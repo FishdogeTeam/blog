@@ -1,58 +1,62 @@
-<header class="navbar-fixed">
+<!-- <header class="navbar-fixed"> -->
+<header class="navbar">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
+        <!-- <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="<%- url_for() %>" class="waves-effect waves-light">
-                    <% if (theme.logo !== undefined && theme.logo.length > 0) { %>
-                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img" alt="LOGO">
-                    <% } %>
-                    <span class="logo-span"><%= config.title %></span>
+                    <% if (theme.logo !==undefined && theme.logo.length> 0) { %>
+                        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img" alt="LOGO">
+                        <% } %>
+                            <span class="logo-span">
+                                <%= config.title %>
+                            </span>
                 </a>
+            </div>            
+        </div> -->
+        <div class="bitcoin-price">
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <div class="tradingview-widget-copyright"></div>
+                <script type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+                        {
+                            "symbols": [
+                                {
+                                    "description": "BTC",
+                                    "proName": "BITSTAMP:BTCUSD"
+                                },
+                                {
+                                    "description": "S&P 500",
+                                    "proName": "FOREXCOM:SPXUSD"
+                                },
+                                {
+                                    "description": "Nasdaq",
+                                    "proName": "SKILLING:NASDAQ"
+                                },
+                                {
+                                    "description": "Crude oil",
+                                    "proName": "CURRENCYCOM:OIL_CRUDE"
+                                },
+                                {
+                                    "description": "US 10 Yr",
+                                    "proName": "ECONOMICS:US10Y"
+                                }
+                            ],
+                                "colorTheme": "dark",
+                                    "isTransparent": true,
+                                        "showSymbolLogo": false,
+                                            "locale": "zh_TW"
+                        }
+                    </script>
             </div>
-            <div class="bitcoin-price">
-                <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <div class="tradingview-widget-copyright"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
-        {
-        "symbols": [
-        {
-            "description": "BTC",
-            "proName": "BITSTAMP:BTCUSD"
-        },
-        {
-            "description": "S&P 500",
-            "proName": "FOREXCOM:SPXUSD"
-        },
-        {
-            "description": "Nasdaq",
-            "proName": "SKILLING:NASDAQ"
-        },
-        {
-            "description": "Crude oil",
-            "proName": "CURRENCYCOM:OIL_CRUDE"
-        },
-        {
-            "description": "US 10 Yr",
-            "proName": "ECONOMICS:US10Y"
-        }
-        ],
-        "colorTheme": "dark",
-        "isTransparent": true,
-        "showSymbolLogo": false,
-        "locale": "zh_TW"
-        }
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
-            </div>
-            <%- partial('_partial/navigation') %>
+            <!-- TradingView Widget END -->
         </div>
+        <%- partial('_partial/navigation') %>
 
         <% if (theme.githubLink && theme.githubLink.enable) { %>
             <%- partial('_partial/github-link') %>
-        <% } %>
+                <% } %>
     </nav>
 
 </header>

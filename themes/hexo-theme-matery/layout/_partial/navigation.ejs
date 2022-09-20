@@ -4,11 +4,12 @@
 %>
 
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
+<ul class="left nav-menu white">
+  <li class="nav-item"><img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img col s2" alt="LOGO"></li>
   <% Object.keys(theme.menu).forEach(function(key) { %>
   <li class="hide-on-med-and-down nav-item">
     <% if(!theme.menu[key].children) { %>
-    <a href="<%- url_for(theme.menu[key].url) %>" class="waves-effect waves-light">
+    <a href="<%- url_for(theme.menu[key].url) %>" class="waves-effect waves-light black-text bold">
       <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
       <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
       <% } %>
@@ -38,14 +39,10 @@
     <% } %>
   </li>
   <% }); %>
-  <li>
+  <div class="col s12 m4 l4 social-link right"><%- partial('_partial/social-link') %></div>
+  <li class="right">
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="<%= __('search') %>" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-  <li>
-    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
-      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search orange-text" title="<%= __('search') %>" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>

@@ -145,14 +145,18 @@ indexbtn:
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  github:  https://github.com/blinkfox
-  email: 1181062873@qq.com
-  facebook: # https://www.facebook.com/xxx
-  twitter: # https://twitter.com/xxx
-  qq: 1181062873
+  facebook: https://www.facebook.com/facebook/?brand_redir=123739327653840
+  instagram: https://www.instagram.com/instagram/
+  twitter: https://twitter.com/Twitter
+  youtube: https://www.youtube.com/
+  podcast: https://www.apple.com/tw/apple-podcasts/
+  rss: true # true、false
+  #以下用不到
+  github:  #https://github.com/blinkfox
+  email: #1181062873@qq.com
+  qq: #1181062873
   weibo: # https://weibo.com/xxx
   zhihu: # https://www.zhihu.com/xxx
-  rss: true # true、false
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
@@ -445,6 +449,7 @@ baiduPush: true
 # 注：jsdelivr可以自动帮你生成.min版的js和css，所以你在设置js及css路径中可以直接写.min.xxx
 libs:
   css:
+    customize: /css/customize.css
     matery: /css/matery.css
     mycss: /css/my.css
     post: /css/post.css
@@ -467,6 +472,7 @@ libs:
     fancybox: /libs/fancybox/jquery.fancybox.css
     justifiedGallery: /libs/justifiedGallery/justifiedGallery.min.css
   js:
+    customize: /js/customize.js
     matery: /js/matery.js
     jquery: /libs/jquery/jquery-3.6.0.min.js  #3.6.0 20211109
     materialize: /libs/materialize/materialize.min.js # 1.0.0
