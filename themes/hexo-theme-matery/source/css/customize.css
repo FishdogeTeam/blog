@@ -1,0 +1,33 @@
+footer .footer-nfts h1{
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: black;
+}
+footer .footer-nfts h2{
+    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    color: black;
+}
+footer .footer-nfts h3{
+    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    color: black;
+}
+footer .footer-nfts h4{
+    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    color: black;
+}
+footer .row .col{
+    padding-left: 0px;
+}
+footer hr{
+    margin: 0px;
+    border-top: 2px solid black;
+    vertical-align: bottom;
+    padding-bottom: 50px;
+}

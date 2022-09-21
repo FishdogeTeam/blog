@@ -7,6 +7,16 @@ menu:
     url: /buybitcoin
   主題:
     url: /topic
+bottomMenu:
+  關於:
+    url: /about
+  購買比特幣:
+    url: /buybitcoin
+  合作夥伴:
+    url: /partner
+  免責申明:
+    url: /disclaimer
+
   # 二级菜单写法如下
   #Medias:
   #  icon: fas fa-list
@@ -28,9 +38,9 @@ menu:
 # 站点运行开始时间.
 time:
   enable: false
-  year: 2019 # 年份
-  month: 06 # 月份
-  date: 28 # 日期
+  year: 2022 # 年份
+  month: 09 # 月份
+  date: 21 # 日期
   hour: 00 # 小时
   minute: 00 # 分钟
   second: 00 # 秒
@@ -131,6 +141,12 @@ recommend:
 # 配置网站favicon和网站LOGO
 favicon: /favicon.png
 logo: /medias/logo.png
+logoWhite: /medias/logo-white.png
+
+#NFT 照片
+nftLeft: /medias/nft_left.png
+nftRight: /medias/nft_right.png
+
 
 # The configuration of the second button in the home banner,
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.
