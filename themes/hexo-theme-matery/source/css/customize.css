@@ -31,3 +31,9 @@ footer hr{
     vertical-align: bottom;
     padding-bottom: 50px;
 }
+
+/*readmore*/
+.readmore{
+    z-index: 10;
+    cursor: pointer;
+}
