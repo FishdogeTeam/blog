@@ -1,7 +1,40 @@
-<div class="carousel">
-  <a class="carousel-item">關鍵字</a>
-  <a class="carousel-item">關鍵字</a>
-  <a class="carousel-item">關鍵字</a>
-  <a class="carousel-item">關鍵字</a>
-  <a class="carousel-item">關鍵字</a>
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+    <div class="swiper-slide">關鍵字</div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 6,
+        spaceBetween: -3,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: false,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+</script>

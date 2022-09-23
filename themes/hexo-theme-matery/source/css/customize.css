@@ -32,22 +32,45 @@ footer hr{
     padding-bottom: 50px;
 }
 
-/*readmore*/
-.readmore{
-    z-index: 10;
-    cursor: pointer;
+
+/*nav*/
+.nav-menu{
+    padding-top: 20px;
+    padding-bottom: 0px;
 }
-
-
 /*carousel*/
-.carousel{
+.swiper{
+    display: block;
+    background-color: white;
+    color: black;
+    clear: both;
+    min-height: 5vh;
+    padding: 0 5%;
+    box-shadow: -2px 2px 3px 1px rgba(128, 128, 128, 0.3);
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+    display: none;
+}
+.swiper-slide{
+    text-align: center;
+    padding: 0 10px;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    background-color: black;
+    color: white;
 }
 /*content*/
 .content{
-    padding-top: 5vh;
+    padding-top: 5%;
     clear: both;
 }
 
 #articles{
     min-width: 90%;
+}
+
+/*readmore*/
+.readmore{
+    z-index: 10;
+    cursor: pointer;
 }
