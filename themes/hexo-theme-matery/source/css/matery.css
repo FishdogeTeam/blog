@@ -34,9 +34,9 @@
 }
 
 body {
-    background-color: #eaeaea;
+    background-color: white;
     margin: 0;
-    color: #34495e;
+    color: black;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -878,9 +878,16 @@ header .go-back i {
     margin-bottom: 10px;
 }
 
+#articles .article{
+    height: 100vmax;
+    max-height: 13vmax;    
+    min-height: 200px;
+    margin-top: 40px;
+}
+
 article a {
     margin-right: 0 !important;
-    color: #525f7f;
+    color: black;
     text-transform: none !important;
 }
 
@@ -899,18 +906,35 @@ article .card {
     border-radius: 8px;
     overflow: hidden;
 }
-
-article .card-image {
-    background-color: #222;
-    border-radius: 8px;
+article .publish-info {
+    border-bottom: solid 1px black;
+    max-height: 13vmax;
+    min-height: 200px;
 }
 
+article .card-title {
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+article .summary {
+    font-size: 16px;
+}
+
+article .card-image{
+    /* height: 100%; */
+}
 article .card-image img {
-    height: 220px;
-    border-radius: 0.3rem;
-    opacity: .7;
+    /* height: 100%; */
+    height: 100vmax;
+    max-height: 13vmax;
+    min-height: 200px;
+    /* opacity: .7; */
 }
-
+article .card-image.col {
+    padding: 0px;
+}
 article .tag-image img {
     height: 220px;
 }
@@ -920,14 +944,10 @@ article .card .card-content {
 }
 
 article .article-content .summary {
-    padding-bottom: 2px;
     padding-left: 0;
-    margin-bottom: 6px;
+    margin-top: 4px;
+    margin-bottom: 4px;
     word-break: break-all;
-}
-
-article .article-content .publish-author {
-    float: right;
 }
 
 .publish-date .icon-date {
@@ -947,14 +967,8 @@ article .card .card-action {
     border-radius: 0 0 8px 8px !important;
 }
 
-article .article-tags .chip {
-    margin: 2px;
-    font-size: 0.8rem;
-    font-weight: 400;
-    height: 22px;
-    line-height: 22px;
-    color: #fff;
-    border-radius: 10px;
+article .article-tags {
+    margin-bottom: 20px;
 }
 
 .prev-next {
@@ -1919,14 +1933,17 @@ p.search-result-summary{
 }
 
 .top-scroll .btn-floating {
-    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
+    /* background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%); */
+    background: black;
     width: 48px;
     height: 48px;
+    border-radius: 0%;
 }
 
 .top-scroll .btn-floating i {
     line-height: 48px;
     font-size: 1.8rem;
+    border-radius: 0%;
 }
 
 @media screen and (min-width: 368px) and (max-width: 767px) {
@@ -2035,7 +2052,7 @@ p.search-result-summary{
     /* fix the problem of hidden failure */
     margin-top: 0.4em;
     /* bg color = bg color under block */
-    background: white;
+    /* background: white; */
 }
 
 /*二级菜单*/

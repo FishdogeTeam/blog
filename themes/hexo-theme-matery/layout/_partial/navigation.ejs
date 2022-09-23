@@ -4,47 +4,48 @@
 %>
 
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="left nav-menu white">
-  <li class="nav-item"><img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img col s2" alt="LOGO"></li>
-  <% Object.keys(theme.menu).forEach(function(key) { %>
-  <li class="hide-on-med-and-down nav-item">
-    <% if(!theme.menu[key].children) { %>
-    <a href="<%- url_for(theme.menu[key].url) %>" class="waves-effect waves-light black-text bold">
-      <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
-      <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
-      <% } %>
-      <span><%- __(key) %></span>
-    </a>
-    <% } else { %>
-    <a href="<%- theme.menu[key].url %>" class="waves-effect waves-light">
+<div class="container">  
+  <ul class="nav-menu white">
+    <li class="left nav-item"><img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img col s2" alt="LOGO"></li>
+    <% Object.keys(theme.menu).forEach(function(key) { %>
+    <li class="hide-on-med-and-down nav-item">
+      <% if(!theme.menu[key].children) { %>
+      <a href="<%- url_for(theme.menu[key].url) %>" class="waves-effect waves-light black-text bold">
+        <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
+        <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
+        <% } %>
+        <span><%- __(key) %></span>
+      </a>
+      <% } else { %>
+      <a href="<%- theme.menu[key].url %>" class="waves-effect waves-light">
 
-      <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
-      <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
+        <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
+        <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
+        <% } %>
+        <span><%- __(key) %></span>
+        <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+      </a>
+      <ul class="sub-nav menus_item_child ">
+        <% for(let childrenLink of theme.menu[key].children){ %>
+        <li>
+          <a href="<%- url_for(childrenLink.url)%>">
+            <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
+            <i class="<%- childrenLink.icon %>" style="margin-top: -20px; zoom: 0.6;"></i>
+            <% } %>
+            <span><%- childrenLink.name %></span>
+          </a>
+        </li>
+        <% } %>
+      </ul>
       <% } %>
-      <span><%- __(key) %></span>
-      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-    </a>
-    <ul class="sub-nav menus_item_child ">
-      <% for(let childrenLink of theme.menu[key].children){ %>
-      <li>
-        <a href="<%- url_for(childrenLink.url)%>">
-          <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
-          <i class="<%- childrenLink.icon %>" style="margin-top: -20px; zoom: 0.6;"></i>
-          <% } %>
-          <span><%- childrenLink.name %></span>
-        </a>
-      </li>
-      <% } %>
-    </ul>
-    <% } %>
-  </li>
-  <% }); %>
-  <div class="col s12 m4 l4 social-link right"><%- partial('_partial/social-link') %></div>
-  <li class="right">
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search orange-text" title="<%= __('search') %>" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
-
+    </li>
+    <% }); %>
+    <div class="col s12 m4 l4 social-link right"><%- partial('_partial/social-link') %></div>
+    <li class="right">
+      <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+        <i id="searchIcon" class="fas fa-search orange-text" title="<%= __('search') %>" style="zoom: 0.85;"></i>
+      </a>
+    </li>
+  </ul>
+</div>
 <%- partial('_partial/mobile-nav') %>
