@@ -88,6 +88,44 @@
         </div>
     </article>
 
+    <button id="readmore">看更多</button>
+
+    <script>
+        //看更多按鈕
+        const articleDisplay=document.getElementsByClassName("article")
+        const readmoreBtn=document.getElementById("readmore")
+        let articleArray=[]
+        let clickCount=0
+
+        for(let i=0;i<articleDisplay.length;i++){
+            if((i+1) > 4){
+                articleDisplay[i].style.display="none"
+            }
+        }
+
+        for(let i=0;i<articleDisplay.length;i++){
+            if(i % 4 == 0 && i != 0){
+                articleArray.push(i)
+            }
+        }
+
+        function readMore(){
+            try{
+                clickCount++
+                for(let i=0;i<4;i++){
+                    articleDisplay[(articleArray[clickCount-1])+i].style.display="block"
+                }
+            }
+            catch(err){
+                err.message="沒有更多文章了"
+                readmoreBtn.style.display="none"
+            }
+        }
+
+        readmoreBtn.addEventListener('click',readMore)
+        
+    </script>
+
 </main>
 <% if (page.total > 1) { %>
 <%- partial('_partial/paging') %>

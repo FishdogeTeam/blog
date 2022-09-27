@@ -45,10 +45,13 @@ footer hr{
     color: black;
     clear: both;
     min-height: 5vh;
-    padding: 0 5%;
+    max-width: 96%;
 }
 .slide-container{
     box-shadow: -2px 2px 3px 1px rgba(128, 128, 128, 0.3);   
+}
+.container{
+    min-width: 98%;
 }
 .swiper-pagination-clickable .swiper-pagination-bullet {
     display: none;
@@ -72,7 +75,6 @@ footer hr{
 }
 
 /*readmore*/
-.readmore{
-    z-index: 10;
+#readmore{
     cursor: pointer;
 }

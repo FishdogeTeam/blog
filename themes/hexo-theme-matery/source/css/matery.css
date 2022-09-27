@@ -539,20 +539,6 @@ header .go-back i {
     line-height: 56px;
 }
 
-/* 背景图效果. */
-.bg-cover {
-    position: relative;
-    display: flex;
-    align-items: center;
-    height: 60vh;
-    padding: 0;
-    border: 0;
-    overflow: hidden;
-    background-position: center center;
-    background-size: cover;
-    transform: translate3d(0px, 0px, 0px);
-}
-
 .index-cover {
     height: 100vh;
 }
@@ -561,48 +547,6 @@ header .go-back i {
     height: 40vh !important;
 }
 
-.bg-cover:after {
-    -webkit-animation: rainbow 60s infinite;
-    animation: rainbow 60s infinite;
-}
-
-.bg-cover:before,
-.bg-cover:after {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    display: block;
-    left: 0;
-    top: 0;
-    content: "";
-}
-
-.bg-cover .container {
-    position: relative;
-    color: #fff;
-    z-index: 2;
-}
-
-.bg-cover .title {
-    font-size: 4rem;
-    line-height: 1.2em;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-.bg-cover .description {
-    font-weight: 300;
-    font-size: 1.25rem;
-    line-height: 1.4em;
-    color: #eee;
-}
-
-.bg-cover .post-title {
-    margin: 0 auto;
-    font-size: 2.5rem;
-    font-weight: 400;
-}
 
 @-webkit-keyframes rainbow {
 
