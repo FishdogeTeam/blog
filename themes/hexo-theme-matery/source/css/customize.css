@@ -32,12 +32,12 @@ footer hr{
     padding-bottom: 50px;
 }
 
-
 /*nav*/
 .nav-menu{
     padding-top: 20px;
     padding-bottom: 0px;
 }
+
 /*carousel*/
 .swiper{
     display: block;
@@ -45,7 +45,7 @@ footer hr{
     color: black;
     clear: both;
     min-height: 5vh;
-    max-width: 96%;
+    max-width: 94vw;
 }
 .slide-container{
     box-shadow: -2px 2px 3px 1px rgba(128, 128, 128, 0.3);   
@@ -60,18 +60,27 @@ footer hr{
     text-align: center;
     padding: 0 10px;
 }
+.swiper-slide a{
+    color: black;
+    border: 1px ;
+}
 .swiper-button-next:after, .swiper-button-prev:after {
     background-color: black;
     color: white;
 }
+
 /*content*/
 .content{
     padding-top: 5%;
     clear: both;
 }
 
+/*articles*/
 #articles{
     min-width: 90%;
+}
+.publish-info{
+    z-index: 50;
 }
 
 /*readmore*/
