@@ -75,6 +75,14 @@ footer hr{
     clear: both;
 }
 
+/*url-now*/
+.url-now{
+    color: black !important;
+}
+.author-name{
+    color: black !important;
+}
+
 /*articles*/
 #articles{
     min-width: 90%;

@@ -12,7 +12,15 @@
         }
         return hash;
     };
-    %>    
+    %>
+    <!--現在位置-->
+    <% if(page.current_url == ''){ %>
+        <p class="url-now">首頁</p>
+    <% }else{ %>
+        <p class="url-now">首頁 &gt; <%- page.author.id %></p>
+        <h1 class="author-name"><%- page.author.id %></h1>
+    <% } %>
+
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">

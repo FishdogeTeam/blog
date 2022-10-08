@@ -14,7 +14,10 @@
         return hash;
     };
     %>
+    <!--現在位置-->
+    <p class="url-now">首頁 &gt; <%- page.tag %></p>
 
+    <!--標籤文章卡片-->
     <article id="articles" class="container articles">
         <div class="row tags-posts">
             <% page.posts.sort('date').reverse().forEach(post => { %>
