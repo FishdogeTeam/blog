@@ -1,56 +1,51 @@
 <!-- <header class="navbar-fixed"> -->
 <header class="navbar">
     <nav id="headNav" class="bg-color nav-transparent">
-        <!-- <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="<%- url_for() %>" class="waves-effect waves-light">
-                    <% if (theme.logo !==undefined && theme.logo.length> 0) { %>
-                        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img" alt="LOGO">
-                        <% } %>
-                            <span class="logo-span">
-                                <%= config.title %>
-                            </span>
-                </a>
-            </div>            
-        </div> -->
         <div class="bitcoin-price">
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-                <div class="tradingview-widget-container__widget"></div>
-                <div class="tradingview-widget-copyright"></div>
-                <script type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
-                        {
-                            "symbols": [
-                                {
-                                    "description": "BTC",
-                                    "proName": "BITSTAMP:BTCUSD"
-                                },
-                                {
-                                    "description": "S&P 500",
-                                    "proName": "FOREXCOM:SPXUSD"
-                                },
-                                {
-                                    "description": "Nasdaq",
-                                    "proName": "SKILLING:NASDAQ"
-                                },
-                                {
-                                    "description": "Crude oil",
-                                    "proName": "CURRENCYCOM:OIL_CRUDE"
-                                },
-                                {
-                                    "description": "US 10 Yr",
-                                    "proName": "ECONOMICS:US10Y"
-                                }
-                            ],
-                                "colorTheme": "dark",
-                                    "isTransparent": true,
-                                        "showSymbolLogo": false,
-                                            "locale": "zh_TW"
-                        }
-                    </script>
+            <div class="btc-price black">
+                <div class="container">
+                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCal) %>" class="responsive-img" alt="iconCal">
+                    <span>2022/10/06</span>
+                    <span>BTC</span>
+                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img" alt="iconMoney">
+                    <span>價格：
+                        <span>20,000</span>
+                    </span>
+                    <span>|</span>
+                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img" alt="iconBlock">
+                    <span>區塊高度：
+                        <span>500</span>
+                    </span>
+                </div>
             </div>
-            <!-- TradingView Widget END -->
+            <div class="stock-price grey lighten-4">
+                <div class="container">
+                    <div class="stock">
+                        <span>S&P 500</span>
+                        <span>3845.08</span>
+                        <i class="fa-solid fa-caret-up green-text text-darken-3"></i>
+                        <span class="green-text text-darken-3">+0.36%</span>
+                    </div>
+                    <div class="stock">
+                        <span>Nasdaq</span>
+                        <span>11361.85</span>
+                        <i class="fa-solid fa-caret-up green-text text-darken-3"></i>
+                        <span class="green-text text-darken-3">+0.35%</span>
+                    </div>
+                    <div class="stock">
+                        <span>Crude oil</span>
+                        <span>98.93</span>
+                        <i class="fa-solid fa-caret-up green-text text-darken-3"></i>
+                        <span class="green-text text-darken-3">+0.41%</span>
+                    </div>
+                    <div class="stock">
+                        <span>US 10 Yr</span>
+                        <span>2.91</span>
+                        <i class="fa-solid fa-caret-up green-text text-darken-3"></i>
+                        <span class="green-text text-darken-3">+0.13%</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <%- partial('_partial/navigation') %>
         <%- partial('_partial/slider') %>

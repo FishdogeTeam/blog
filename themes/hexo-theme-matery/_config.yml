@@ -147,6 +147,10 @@ logoWhite: /medias/logo-white.png
 nftLeft: /medias/nft_left.png
 nftRight: /medias/nft_right.png
 
+#價格顯示Icon
+iconCal: /medias/icon-calender.png
+iconMoney: /medias/icon-money.png
+iconBlock: /medias/icon-block.png
 
 # The configuration of the second button in the home banner,
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.

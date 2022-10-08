@@ -87,11 +87,11 @@
             <% }); %> 
         </div>
     </article>
-
-    <button id="readmore">看更多</button>
+    <div class="container">
+        <button id="readmore" class="readmore center col s3">看更多</button>
+    </div>
 
     <script>
-        //看更多按鈕 需修改css正確顯示
         const articleDisplay=document.getElementsByClassName("article")
         const readmoreBtn=document.getElementById("readmore")
         let articleArray=[]
@@ -117,15 +117,12 @@
                 }
             }
             catch(err){
-                err.message="沒有更多文章了"
+                // err.message="沒有更多文章了"
                 readmoreBtn.style.display="none"
             }
         }
-
-        readmoreBtn.addEventListener('click',readMore)
-        
+        readmoreBtn.addEventListener('click',readMore)        
     </script>
-
 </main>
 <% if (page.total > 1) { %>
 <%- partial('_partial/paging') %>

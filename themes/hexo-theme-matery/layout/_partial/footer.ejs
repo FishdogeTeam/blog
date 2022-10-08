@@ -1,47 +1,12 @@
 <footer class="page-footer black">
-    <div class="container black">
+    <div class="container black footer-nav">
         <div class="row">
-            <div class="col s12">
-                <div class="col s6">
-                    <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logoWhite) %>" class="logo-img col s2" alt="LOGO">
-                </div>
-                <div class="col s6">
-                    <ul class="nav-menu">
-                        <% Object.keys(theme.menu).forEach(function(key) { %>
-                        <li class="hide-on-med-and-down nav-item">
-                            <% if(!theme.menu[key].children) { %>
-                            <a href="<%- url_for(theme.menu[key].url) %>" class="waves-effect waves-light white-text bold">
-                            <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
-                            <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
-                            <% } %>
-                            <span><%- __(key) %></span>
-                            </a>
-                            <% } else { %>
-                            <a href="<%- theme.menu[key].url %>" class="waves-effect waves-light">
-                        
-                            <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
-                            <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
-                            <% } %>
-                            <span><%- __(key) %></span>
-                            <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
-                            </a>
-                            <ul class="sub-nav menus_item_child ">
-                            <% for(let childrenLink of theme.menu[key].children){ %>
-                            <li>
-                                <a href="<%- url_for(childrenLink.url)%>">
-                                <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
-                                <i class="<%- childrenLink.icon %>" style="margin-top: -20px; zoom: 0.6;"></i>
-                                <% } %>
-                                <span><%- childrenLink.name %></span>
-                                </a>
-                            </li>
-                            <% } %>
-                            </ul>
-                            <% } %>
-                        </li>
-                        <% }); %>
-                    </ul>
-                </div>
+            <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logoWhite) %>" class="logo-img left" alt="LOGO">
+            <div class="right col s4">
+                <div class="footer-item col s3 center white-text">關於</div>
+                <div class="footer-item col s3 center white-text">購買彼特幣</div>
+                <div class="footer-item col s3 center white-text">合作夥伴</div>
+                <div class="footer-item col s3 center white-text">免責聲明</div>
             </div>
         </div>
     </div>
@@ -49,7 +14,7 @@
     <div class="footer-copyright grey darken-3">
         <div class="container">
             <div class="row">                
-                <div class="center col s12 m6 l6">
+                <div class="col s12 m3 l3 left ">
                     &copy;Photo,&nbsp;Inc.&nbsp;
                     <% if (theme.time.year !== new Date().getFullYear()) { %>
                         <span id="year"><%- theme.time.year %>-<%- new Date().getFullYear() %></span>
@@ -58,7 +23,7 @@
                     <% } %>
                     All rights reserved
                 </div>
-                <div class="center col s12 m6 l6 social-link"><%- partial('_partial/social-link-white') %></div>     
+                <div class="col s12 m3 l3 social-link right"><%- partial('_partial/social-link-white') %></div>     
             </div>
         </div>
     </div>
