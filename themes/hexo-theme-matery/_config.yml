@@ -149,6 +149,7 @@ nftRight: /medias/nft_right.png
 
 #價格顯示Icon
 iconCal: /medias/icon-calender.png
+iconCalBlack: /medias/icon-calender-black.png
 iconMoney: /medias/icon-money.png
 iconBlock: /medias/icon-block.png
 

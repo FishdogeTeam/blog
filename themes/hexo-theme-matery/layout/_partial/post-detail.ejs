@@ -2,76 +2,61 @@
 <p class="url-now">首頁  &gt; <%- page.title %></p>
 <!-- 文章内容详情 -->
 <div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    <% if (page.tags && page.tags.length) { %>
-                    <div class="article-tag">
-                        <% page.tags.forEach(function(tag) { %>
-                            <a href="<%- url_for(tag.path) %>">
-                                <span class="chip bg-color"><%= tag.name %></span>
-                            </a>
-                        <% }); %>
-                    </div>
-                    <% } else { %>
-                          <div class="article-tag">
-                            <span class="chip bg-color"><%- __("notag")  %></span>
-                          </div>
-                    <% } %>
-                </div>
-                <div class="col s5 right-align">
-                    <% if (page.categories && page.categories.length > 0) { %>
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        <% page.categories.forEach(category => { %>
-                            <a href="<%- url_for(category.path) %>" class="post-category">
-                                <%- category.name %>
-                            </a>
-                        <% }); %>
-                    </div>
-                    <% } %>
-                </div>
+    <div class="container">
+        <!-- 日期 -->
+        <div class="post-info row">
+            <% if (theme.postInfo.date) { %>
+            <div class="post-date info-break-policy">                
+                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCalBlack) %>" class="responsive-img black-text" alt="iconCal"><%- __('publishDate') %>:&nbsp;&nbsp;
+                <%- date(page.date, 'YYYY-MM-DD') %>
             </div>
+            <% } %>
 
-            <div class="post-info">
-                <% if (theme.postInfo.date) { %>
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i><%- __('publishDate') %>:&nbsp;&nbsp;
-                    <%- date(page.date, 'YYYY-MM-DD') %>
-                </div>
-                <% } %>
-
-                <% if (theme.postInfo.update) { %>
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i><%- __('updateDate') %>:&nbsp;&nbsp;
-                    <%- date(page.updated, 'YYYY-MM-DD') %>
-                </div>
-                <% } %>
-
-                <% if (theme.postInfo.wordCount) { %>
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i><%- __('wordCount') %>:&nbsp;&nbsp;
-                    <%= wordcount(page.content) %>
-                </div>
-                <% } %>
-
-                <% if (theme.postInfo.min2read) { %>
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i><%- __('readTimes') %>:&nbsp;&nbsp;
-                    <%= min2read(page.content) %> <%= __('Minutes') %>
-                </div>
-                <% } %>
-
-                <% if (theme.postInfo.readCount && theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i><%- __('readCount') %>:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				<% } %>
+            <% if (theme.postInfo.update) { %>
+            <div class="post-date info-break-policy">
+                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCalBlack) %>" class="responsive-img black-text" alt="iconCal"><%- __('updateDate') %>:&nbsp;&nbsp;
+                <%- date(page.updated, 'YYYY-MM-DD') %>
+            </div>
+            <% } %>
+        </div>
+        <!-- 標題 -->
+        <div class="post-title row">
+            <%- page.title %>
+        </div>
+        <!-- 圖片 -->
+        <div class="post-img row">
+            <img src="<%- url_for(page.img) %>" class="responsive-img" alt="">
+            <div class="quotation black">
+                <p class="white-text">
+                    <p class="white-text q-mark">“<br></p> 
+                    <p class="white-text q-content"><%- page.quotation %><br></p>
+                    <p class="white-text q-mark" style="text-align: right">”</p> 
+                </p>
             </div>
         </div>
-        <hr class="clearfix">
+        <!-- 資訊 -->
+        <div class="post-info">
+            <!-- tag -->
+            <div class="post-info-tags">
+                <% if (page.tags && page.tags.length) { %>
+                <div class="article-tag">
+                    <% page.tags.forEach(function(tag) { %>
+                        <a href="<%- url_for(tag.path) %>">
+                            <span class="black-text">#<%= tag.name %></span>
+                        </a>
+                    <% }); %>
+                </div>
+                <% } else { %>
+                        <div class="article-tag">
+                        <span class="black-text"><%- __("notag")  %></span>
+                        </div>
+                <% } %>
+            </div>
+            <hr class="clearfix">
+            <!-- author -->
+            作者：<a class="black-text post-info-author" href="/author/<%- page.authorId %>" rel="external nofollow noreferrer"><%- page.authorId %></a>
+            <hr class="clearfix">
+        </div>
 
         <% if (config.prismjs && config.prismjs.enable) { %>
         <!-- 是否加载使用自带的 prismjs. -->
@@ -85,7 +70,7 @@
         </style>
         <% } %>
 
-        <div class="card-content article-card-content">
+        <div class="card-content ">
             <div id="articleContent">
                 <%- page.content %>
                 <% if (theme.bbtime.enable && page.layout == 'bb') { %>
@@ -136,7 +121,6 @@
             </div>
             <hr/>
 
-            <%- partial('_partial/reprint-statement') %>
 
             <div class="tag_share" style="display: block;">
                 <div class="post-meta__tag-list" style="display: inline-block;">
