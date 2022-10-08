@@ -49,8 +49,10 @@
                                             <%- category.name %>
                                         </a>
                                         <% }); %>
-                                        <% } else if (post.author && post.author.length > 0) { %>
-                                        <%- post.author %>
+                                        <% } else if (post.authorId && post.authorId.length > 0) { %>
+                                        <a href="/author/<%- post.authorId %>" class="author-link">
+                                            <%- post.authorId %>
+                                        </a>
                                         <% } else { %>
                                         <%- config.author %>
                                         <% } %>

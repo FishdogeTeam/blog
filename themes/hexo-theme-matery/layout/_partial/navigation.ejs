@@ -6,7 +6,7 @@
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
 <div class="container">  
   <ul class="nav-menu white">
-    <li class="left nav-item"><img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img col s2" alt="LOGO"></li>
+    <li class="left nav-item"><a href="/"><img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img col s2" alt="LOGO"></a></li>
     <% Object.keys(theme.menu).forEach(function(key) { %>
     <li class="hide-on-med-and-down nav-item">
       <% if(!theme.menu[key].children) { %>
