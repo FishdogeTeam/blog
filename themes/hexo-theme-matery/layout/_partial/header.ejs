@@ -3,13 +3,37 @@
     <nav id="headNav" class="bg-color nav-transparent">
         <div class="bitcoin-price">
             <div class="btc-price black">
+                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
                 <div class="container">
+                    <script>
+                        async function getData(){
+                            let data;
+                            await axios.get('http://127.0.0.1:8080/getData?coin=BTC/USDT')
+                            .then((response) => {
+                                data = JSON.parse(JSON.stringify(response.data));
+                            })
+                            .catch((error) => {
+                                console.log(error);
+                            });
+                            return data;
+                        }
+                        // getData().then( res => {
+                        //     document.write(res);
+                        // });
+                    </script>
                     <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCal) %>" class="responsive-img" alt="iconCal">
                     <span><%- date(Date.now(), 'YYYY/M/D') %></span>
-                    <span>BTC</span>
+                    <span>BTC/USDT</span>
                     <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img" alt="iconMoney">
                     <span>價格：
-                        <span>19,499.13</span>
+                        <span id="price">
+                            <script> 
+                                getData().then( res => {
+                                    document.getElementById("price").innerHTML = res.result.price;
+                                }); 
+                            </script>
+                        </span>
                     </span>
                     <span>|</span>
                     <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img" alt="iconBlock">
