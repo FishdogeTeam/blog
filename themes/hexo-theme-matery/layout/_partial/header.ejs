@@ -120,8 +120,9 @@
                                 // get data from the func "getData"
                                 getStock("US500","Index","NYSE").then( res => {
                                     // if the api is not connected, show the error msg
+                                    let data = res.message === "Network Error" ? "連不上API，請先連上API" : res;
                                     // show the blockhigh
-                                    document.getElementById("header_US500_price").innerHTML = res;
+                                    document.getElementById("header_US500_price").innerHTML = data;
                                 });
                             </script>
                         </span>
@@ -132,8 +133,9 @@
                                     // get data from the func "getData"
                                     getStockGain("US500","Index","NYSE").then( res => {
                                         // if the api is not connected, show the error msg
+                                        let data = res.message === "Network Error" ? "連不上API，請先連上API" : res;
                                         // show the blockhigh
-                                        document.getElementById("header_US500_gain").innerHTML = res;
+                                        document.getElementById("header_US500_gain").innerHTML = data;
                                     });
                                 </script>
                             </span>
@@ -146,8 +148,9 @@
                                 // get data from the func "getData"
                                 getStock("IXIC","Index","NASDAQ").then( res => {
                                     // if the api is not connected, show the error msg
+                                    let data = res.message === "Network Error" ? "連不上API，請先連上API" : res;
                                     // show the blockhigh
-                                    document.getElementById("header_Nasdaq_price").innerHTML = res;
+                                    document.getElementById("header_Nasdaq_price").innerHTML = data;
                                 });
                             </script>
                         </span>
@@ -158,8 +161,9 @@
                                     // get data from the func "getData"
                                     getStockGain("IXIC","Index","NASDAQ").then( res => {
                                         // if the api is not connected, show the error msg
+                                        let data = res.message === "Network Error" ? "連不上API，請先連上API" : res;
                                         // show the blockhigh
-                                        document.getElementById("header_Nasdaq_gain").innerHTML = res;
+                                        document.getElementById("header_Nasdaq_gain").innerHTML = data;
                                     });
                                 </script>
                             </span>
@@ -172,8 +176,9 @@
                                 // get data from the func "getData"
                                 getStock("CL","Commodity","ICE").then( res => {
                                     // if the api is not connected, show the error msg
+                                    let data = res.message === "Network Error" ? "連不上API，請先連上API" : res;
                                     // show the blockhigh
-                                    document.getElementById("header_CrudeOil_price").innerHTML = res;
+                                    document.getElementById("header_CrudeOil_price").innerHTML = data;
                                 });
                             </script>
                         </span>
@@ -184,8 +189,10 @@
                                     // get data from the func "getData"
                                     getStockGain("CL","Commodity","ICE").then( res => {
                                         // if the api is not connected, show the error msg
+                                        let data = res.message === "Network Error" ? "連不上API，請先連上API" : res;
+
                                         // show the blockhigh
-                                        document.getElementById("header_CrudeOil_gain").innerHTML = res;
+                                        document.getElementById("header_CrudeOil_gain").innerHTML = data;
                                     });
                                 </script>
                             </span>
