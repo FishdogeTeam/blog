@@ -1,9 +1,12 @@
 # import json
 import requests
 import json
+import time
+from investiny import historical_data, search_assets
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
 from flask_sslify import SSLify
+from datetime import datetime, timedelta
 
 # TODO: 突破 IP 訪問限制
 # TODO: 避免 client 有大量可疑請求(同IP)
@@ -13,7 +16,7 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/getData', methods=['GET'])
-def getTable():
+def getData():
     
     coin = request.args.get('coin')
     if coin == None:
@@ -28,6 +31,45 @@ def getTable():
         data = json.loads(txt)
         
         return data
+
+@app.route('/getStock', methods=['GET'])
+def getStock():
+
+    query = request.args.get('query')
+    type = request.args.get('type')
+    exchange = request.args.get('exchange')
+    if query == None or type == None or exchange == None:
+        return 'Error: 請給我正確的參數: query + type + exchange'
+
+    else:
+        # get stock data
+        results = search_assets(query = query, limit = 1, type = type, exchange = exchange)
+        # get stock id
+        investing_id = int(results[0]["ticker"])
+        
+        # get historical data
+        data = historical_data(investing_id = investing_id)
+        return str(round(data['close'][-1], 2))
+
+@app.route('/getStockGain', methods=['GET'])
+def getStockGain():
+
+    query = request.args.get('query')
+    type = request.args.get('type')
+    exchange = request.args.get('exchange')
+    if query == None or type == None or exchange == None:
+        return 'Error: 請給我正確的參數: query + type + exchange'
+        
+    else:
+        # get current price
+        results = search_assets(query = query, limit = 1, type = type, exchange = exchange)
+        
+        # get investing id
+        investing_id = int(results[0]["ticker"])
+        
+        # get historical data
+        data = historical_data(investing_id = investing_id)
+        return str(round((data['close'][-1] - data['close'][-2]) / data['close'][-2]*100, 2)) + "%"
 
 @app.route('/', methods=['GET'])
 def root():

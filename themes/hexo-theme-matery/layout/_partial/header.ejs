@@ -1,4 +1,9 @@
 <!-- <header class="navbar-fixed"> -->
+<!-- 
+    TODO: 漲跌幅還沒做
+    TODO: US 10 Yr 還沒做，抓不到。
+    TODO: 區塊高度還沒做，不知道這是什麼
+ -->
 <header class="navbar">
     <nav id="headNav" class="bg-color nav-transparent">
         <div class="bitcoin-price">
@@ -9,11 +14,46 @@
                     <script>
 
                         // get exchange data from a self-hosted api to get data from ftx, binance...etc
+                        // get specific crypto data
                         async function getData(){
                             let data;
 
                             // url need to be changed
                             await axios.get('http://127.0.0.1:8080/getData?coin=BTC/USDT')
+                            .then((response) => {
+                                data = JSON.parse(JSON.stringify(response.data));
+                            })
+                            .catch((error) => {
+                                data = error;
+                                console.log(error);
+                            });
+                            return data;
+                        }
+                        
+                        // get exchange data from a self-hosted api to get data from ftx, binance...etc
+                        // get specific stock data
+                        async function getStock(query, type, exchange){
+                            let data;
+                            let url = 'http://127.0.0.1:8080/getStock?query=' + query + '&type=' + type + '&exchange=' + exchange;
+                            // url need to be changed
+                            await axios.get(url)
+                            .then((response) => {
+                                data = JSON.parse(JSON.stringify(response.data));
+                            })
+                            .catch((error) => {
+                                data = error;
+                                console.log(error);
+                            });
+                            return data;
+                        }
+                        
+                        // get exchange data from a self-hosted api to get data from ftx, binance...etc
+                        // get specific stock gain
+                        async function getStockGain(query, type, exchange){
+                            let data;
+                            let url = 'http://127.0.0.1:8080/getStockGain?query=' + query + '&type=' + type + '&exchange=' + exchange;
+                            // url need to be changed
+                            await axios.get(url)
                             .then((response) => {
                                 data = JSON.parse(JSON.stringify(response.data));
                             })
@@ -75,27 +115,107 @@
                 <div class="container">
                     <div class="stock">
                         <span>S&P 500</span>
-                        <span>3845.08</span>
+                        <span id="header_US500_price">
+                            <script>
+                                // get data from the func "getData"
+                                getStock("US500","Index","NYSE").then( res => {
+                                    // if the api is not connected, show the error msg
+                                    // show the blockhigh
+                                    document.getElementById("header_US500_price").innerHTML = res;
+                                });
+                            </script>
+                        </span>
                         <i class="fa-solid fa-caret-up green-text text-darken-3"></i>
-                        <span class="green-text text-darken-3">+0.36%</span>
+                        <span class="green-text text-darken-3">
+                            <span id="header_US500_gain">
+                                <script>
+                                    // get data from the func "getData"
+                                    getStockGain("US500","Index","NYSE").then( res => {
+                                        // if the api is not connected, show the error msg
+                                        // show the blockhigh
+                                        document.getElementById("header_US500_gain").innerHTML = res;
+                                    });
+                                </script>
+                            </span>
+                        </span>
                     </div>
                     <div class="stock">
                         <span>Nasdaq</span>
-                        <span>11361.85</span>
+                        <span id="header_Nasdaq_price">
+                            <script>
+                                // get data from the func "getData"
+                                getStock("IXIC","Index","NASDAQ").then( res => {
+                                    // if the api is not connected, show the error msg
+                                    // show the blockhigh
+                                    document.getElementById("header_Nasdaq_price").innerHTML = res;
+                                });
+                            </script>
+                        </span>
                         <i class="fa-solid fa-caret-up green-text text-darken-3"></i>
-                        <span class="green-text text-darken-3">+0.35%</span>
+                        <span class="green-text text-darken-3">
+                            <span id="header_Nasdaq_gain">
+                                <script>
+                                    // get data from the func "getData"
+                                    getStockGain("IXIC","Index","NASDAQ").then( res => {
+                                        // if the api is not connected, show the error msg
+                                        // show the blockhigh
+                                        document.getElementById("header_Nasdaq_gain").innerHTML = res;
+                                    });
+                                </script>
+                            </span>
+                        </span>
                     </div>
                     <div class="stock">
                         <span>Crude oil</span>
-                        <span>98.93</span>
+                        <span id="header_CrudeOil_price">
+                            <script>
+                                // get data from the func "getData"
+                                getStock("CL","Commodity","ICE").then( res => {
+                                    // if the api is not connected, show the error msg
+                                    // show the blockhigh
+                                    document.getElementById("header_CrudeOil_price").innerHTML = res;
+                                });
+                            </script>
+                        </span>
                         <i class="fa-solid fa-caret-up green-text text-darken-3"></i>
-                        <span class="green-text text-darken-3">+0.41%</span>
+                        <span class="green-text text-darken-3">
+                            <span id="header_CrudeOil_gain">
+                                <script>
+                                    // get data from the func "getData"
+                                    getStockGain("CL","Commodity","ICE").then( res => {
+                                        // if the api is not connected, show the error msg
+                                        // show the blockhigh
+                                        document.getElementById("header_CrudeOil_gain").innerHTML = res;
+                                    });
+                                </script>
+                            </span>
+                        </span>
                     </div>
                     <div class="stock">
                         <span>US 10 Yr</span>
-                        <span>2.91</span>
+                        <span id="header_US10Y_price">
+                            <script>
+                                // get data from the func "getData"
+                                getStock("US10YT=X","Bond","NYSE").then( res => {
+                                    // if the api is not connected, show the error msg
+                                    // show the blockhigh
+                                    document.getElementById("header_US10Y_price").innerHTML = res;
+                                });
+                            </script>
+                        </span>
                         <i class="fa-solid fa-caret-up green-text text-darken-3"></i>
-                        <span class="green-text text-darken-3">+0.13%</span>
+                        <span class="green-text text-darken-3">
+                            <span id="header_US10Y_gain">
+                                <script>
+                                    // get data from the func "getData"
+                                    getStockGain("US10YT=X","Bond","NYSE").then( res => {
+                                        // if the api is not connected, show the error msg
+                                        // show the blockhigh
+                                        document.getElementById("header_US10Y_gain").innerHTML = res;
+                                    });
+                                </script>
+                            </span>
+                        </span>
                     </div>
                 </div>
             </div>
