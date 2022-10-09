@@ -7,30 +7,49 @@
 
                 <div class="container">
                     <script>
+
+                        // get exchange data from a self-hosted api to get data from ftx, binance...etc
                         async function getData(){
                             let data;
+
+                            // url need to be changed
                             await axios.get('http://127.0.0.1:8080/getData?coin=BTC/USDT')
                             .then((response) => {
                                 data = JSON.parse(JSON.stringify(response.data));
                             })
                             .catch((error) => {
+                                data = error;
                                 console.log(error);
                             });
                             return data;
                         }
-                        // getData().then( res => {
-                        //     document.write(res);
-                        // });
                     </script>
                     <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCal) %>" class="responsive-img" alt="iconCal">
                     <span><%- date(Date.now(), 'YYYY/M/D') %></span>
-                    <span>BTC/USDT</span>
+                    <span id="header_cropto_name">
+                        
+                        <!-- needed to be able to change -->
+                        <!-- send data to js and call api -->
+                        <!-- BTC/USDT -->
+                        <script> 
+                            getData().then( res => {
+                                // if the api is not working, show error message
+                                let nameMsg = res.message === "Network Error" ? "連不上API，請先連上API" : res.result.name;
+                                // if the api is working, show the name
+                                document.getElementById("header_cropto_name").innerHTML = nameMsg;
+                            }); 
+                        </script>
+                    </span>
                     <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img" alt="iconMoney">
                     <span>價格：
-                        <span id="price">
-                            <script> 
+                        <span id="header_crypto_price">
+                            <script>
+                                // get data from the func "getData"
                                 getData().then( res => {
-                                    document.getElementById("price").innerHTML = res.result.price;
+                                    // if the api is not connected, show the error msg
+                                    let priceMsg = res.message === "Network Error" ? "連不上API，請先連上API" : res.result.price;
+                                    // show the price
+                                    document.getElementById("header_crypto_price").innerHTML = priceMsg;
                                 }); 
                             </script>
                         </span>
@@ -38,7 +57,17 @@
                     <span>|</span>
                     <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img" alt="iconBlock">
                     <span>區塊高度：
-                        <span>757,674</span>
+                        <span id="header_crypto_blockhigh">
+                            <script>
+                                // get data from the func "getData"
+                                getData().then( res => {
+                                    // if the api is not connected, show the error msg
+                                    let blockhighMsg = res.message === "Network Error" ? "連不上API，請先連上API" : "757,674"; //res.result.區塊高度;
+                                    // show the blockhigh
+                                    document.getElementById("header_crypto_blockhigh").innerHTML = blockhighMsg;
+                                });
+                            </script>
+                        </span>
                     </span>
                 </div>
             </div>
