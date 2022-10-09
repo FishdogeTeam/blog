@@ -184,3 +184,13 @@ footer hr{
 #readmore{
     cursor: pointer;
 }
+
+/*social-block*/
+#social-block{
+    position: fixed;
+    right: 20px;
+    top: 40vh;
+}
+#social-expend{
+    display: none;
+}

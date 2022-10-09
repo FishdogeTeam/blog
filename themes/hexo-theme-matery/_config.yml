@@ -7,6 +7,8 @@ menu:
     url: /buybitcoin
   主題:
     url: /topic
+  專欄:
+    url: /column
 bottomMenu:
   關於:
     url: /about
@@ -16,6 +18,8 @@ bottomMenu:
     url: /partner
   免責申明:
     url: /disclaimer
+  隱私政策:
+    url: /about
 
   # 二级菜单写法如下
   #Medias:

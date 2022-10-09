@@ -15,9 +15,10 @@
     %>
     <!--現在位置-->
     <% if(page.current_url !== ''){ %>
-        <p class="url-now">首頁 &gt; <%- page.author.id %></p>
+        <p class="url-now">專欄 &gt; <%- page.author.id %></p>
         <h1 class="author-name"><%- page.author.id %></h1>
     <% } %>
+
 
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
@@ -95,10 +96,10 @@
             <% }); %> 
         </div>
     </article>
+
     <div class="container">
         <button id="readmore" class="readmore center col s3">看更多</button>
     </div>
-
     <script>
         const articleDisplay=document.getElementsByClassName("article")
         const readmoreBtn=document.getElementById("readmore")
@@ -131,6 +132,7 @@
         }
         readmoreBtn.addEventListener('click',readMore)        
     </script>
+ 
 </main>
 <% if (page.total > 1) { %>
 <%- partial('_partial/paging') %>
