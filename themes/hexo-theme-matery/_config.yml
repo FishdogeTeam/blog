@@ -745,6 +745,7 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
 
 #header
 stock:
+  getCryptoUrl: "http://26.2.188.137:8080/getData?"
   getStockUrl: "http://26.2.188.137:8080/getStock?"
   getStockGainUrl: "http://26.2.188.137:8080/getStockGain?"
   apiErrMsg:  "連不上API，請先連上API"

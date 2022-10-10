@@ -16,8 +16,9 @@
                         // get specific crypto data
                         async function getData(){
                             let data;
+                            let url = "<%- theme.stock.getCryptoUrl%>"+'coin=BTC/USDT';
                             // url need to be changed
-                            await axios.get('http://127.0.0.1:8080/getData?coin=BTC/USDT')
+                            await axios.get(url)
                             .then((response) => {
                                 data = JSON.parse(JSON.stringify(response.data));
                             })
