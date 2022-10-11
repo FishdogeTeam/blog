@@ -171,6 +171,9 @@ footer hr{
 .author-name{
     color: black !important;
 }
+.author-about{
+    color: black !important;
+}
 
 /*articles*/
 #articles{
@@ -193,4 +196,16 @@ footer hr{
 }
 #social-expend{
     display: none;
+}
+
+/*about page*/
+#aboutme{
+    background: #3f3f3f;
+}
+#aboutme h1{
+    color: white;
+}
+#aboutme .about-info{
+    color: white;
+    line-height: 30px;
 }

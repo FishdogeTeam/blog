@@ -1595,12 +1595,10 @@ thead {
     line-height: 2.2rem;
     margin: 0 0.5rem;
     padding: 0;
-    color: #fff;
-    border: 1px solid #0f9d58;
-    background: radial-gradient(#4cbf30, #0f9d58);
+    color: white;
+    background: #3f3f3f;
     font-size: 0.9rem;
     border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
 }
 
 .profile .avatar-img {

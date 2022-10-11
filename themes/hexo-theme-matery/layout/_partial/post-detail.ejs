@@ -1,10 +1,7 @@
 <!--現在位置-->
-<p class="url-now"><%- page.title %></p>
-<!-- 保留所有關鍵字名稱的話
-    <% page.tags.forEach((item)=>{ %>
-    <p class="url-now"><%- item.name %> &gt; <%- page.title %></p>
+<% page.tags.forEach((item)=>{ %>
+    <span class="url-now"><%- item.name %></span>
 <% }) %>
--->
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="container">
@@ -12,15 +9,15 @@
         <div class="post-info row">
             <% if (theme.postInfo.date) { %>
             <div class="post-date info-break-policy">                
-                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCalBlack) %>" class="responsive-img black-text" alt="iconCal"><%- __('publishDate') %>:&nbsp;&nbsp;
-                <%- date(page.date, 'YYYY-MM-DD') %>
+                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCalBlack) %>" class="responsive-img black-text" alt="iconCal">
+                <%- date(page.date, 'YYYY/MM/DD') %>
             </div>
             <% } %>
 
             <% if (theme.postInfo.update) { %>
             <div class="post-date info-break-policy">
                 <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCalBlack) %>" class="responsive-img black-text" alt="iconCal"><%- __('updateDate') %>:&nbsp;&nbsp;
-                <%- date(page.updated, 'YYYY-MM-DD') %>
+                <%- date(page.updated, 'YYYY/MM/DD') %>
             </div>
             <% } %>
         </div>
