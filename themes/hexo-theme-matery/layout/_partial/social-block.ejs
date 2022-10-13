@@ -16,7 +16,7 @@
             </a>
         </li><li>
             <a href="<%= theme.socialLink.podcast %>" class="tooltipped" target="_blank" data-tooltip="podcast" data-position="top" data-delay="50">
-                <i class="fab fa-podcast black-text"></i>
+                <i class="fa-solid fa-podcast black-text"></i>
             </a>
         </li><li>
             <a href="<%= theme.socialLink.line %>" class="tooltipped" target="_blank" data-tooltip="line" data-position="top" data-delay="50">
@@ -32,7 +32,13 @@
             </a>
         </li>
     </ul>
-    <button id="social-btn">&gt;</button>
+    <button id="social-btn" style="
+        border: none;
+        color: white;
+        background-color: black;
+        left: 50%;
+        position: absolute;
+    "><i class="fa-solid fa-arrow-up"></i></button>
 </div>
 <script>
     const socialBlock=document.getElementById('social-block')
