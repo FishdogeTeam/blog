@@ -20,7 +20,7 @@
     }
     .article-main-post{
         /* height: 100vmax; */
-        height: 22vmax;
+        height: 26vmax;
         max-height: 100vmax; 
         min-height: 190px;
         margin-top: 40px;
@@ -48,7 +48,57 @@
 
     .article-main-post{
         /* height: 100vmax; */
-        height: 18vmax;
+        height: 20vmax;
+        max-height: 100vmax; 
+        min-height: 190px;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .article-main-post{
+        /* height: 100vmax; */
+        height: 17vmax;
+        max-height: 100vmax; 
+        min-height: 190px;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 992px) {
+    .article-main-post{
+        /* height: 100vmax; */
+        height: 20vmax;
+        max-height: 100vmax; 
+        min-height: 190px;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 800px) {
+    .article-main-post{
+        /* height: 100vmax; */
+        height: 24vmax;
+        max-height: 100vmax; 
+        min-height: 190px;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 759px) {
+    .article-main-post{
+        /* height: 100vmax; */
+        height: 28vmax;
+        max-height: 100vmax; 
+        min-height: 190px;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .article-main-post{
+        /* height: 100vmax; */
+        height: 12vmax;
         max-height: 100vmax; 
         min-height: 190px;
         margin-top: 10px;
