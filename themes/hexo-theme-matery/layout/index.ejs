@@ -26,7 +26,7 @@
         <div class="row article-row">
             <% page.posts.forEach((post,index) => { %>
                 <% if (post.hide != true)  { %> <!-- 隐藏某个文章 -->
-                    <div class="article col s12 m6 l4" data-aos="zoom-in">
+                    <div class="article-main-post col s12 m6 l4" data-aos="zoom-in">
                         <a href="<%- url_for(post.path) %>">
                             <!-- 照片 -->
                             <div class="card-image col s12 m5">
@@ -94,7 +94,15 @@
                         </a>
                     </div> 
                 <% } %>
-            <% }); %> 
+            <% }); %>
+            <!-- 
+                判斷是否文章是奇數，就是在左邊。
+                如果是奇數，就生成一個右邊的隱藏文章。
+             -->
+            <!-- <% if (page.posts.length % 2 === 1){%>
+                <div class="article-main-post col s12 m6 l4 aos-init aos-animate" data-aos="zoom-in" style="display: block;">
+                </div>
+            <% } %> -->
         </div>
     </article>
 
@@ -102,7 +110,7 @@
         <button id="readmore" class="readmore center col s3">看更多</button>
     </div>
     <script>
-        const articleDisplay=document.getElementsByClassName("article")
+        const articleDisplay=document.getElementsByClassName("article-main-post")
         const readmoreBtn=document.getElementById("readmore")
         let articleArray=[]
         let clickCount=0
@@ -128,7 +136,7 @@
             }
             catch(err){
                 // err.message="沒有更多文章了"
-                readmoreBtn.style.visibility="hidden"
+                readmoreBtn.style.visibility="hidden";
             }
         }
         readmoreBtn.addEventListener('click',readMore)        

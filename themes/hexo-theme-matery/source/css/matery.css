@@ -4,12 +4,26 @@
     .container {
         width: 95%;
     }
+    .article-main-post{
+        /* height: 100vmax; */
+        /* height: 28vmax; */
+        max-height: 100vmax; 
+        min-height: 190px;
+        margin-top: 40px;
+    }
 }
 
 /*中等屏幕下(平板类)的样式*/
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     .container {
         width: 90%;
+    }
+    .article-main-post{
+        /* height: 100vmax; */
+        height: 22vmax;
+        max-height: 100vmax; 
+        min-height: 190px;
+        margin-top: 40px;
     }
 }
 
@@ -30,6 +44,14 @@
         width: 90%;
         margin: 0 auto;
         max-width: 1250px;
+    }
+
+    .article-main-post{
+        /* height: 100vmax; */
+        height: 18vmax;
+        max-height: 100vmax; 
+        min-height: 190px;
+        margin-top: 10px;
     }
 }
 
@@ -823,11 +845,19 @@ header .go-back i {
 }
 
 #articles .article{
-    /* height: 100vmax; */
-    /* max-height: 13vmax;     */
+    /* height: 100vmax;
+    max-height: 13vmax; */
     min-height: 190px;
     margin-top: 40px;
 }
+
+/* .article-main-post{ */
+    /* height: 100vmax; */
+    /* height: 100vmax;
+    max-height: 13vmax; 
+    min-height: 190px;
+    margin-top: 40px;
+} */
 
 article a {
     margin-right: 0 !important;
