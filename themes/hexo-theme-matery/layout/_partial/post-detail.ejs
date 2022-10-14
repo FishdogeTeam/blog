@@ -1,6 +1,6 @@
 <!--現在位置-->
 <% page.tags.forEach((item)=>{ %>
-    <span class="url-now"><%- item.name %></span>
+    <p class="url-now"><%- item.name %></p>
 <% }) %>
 <!-- 文章内容详情 -->
 <div id="artDetail">
@@ -27,9 +27,11 @@
         </div>
         <!-- 圖片 -->
         <div class="post-img row">
+            
             <% if(page.img != undefined){ %>
                 <img src="<%- url_for(page.img) %>" class="responsive-img" alt="">
             <% } %>
+            <div class="img-bg"></div>
             <div class="quotation black">
                 <p class="white-text">
                     <p class="white-text q-mark">“<br></p> 
@@ -59,7 +61,7 @@
             <hr class="clearfix">
             <!-- author -->
             作者：<a class="black-text post-info-author" href="/author/<%- page.authorId %>" rel="external nofollow noreferrer"><%- page.authorId %></a>
-            <hr class="clearfix">
+            <hr class="clearfix down-hr">
         </div>
 
         <% if (config.prismjs && config.prismjs.enable) { %>
@@ -179,8 +181,8 @@
         <%- partial('_partial/twikoo') %>
     <% } %>
 
-    <%- partial('_partial/prev-next') %>
 </div>
+<%- partial('_partial/prev-next') %>
 
 <% if (theme.copyright.enable) { %>
 <script>
