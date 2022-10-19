@@ -34,22 +34,31 @@ def getData():
 
 @app.route('/getStock', methods=['GET'])
 def getStock():
-
-    query = request.args.get('query')
-    type = request.args.get('type')
-    exchange = request.args.get('exchange')
-    if query == None or type == None or exchange == None:
-        return 'Error: 請給我正確的參數: query + type + exchange'
-
-    else:
-        # get stock data
-        results = search_assets(query = query, limit = 1, type = type, exchange = exchange)
-        # get stock id
-        investing_id = int(results[0]["ticker"])
+        nameList = [
+            'BTC-PERP', 'ETH-PERP',
+            'BTC/USD', 'ETH/USD',
+            'APT-PERP', 'SOL-PERP',
+            'XRP-PERP', 'MATIC-PERP',
+            'ATOM-PERP', 'APT/USD'
+        ]
+        dataList = []
         
-        # get historical data
-        data = historical_data(investing_id = investing_id)
-        return str(round(data['close'][-1], 2))
+        # get data from FTX
+        # {name: 'name', price: price, gain: gain}
+        # str, float, float
+        for name in nameList:
+            url = "https://ftx.com/api/markets/" + name
+            txt = requests.get(url).text
+            data = json.loads(txt)
+
+            tmp = {
+                "name": data['result']['name'],
+                "price": data['result']['price'],
+                "gain": data['result']['change1h']
+            }
+
+            dataList.append(tmp)
+        return dataList
 
 @app.route('/getStockGain', methods=['GET'])
 def getStockGain():
