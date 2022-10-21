@@ -111,7 +111,7 @@
                                 // if the api is not working, show error message
                                 let nameMsg = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>" : res.result.name;
                                 // if the api is working, show the name
-                                document.getElementById("header_cropto_name").innerHTML = nameMsg;
+                                document.getElementById("header_cropto_name").innerHTML = "BTC";
                             }); 
                         </script>
                     </span>
@@ -147,18 +147,41 @@
                 </div>
             </div>
             <div class="stock-price grey lighten-4">
-                <div class="swiper-container">
-                    
-                    <div class="swiper mySwiper">
+                <div class="swiper-container" style="height: 60px;">
+                    <div class="swiper mySwiper2">
                         <div class="swiper-wrapper">
                             <!-- 不用~ 我們只要讓他自動生成就好了  -->
                             <!-- 當然不是~ 寫這樣而已w -->
                             <!-- get data from api by ejs axio -->
+                            
                             <% for (var i =1; i <=10;  i++ ) { %>
-                                <div class="swiper-slide"><span id="price-<%= i %>">名字:價格</span></div>                                
-                            <% } %>                                                                               
-                        </div>
-                        
+                                <div class="swiper-slide">
+                                    <div id="name-<%= i %>" style="height: 20px;">name</div>
+                                    <span id="price-<%= i %>">price</span>
+                                    <i id="price-<%= i %>_gain_img" class="fa-solid text-darken-3 "></i> 
+                                    <span id="price-<%= i %>_gain_text" class="text-darken-3"> 
+                                        <span id="price-<%= i %>_gain"></span>
+                                    </span>
+                                </div>                                                            
+                            <% } %>
+                            <script>
+                                // TODO: 把 nav bar三組改成一組
+                                // TODO: 解決有些 index 無法連動的問題
+                                // TODO: 新增漲跌幅
+                                getStock().then( res => {
+                                    var i = 1
+                                    for (var item = 0; item <= res.length; item++){
+                                        // console.log("price-"+i.toString())
+                                        console.log(res[item])
+                                        document.getElementById("name-"+i.toString()).innerHTML = res[item]["name"]
+                                        document.getElementById("price-"+i.toString()).innerHTML = res[item]["price"]
+                                        setPriceGain("price-" + i.toString() + "_gain_img", "price-" + i.toString() + "_gain_text", "price-" + i.toString() + "_gain", parseFloat(res[item]["gain"]));                                
+                                        i++
+                                    }
+                                    // document.getElementById("header_US500_price").innerHTML = data;
+                                });
+                            </script>                                                                               
+                        </div>                        
                         <div class="swiper-button-next">
                           <i class="fa-solid fa-chevron-right" style="
                           color: white;
@@ -184,24 +207,7 @@
                           "></i>
                         </div>
                         <div class="swiper-pagination"></div>
-                    </div>
-                    <script>
-                       // TODO: 把 nav bar三組改成一組
-                       // TODO: 解決有些 index 無法連動的問題
-                       // TODO: 新增漲跌幅
-                        getStock().then( res => {
-                            var i = 1
-                            for (var item = 1; item <= res.length; item++){
-                                // console.log("price-"+i.toString())
-                                console.log(res[item])
-                                document.getElementById("price-"+i.toString()).innerHTML = res[item]["name"] + ':' + res[item]["price"]
-                                i++
-                            }
-                            // document.getElementById("header_US500_price").innerHTML = data;
-                        });
-
-                        
-                    </script>
+                    </div>                    
                     <!-- <div class="stock">
                         <span>S&P 500</span>
                         <span id="header_US500_price">

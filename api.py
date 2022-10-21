@@ -54,9 +54,9 @@ def getStock():
             tmp = {
                 "name": data['result']['name'],
                 "price": data['result']['price'],
-                "gain": data['result']['change1h']
+                "gain": round(float(data['result']['change24h']) * 100, 2)
             }
-
+            
             dataList.append(tmp)
         return dataList
 
