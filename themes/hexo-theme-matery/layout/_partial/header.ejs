@@ -1,9 +1,4 @@
 <!-- <header class="navbar-fixed"> -->
-<!-- 
-    TODO: 漲跌幅還沒做
-    TODO: US 10 Yr 還沒做，抓不到。
-    TODO: 區塊高度還沒做，不知道這是什麼
- -->
  <header class="navbar">
     <nav id="headNav" class="bg-color nav-transparent">
         <div class="bitcoin-price">
@@ -15,8 +10,6 @@
                         // get exchange data from a self-hosted api to get data from ftx, binance...etc
                         // get specific crypto data
                         async function getData(){
-                            // 不用這樣~ 我們不需要傳入東西，彈藥回傳十筆來處理，所以我們必須先定義一個list
-                            // 然後把後端回傳回來的十筆值給塞進來那個變數
                                                   
                             let data;
                             let url = "<%- theme.stock.getCryptoUrl%>"+'coin=BTC/USDT';
@@ -32,23 +25,6 @@
                             return data;
                         }
                         
-                        // get exchange data from a self-hosted api to get data from ftx, binance...etc
-                        // get specific stock data
-                        // async function getStock(query, type, exchange){
-                        //     let data;
-                        //     let url = "<%- theme.stock.getStockUrl%>" +'query=' + query + '&type=' + type + '&exchange=' + exchange;
-                        //     // url need to be changed
-                        //     await axios.get(url)
-                        //     .then((response) => {
-                        //         data = JSON.parse(JSON.stringify(response.data));
-                        //     })
-                        //     .catch((error) => {
-                        //         data = error;
-                        //         console.log(error);
-                        //     });
-                        //     return data;
-                        // }
-
                         async function getStock(){
                             let data;
                             let url = "<%- theme.stock.getStockUrl%>";
@@ -65,15 +41,13 @@
                             return data;
                         }
                         
-                        // get exchange data from a self-hosted api to get data from ftx, binance...etc
-                        // get specific stock gain
-                        async function getStockGain(query, type, exchange){
+                        async function getBlockHeight(){
                             let data;
-                            let url = "<%- theme.stock.getStockGainUrl%>" + 'query=' + query + '&type=' + type + '&exchange=' + exchange;
+                            let url = "<%- theme.stock.getBlockHeight%>";
                             // url need to be changed
                             await axios.get(url)
                             .then((response) => {
-                                data = JSON.parse(JSON.stringify(response.data));
+                                data = response.data;
                             })
                             .catch((error) => {
                                 data = error;
@@ -134,12 +108,11 @@
                     <span>區塊高度：
                         <span id="header_crypto_blockhigh">
                             <script>
-                                // get data from the func "getData"
-                                getData().then( res => {
-                                    // if the api is not connected, show the error msg
-                                    let blockhighMsg = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : "757,674"; //res.result.區塊高度;
+                                // get data from the func "getBlockHeight"
+                                getBlockHeight().then( res => {
+                                    // let blockhighMsg = res; //res.result.區塊高度;
                                     // show the blockhigh
-                                    document.getElementById("header_crypto_blockhigh").innerHTML = blockhighMsg;
+                                    document.getElementById("header_crypto_blockhigh").innerHTML = res;
                                 });
                             </script>
                         </span>
@@ -150,10 +123,8 @@
                 <div class="swiper-container" style="height: 60px;">
                     <div class="swiper mySwiper2">
                         <div class="swiper-wrapper">
-                            <!-- 不用~ 我們只要讓他自動生成就好了  -->
-                            <!-- 當然不是~ 寫這樣而已w -->
-                            <!-- get data from api by ejs axio -->
                             
+                            <!-- get data from api by ejs axio -->
                             <% for (var i =1; i <=10;  i++ ) { %>
                                 <div class="swiper-slide">
                                     <div id="name-<%= i %>" style="height: 20px;">name</div>
@@ -165,9 +136,6 @@
                                 </div>                                                            
                             <% } %>
                             <script>
-                                // TODO: 把 nav bar三組改成一組
-                                // TODO: 解決有些 index 無法連動的問題
-                                // TODO: 新增漲跌幅
                                 getStock().then( res => {
                                     var i = 1
                                     for (var item = 0; item <= res.length; item++){
@@ -178,7 +146,6 @@
                                         setPriceGain("price-" + i.toString() + "_gain_img", "price-" + i.toString() + "_gain_text", "price-" + i.toString() + "_gain", parseFloat(res[item]["gain"]));                                
                                         i++
                                     }
-                                    // document.getElementById("header_US500_price").innerHTML = data;
                                 });
                             </script>                                                                               
                         </div>                        
@@ -207,37 +174,7 @@
                           "></i>
                         </div>
                         <div class="swiper-pagination"></div>
-                    </div>                    
-                    <!-- <div class="stock">
-                        <span>S&P 500</span>
-                        <span id="header_US500_price">
-                            <script>
-                                // get data from the func "getData"
-                                getStock("US500","Index","NYSE").then( res => {
-                                    // if the api is not connected, show the error msg
-                                    let data = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : res;
-                                    // show the blockhigh
-                                    document.getElementById("header_US500_price").innerHTML = data;
-                                });
-                            </script>
-                        </span> -->
-
-                        <!-- <i id="header_US500_gain_img" class="fa-solid text-darken-3 "></i> 
-                        <span id="header_US500_gain_text" class="text-darken-3"> 
-                            <span id="header_US500_gain">
-                                <script>
-                                    // get data from the func "getData"
-                                    getStockGain("US500","Index","NYSE").then( res => {
-                                        // if the api is not connected, show the error msg
-                                        let data = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : res;
-                                        // show the blockhigh
-                                        setPriceGain("header_US500_gain_img", "header_US500_gain_text", "header_US500_gain", parseFloat(data));
-                                    });
-                                </script>
-                            </span>
-                        </span> -->
-                    <!-- </div> -->
-                    
+                    </div>
                 </div>
             </div>
         </div>

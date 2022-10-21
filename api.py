@@ -15,6 +15,20 @@ from datetime import datetime, timedelta
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/getBlockHeight', methods=['GET'])
+def getBlockHeight():
+    # get block hash
+    hashURL = 'https://chain.api.btc.com/v3/block/latest/tx?verbose=2'
+    hashTxt = requests.get(hashURL).text
+    data = json.loads(hashTxt)
+    block_hash = data['data']['list'][0]['block_hash']
+
+    # get block height
+    heightUrl = 'https://blockchain.info/rawblock/' + block_hash
+    heightTxt = requests.get(heightUrl).text
+    data = json.loads(heightTxt)
+    return str(data['height'])
+
 @app.route('/getData', methods=['GET'])
 def getData():
     
@@ -34,31 +48,31 @@ def getData():
 
 @app.route('/getStock', methods=['GET'])
 def getStock():
-        nameList = [
-            'BTC-PERP', 'ETH-PERP',
-            'BTC/USD', 'ETH/USD',
-            'APT-PERP', 'SOL-PERP',
-            'XRP-PERP', 'MATIC-PERP',
-            'ATOM-PERP', 'APT/USD'
-        ]
-        dataList = []
-        
-        # get data from FTX
-        # {name: 'name', price: price, gain: gain}
-        # str, float, float
-        for name in nameList:
-            url = "https://ftx.com/api/markets/" + name
-            txt = requests.get(url).text
-            data = json.loads(txt)
+    nameList = [
+        'BTC-PERP', 'ETH-PERP',
+        'BTC/USD', 'ETH/USD',
+        'APT-PERP', 'SOL-PERP',
+        'XRP-PERP', 'MATIC-PERP',
+        'ATOM-PERP', 'APT/USD'
+    ]
+    dataList = []
+    
+    # get data from FTX
+    # {name: 'name', price: price, gain: gain}
+    # str, float, float
+    for name in nameList:
+        url = "https://ftx.com/api/markets/" + name
+        txt = requests.get(url).text
+        data = json.loads(txt)
 
-            tmp = {
-                "name": data['result']['name'],
-                "price": data['result']['price'],
-                "gain": round(float(data['result']['change24h']) * 100, 2)
-            }
-            
-            dataList.append(tmp)
-        return dataList
+        tmp = {
+            "name": data['result']['name'],
+            "price": data['result']['price'],
+            "gain": round(float(data['result']['change24h']) * 100, 2)
+        }
+        
+        dataList.append(tmp)
+    return dataList
 
 @app.route('/getStockGain', methods=['GET'])
 def getStockGain():
