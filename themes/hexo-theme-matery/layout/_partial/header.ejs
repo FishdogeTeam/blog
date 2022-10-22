@@ -127,7 +127,7 @@
                             <!-- get data from api by ejs axio -->
                             <% for (var i =1; i <=10;  i++ ) { %>
                                 <div class="swiper-slide">
-                                    <div id="name-<%= i %>" style="height: 20px;">name</div>
+                                    <span id="name-<%= i %>" >name</span>
                                     <span id="price-<%= i %>">price</span>
                                     <i id="price-<%= i %>_gain_img" class="fa-solid text-darken-3 "></i> 
                                     <span id="price-<%= i %>_gain_text" class="text-darken-3"> 
@@ -151,8 +151,7 @@
                         </div>                        
                         <div class="swiper-button-next">
                           <i class="fa-solid fa-chevron-right" style="
-                          color: white;
-                          background-color: black;
+                          color: black;
                           height: auto;
                           font-size: x-large;
                           position: absolute;
@@ -163,8 +162,7 @@
                         </div>
                         <div class="swiper-button-prev">
                           <i class="fa-solid fa-chevron-left" style="
-                          color: white;
-                          background-color: black;
+                          color: black;
                           height: auto;
                           font-size: x-large;
                           position: absolute;
