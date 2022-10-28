@@ -94,6 +94,15 @@
     font-weight: 500;
 }
 
+#aboutme h1{
+    padding-top: 30px;
+}
+#aboutme .social-link{
+    padding-bottom: 30px;
+}
+#aboutme.about-container{
+    margin-bottom: 30px;
+}
 
 .btc-price span{
     margin-right: 10px;

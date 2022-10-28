@@ -1627,7 +1627,7 @@ thead {
 .about-container {
     width: 90%;
     max-width: 1225px;
-    margin-top: -60px;
+    /* margin-top: -60px; */
 }
 
 @media only screen and (max-width: 601px) {
