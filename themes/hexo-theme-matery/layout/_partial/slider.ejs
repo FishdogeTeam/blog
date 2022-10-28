@@ -1,6 +1,6 @@
 <div class="slide-container">  
   <div class="container ">
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper" style="background-color: white;">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><a href="/tags/乙太">乙太</a></div>
         <div class="swiper-slide"><a href="/tags/比特">比特</a></div>
@@ -61,7 +61,29 @@
       prevEl: ".swiper-button-prev",
     },
   });
+  var width = window.innerWidth
+  || document.documentElement.clientWidth
+  || document.body.clientWidth;
 
+  var height = window.innerHeight
+  || document.documentElement.clientHeight
+  || document.body.clientHeight;
+  const swiper2 = new Swiper(".mySwiper2", {
+      slidesPerView: 3,
+      spaceBetween: -width/2,
+      slidesPerGroup: 3,
+      initialSlide: 5,
+      loop: false,
+      loopFillGroupWithBlank: false,
+      pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      },
+      navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+      },      
+  });
   //關鍵字搜索
   
 </script>

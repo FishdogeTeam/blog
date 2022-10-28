@@ -1,9 +1,4 @@
 <!-- <header class="navbar-fixed"> -->
-<!-- 
-    TODO: 漲跌幅還沒做
-    TODO: US 10 Yr 還沒做，抓不到。
-    TODO: 區塊高度還沒做，不知道這是什麼
- -->
  <header class="navbar">
     <nav id="headNav" class="bg-color nav-transparent">
         <div class="bitcoin-price">
@@ -15,6 +10,7 @@
                         // get exchange data from a self-hosted api to get data from ftx, binance...etc
                         // get specific crypto data
                         async function getData(){
+                                                  
                             let data;
                             let url = "<%- theme.stock.getCryptoUrl%>"+'coin=BTC/USDT';
                             // url need to be changed
@@ -29,15 +25,14 @@
                             return data;
                         }
                         
-                        // get exchange data from a self-hosted api to get data from ftx, binance...etc
-                        // get specific stock data
-                        async function getStock(query, type, exchange){
+                        async function getStock(){
                             let data;
-                            let url = "<%- theme.stock.getStockUrl%>" +'query=' + query + '&type=' + type + '&exchange=' + exchange;
+                            let url = "<%- theme.stock.getStockUrl%>";
                             // url need to be changed
                             await axios.get(url)
                             .then((response) => {
-                                data = JSON.parse(JSON.stringify(response.data));
+                                data = response.data;
+                                // data = JSON.parse(JSON.stringify(response.data));
                             })
                             .catch((error) => {
                                 data = error;
@@ -46,15 +41,13 @@
                             return data;
                         }
                         
-                        // get exchange data from a self-hosted api to get data from ftx, binance...etc
-                        // get specific stock gain
-                        async function getStockGain(query, type, exchange){
+                        async function getBlockHeight(){
                             let data;
-                            let url = "<%- theme.stock.getStockGainUrl%>" + 'query=' + query + '&type=' + type + '&exchange=' + exchange;
+                            let url = "<%- theme.stock.getBlockHeight%>";
                             // url need to be changed
                             await axios.get(url)
                             .then((response) => {
-                                data = JSON.parse(JSON.stringify(response.data));
+                                data = response.data;
                             })
                             .catch((error) => {
                                 data = error;
@@ -92,7 +85,7 @@
                                 // if the api is not working, show error message
                                 let nameMsg = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>" : res.result.name;
                                 // if the api is working, show the name
-                                document.getElementById("header_cropto_name").innerHTML = nameMsg;
+                                document.getElementById("header_cropto_name").innerHTML = "BTC";
                             }); 
                         </script>
                     </span>
@@ -115,12 +108,11 @@
                     <span>區塊高度：
                         <span id="header_crypto_blockhigh">
                             <script>
-                                // get data from the func "getData"
-                                getData().then( res => {
-                                    // if the api is not connected, show the error msg
-                                    let blockhighMsg = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : "757,674"; //res.result.區塊高度;
+                                // get data from the func "getBlockHeight"
+                                getBlockHeight().then( res => {
+                                    // let blockhighMsg = res; //res.result.區塊高度;
                                     // show the blockhigh
-                                    document.getElementById("header_crypto_blockhigh").innerHTML = blockhighMsg;
+                                    document.getElementById("header_crypto_blockhigh").innerHTML = res;
                                 });
                             </script>
                         </span>
@@ -128,118 +120,58 @@
                 </div>
             </div>
             <div class="stock-price grey lighten-4">
-                <div class="container">
-                    <div class="stock">
-                        <span>S&P 500</span>
-                        <span id="header_US500_price">
-                            <script>
-                                // get data from the func "getData"
-                                getStock("US500","Index","NYSE").then( res => {
-                                    // if the api is not connected, show the error msg
-                                    let data = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : res;
-                                    // show the blockhigh
-                                    document.getElementById("header_US500_price").innerHTML = data;
-                                });
-                            </script>
-                        </span>
-
-                        <i id="header_US500_gain_img" class="fa-solid text-darken-3 "></i> <!-- fa-caret-up green-text -->
-                        <span id="header_US500_gain_text" class="text-darken-3"> <!-- green-text -->
-                            <span id="header_US500_gain">
-                                <script>
-                                    // get data from the func "getData"
-                                    getStockGain("US500","Index","NYSE").then( res => {
-                                        // if the api is not connected, show the error msg
-                                        let data = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : res;
-                                        // show the blockhigh
-                                        setPriceGain("header_US500_gain_img", "header_US500_gain_text", "header_US500_gain", parseFloat(data));
-                                    });
-                                </script>
-                            </span>
-                        </span>
+                <div class="swiper-container" style="height: 60px;">
+                    <div class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
                             
-                    </div>
-                    <div class="stock">
-                        <span>Nasdaq</span>
-                        <span id="header_Nasdaq_price">
+                            <!-- get data from api by ejs axio -->
+                            <% for (var i =1; i <=10;  i++ ) { %>
+                                <div class="swiper-slide">
+                                    <span id="name-<%= i %>" >name</span>
+                                    <span id="price-<%= i %>">price</span>
+                                    <i id="price-<%= i %>_gain_img" class="fa-solid text-darken-3 "></i> 
+                                    <span id="price-<%= i %>_gain_text" class="text-darken-3"> 
+                                        <span id="price-<%= i %>_gain"></span>
+                                    </span>
+                                </div>                                                            
+                            <% } %>
                             <script>
-                                // get data from the func "getData"
-                                getStock("IXIC","Index","NASDAQ").then( res => {
-                                    // if the api is not connected, show the error msg
-                                    let data = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : res;
-                                    // show the blockhigh
-                                    document.getElementById("header_Nasdaq_price").innerHTML = data;
+                                getStock().then( res => {
+                                    var i = 1
+                                    for (var item = 0; item <= res.length; item++){
+                                        // console.log("price-"+i.toString())
+                                        console.log(res[item])
+                                        document.getElementById("name-"+i.toString()).innerHTML = res[item]["name"]
+                                        document.getElementById("price-"+i.toString()).innerHTML = res[item]["price"]
+                                        setPriceGain("price-" + i.toString() + "_gain_img", "price-" + i.toString() + "_gain_text", "price-" + i.toString() + "_gain", parseFloat(res[item]["gain"]));                                
+                                        i++
+                                    }
                                 });
-                            </script>
-                        </span>
-                        <i id="header_Nasdaq_gain_img" class="fa-solid text-darken-3"></i>
-                        <span id="header_Nasdaq_gain_text" class="text-darken-3">
-                            <span id="header_Nasdaq_gain">
-                                <script>
-                                    // get data from the func "getData"
-                                    getStockGain("IXIC","Index","NASDAQ").then( res => {
-                                        // if the api is not connected, show the error msg
-                                        let data = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : res;
-                                        // show the blockhigh
-                                        setPriceGain("header_Nasdaq_gain_img", "header_Nasdaq_gain_text", "header_Nasdaq_gain", parseFloat(data));
-                                    });
-                                </script>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="stock">
-                        <span>Crude oil</span>
-                        <span id="header_CrudeOil_price">
-                            <script>
-                                // get data from the func "getData"
-                                getStock("CL","Commodity","ICE").then( res => {
-                                    // if the api is not connected, show the error msg
-                                    let data = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : res;
-                                    // show the blockhigh
-                                    document.getElementById("header_CrudeOil_price").innerHTML = data;
-                                });
-                            </script>
-                        </span>
-                        <i id="header_CrudeOil_gain_img" class="fa-solid text-darken-3"></i>
-                        <span id="header_CrudeOil_gain_text" class="text-darken-3">
-                            <span id="header_CrudeOil_gain">
-                                <script>
-                                    // get data from the func "getData"
-                                    getStockGain("CL","Commodity","ICE").then( res => {
-                                        // if the api is not connected, show the error msg
-                                        let data = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : res;
-                                        // show the blockhigh
-                                        setPriceGain("header_CrudeOil_gain_img", "header_CrudeOil_gain_text", "header_CrudeOil_gain", parseFloat(data));
-                                    });
-                                </script>
-                            </span>
-                        </span>
-                    </div>
-                    <div class="stock">
-                        <span>US 10 Yr</span>
-                        <span id="header_US10Y_price">
-                            <script>
-                                // get data from the func "getData"
-                                getStock("US10YT=X","Bond","NYSE").then( res => {
-                                    // if the api is not connected, show the error msg
-                                    // show the blockhigh
-                                    document.getElementById("header_US10Y_price").innerHTML = res;
-                                });
-                            </script>
-                        </span>
-                        <i id="header_US10Y_gain_img" class="fa-solid text-darken-3"></i>
-                        <span id="header_US10Y_gain_text" class="text-darken-3">
-                            <span id="header_US10Y_gain">
-                                <script>
-                                    // get data from the func "getData"
-                                    getStockGain("US10YT=X","Bond","NYSE").then( res => {
-                                        // if the api is not connected, show the error msg
-                                        // show the blockhigh
-                                        setPriceGain("header_US10Y_gain_img", "header_US10Y_gain_text", "header_US10Y_gain", parseFloat(data));
-                                    });
-                                </script>
-                            </span>
-                        </span>
+                            </script>                                                                               
+                        </div>                        
+                        <div class="swiper-button-next">
+                          <i class="fa-solid fa-chevron-right" style="
+                          color: black;
+                          height: auto;
+                          font-size: x-large;
+                          position: absolute;
+                          left: 10px;
+                          width: 100%;
+                          text-align: center;
+                          "></i>
+                        </div>
+                        <div class="swiper-button-prev">
+                          <i class="fa-solid fa-chevron-left" style="
+                          color: black;
+                          height: auto;
+                          font-size: x-large;
+                          position: absolute;
+                          right: 10px;
+                          width: 100%;
+                          text-align: center;
+                          "></i>
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>

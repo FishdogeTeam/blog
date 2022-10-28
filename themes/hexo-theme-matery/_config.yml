@@ -745,7 +745,7 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
 
 #header
 stock:
-  getCryptoUrl: "http://122.116.39.54:8080/getData?"
-  getStockUrl: "http://122.116.39.54:8080/getStock?"
-  getStockGainUrl: "http://122.116.39.54:8080/getStockGain?"
+  getCryptoUrl: "https://api.fishdogeweb.store/getData?"
+  getStockUrl: "https://api.fishdogeweb.store/getStock?"
+  getBlockHeight: "https://api.fishdogeweb.store/getBlockHeight?"
   apiErrMsg:  "連不上API，請先連上API"

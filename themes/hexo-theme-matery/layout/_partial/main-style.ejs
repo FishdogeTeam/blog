@@ -15,3 +15,18 @@
 
 <%- partial('_partial/post-style') %>
 <%- partial('_partial/reward-style') %>
+<script>
+    //響應式，依螢幕寬度匯入不同css檔
+    function includeCss(url) {
+        let link = document.createElement("link");
+        link.rel = "stylesheet"
+        link.type = "text/css"
+        link.href = url
+        document.getElementsByTagName("head")[0].appendChild(link)
+    }
+
+    if(window.innerWidth <540){
+        window.onload=includeCss("/css/mobile.css")
+    }
+</script>
+
