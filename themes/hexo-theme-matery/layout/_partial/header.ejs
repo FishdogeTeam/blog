@@ -6,100 +6,40 @@
                 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
                 <div class="container">
-                    <script>
-                        // get exchange data from a self-hosted api to get data from ftx, binance...etc
-                        // get specific crypto data
-                        async function getData(){
-                                                  
-                            let data;
-                            let url = "<%- theme.stock.getCryptoUrl%>"+'coin=BTC/USDT';
-                            // url need to be changed
-                            await axios.get(url)
-                            .then((response) => {
-                                data = JSON.parse(JSON.stringify(response.data));
-                            })
-                            .catch((error) => {
-                                data = error;
-                                console.log(error);
-                            });
-                            return data;
-                        }
-                        
-                        async function getStock(){
-                            let data;
-                            let url = "<%- theme.stock.getStockUrl%>";
-                            // url need to be changed
-                            await axios.get(url)
-                            .then((response) => {
-                                data = response.data;
-                                // data = JSON.parse(JSON.stringify(response.data));
-                            })
-                            .catch((error) => {
-                                data = error;
-                                console.log(error);
-                            });
-                            return data;
-                        }
-                        
-                        async function getBlockHeight(){
-                            let data;
-                            let url = "<%- theme.stock.getBlockHeight%>";
-                            // url need to be changed
-                            await axios.get(url)
-                            .then((response) => {
-                                data = response.data;
-                            })
-                            .catch((error) => {
-                                data = error;
-                                console.log(error);
-                            });
-                            return data;
-                        }
-
-                        function setPriceGain(imgID, textID, gainID, data){
-                            if (data > 0){
-                                document.getElementById(imgID).classList.add("fa-caret-up");
-                                document.getElementById(imgID).classList.add("green-text");
-                                document.getElementById(textID).classList.add("green-text");
-                            } else if (data == 0){
-
-                            } else {
-                                document.getElementById(imgID).classList.add("fa-caret-down");
-                                document.getElementById(imgID).classList.add("red-text");
-                                document.getElementById(textID).classList.add("red-text");
-                                data *= -1;
-                            }
-                            document.getElementById(gainID).innerHTML = data + "%";
-                        }
-                    </script>
                     
                     <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCal) %>" class="responsive-img" alt="iconCal">
                     <span><%- date(Date.now(), 'YYYY/M/D') %></span>
-                    <span id="header_cropto_name">
-                        
-                        <!-- needed to be able to change -->
-                        <!-- send data to js and call api -->
-                        <!-- BTC/USDT -->
-                        <script> 
-                            getData().then( res => {
-                                // if the api is not working, show error message
-                                let nameMsg = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>" : res.result.name;
-                                // if the api is working, show the name
-                                document.getElementById("header_cropto_name").innerHTML = "BTC";
-                            }); 
-                        </script>
-                    </span>
+                    <span id="header_cropto_name">BTC/USDT</span>
                     <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img" alt="iconMoney">
                     <span>價格：
                         <span id="header_crypto_price">
-                            <script>
+                            <script type="module">
                                 // get data from the func "getData"
-                                getData().then( res => {
-                                    // if the api is not connected, show the error msg
-                                    let priceMsg = res.message === "Network Error" ? "<%- theme.stock.apiErrMsg%>"  : res.result.price;
-                                    // show the price
-                                    document.getElementById("header_crypto_price").innerHTML = priceMsg;
-                                }); 
+                                // let priceMsg;
+                                let data;
+
+                                axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
+                                    .then((response) => {
+                                        data = JSON.parse(JSON.stringify(response.data));
+                                        document.getElementById("header_crypto_price").innerHTML = data.bitcoin.usd;
+                                    })
+                                    .catch((error) => {
+                                        let data;
+                                        let url = "<%- theme.stock.getCryptoUrl%>" + 'coin=BTC/USDT';
+                                        // url need to be changed
+                                        axios.get(url)
+                                        .then((response) => {
+                                            data = JSON.parse(JSON.stringify(response.data));
+                                            document.getElementById("header_crypto_price").innerHTML = data.result.price;
+                                        })
+                                        .catch((error) => {
+                                            data = error;
+                                            console.log(error);
+                                        });
+                                        return data;
+                                        data = error;
+                                        console.log(error);
+                                    });
                             </script>
                         </span>
                     </span>
@@ -107,8 +47,9 @@
                     <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img" alt="iconBlock">
                     <span>區塊高度：
                         <span id="header_crypto_blockhigh">
-                            <script>
+                            <script type="module">
                                 // get data from the func "getBlockHeight"
+                                import {getBlockHeight} from '/js/crypto.js'
                                 getBlockHeight().then( res => {
                                     // let blockhighMsg = res; //res.result.區塊高度;
                                     // show the blockhigh
@@ -135,18 +76,94 @@
                                     </span>
                                 </div>                                                            
                             <% } %>
-                            <script>
-                                getStock().then( res => {
-                                    var i = 1
-                                    for (var item = 0; item <= res.length; item++){
-                                        // console.log("price-"+i.toString())
-                                        console.log(res[item])
-                                        document.getElementById("name-"+i.toString()).innerHTML = res[item]["name"]
-                                        document.getElementById("price-"+i.toString()).innerHTML = res[item]["price"]
-                                        setPriceGain("price-" + i.toString() + "_gain_img", "price-" + i.toString() + "_gain_text", "price-" + i.toString() + "_gain", parseFloat(res[item]["gain"]));                                
-                                        i++
+                            <script type="module">
+                                import {getStock} from '/js/crypto.js'
+                                import {setPriceGain} from '/js/crypto.js'
+                                let getDataurl = "<%- theme.stock.getCryptoUrl%>"
+                                let getStockurl = "<%- theme.stock.getStockUrl%>"
+                                const link = [
+                                    {
+                                        name: 'bitcoin',
+                                        coin: 'BTC',
+                                    },
+                                    {
+                                        name: 'ethereum',
+                                        coin: 'ETH',
+                                    },
+                                    {
+                                        name: 'ripple',
+                                        coin: 'XRP',
+                                    },
+                                    {
+                                        name: 'binance-peg-polkadot',
+                                        coin: 'DOT',
+                                    },
+                                    {
+                                        name: 'bitcoin-cash',
+                                        coin: 'BCH',
+                                    },
+                                    {
+                                        name: 'litecoin',
+                                        coin: 'LTC',
+                                    },
+                                    {
+                                        name: 'cardano',
+                                        coin: 'ADA',
+                                    },
+                                    {
+                                        name: 'solana',
+                                        coin: 'SOL',
+                                    },
+                                    {
+                                        name: 'aptos',
+                                        coin: 'APT',
+                                    },
+                                    {
+                                        name: 'mask-network',
+                                        coin: 'MASK',
                                     }
+                                ]
+
+                                // 自動生成漲跌幅
+                                axios.get(getStockurl)
+                                .then((gain_res) => {
+                                    for (var i =1; i <=10;  i++ ) {
+                                        setPriceGain(`price-${i}_gain_img`, `price-${i}_gain_text`, `price-${i}_gain`, parseFloat(gain_res.data[i]["gain"]));
+                                    }
+                                })
+                                .catch((error) => {
+                                    console.log(error);
                                 });
+
+                                // 自動生成交易對
+                                for (let i = 0; i < 10; i++){
+                                    axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd`)
+                                    .then((response) => {
+                                        let data = JSON.parse(JSON.stringify(response.data));
+                                        document.getElementById(`price-${i+1}`).innerHTML = data[link[i].name].usd;
+                                    })
+                                    .catch((error) => {
+                                        let data;
+                                        let url = getDataurl + `coin=${link[i].coin}/USDT`;
+                                        // url need to be changed
+                                        axios.get(url)
+                                        .then((response) => {
+                                            data = JSON.parse(JSON.stringify(response.data));
+                                            document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
+                                            document.getElementById(`price-${i+1}`).innerHTML = data.result.price;
+                                            return data;
+                                        })
+                                        .catch((error) => {
+                                            data = error;
+                                            console.log(error);
+                                        });
+                                        return data;
+                                        data = error;
+                                        console.log(error);
+                                    });
+                                    document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
+
+                                }
                             </script>                                                                               
                         </div>                        
                         <div class="swiper-button-next">

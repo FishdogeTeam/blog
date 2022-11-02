@@ -745,6 +745,7 @@ mermaid: ## mermaid url https://github.com/knsv/mermaid
 
 #header
 stock:
+  # 記得還要去更改 crypto.js 的 URL
   getCryptoUrl: "https://api2.fishdogeweb.store/getData?"
   getStockUrl: "https://api2.fishdogeweb.store/getStock?"
   getBlockHeight: "https://api2.fishdogeweb.store/getBlockHeight?"
