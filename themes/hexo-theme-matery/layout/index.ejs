@@ -20,6 +20,10 @@
         <p class="author-about"><%- page.author.about %></p>
     <% } %>
 
+    <!--首頁頭條輪播-->
+    <% if(page.current_url == ''){ %>
+        <%- partial('_partial/headlines-slider') %>
+    <% } %>
 
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
