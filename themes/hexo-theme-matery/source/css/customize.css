@@ -125,10 +125,44 @@
     margin-right: 32px;
 }
 
+/* footer區塊1 */
 footer .footer-nav{
     margin-top: 25px;
     margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: 30% 70%;
 }
+footer .footer-nav .pic{    
+    display: inline-block;
+    justify-content: start; 
+    grid-column-start: 1;
+}
+footer .footer-nav .footer-items{  
+    grid-column-start: 2;
+    justify-content: end; 
+    text-align: right;
+}
+footer .footer-nav .footer-item{    
+    display: inline-block;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+/* footer區塊2 */
+footer .copyright-block{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+footer .copyright-text{
+    justify-content: start; 
+    grid-column-start: 1;
+}
+footer .social-link{
+    grid-column-start: 2;
+    justify-content: end; 
+    text-align: right;
+}
+
 footer .footer-nfts h1{
     margin: 0;
     padding-top: 50px;
@@ -136,7 +170,7 @@ footer .footer-nfts h1{
     color: black;
 }
 footer .footer-nfts h2{
-    margin: 0;
+    margin-top: 0px;
     padding-top: 0px;
     padding-bottom: 20px;
     color: black;
@@ -152,6 +186,9 @@ footer .footer-nfts h4{
     padding-top: 0px;
     padding-bottom: 20px;
     color: black;
+}
+footer .footer-nfts a{
+    margin-right: 10px;
 }
 footer .row .col{
     padding-left: 0px;
@@ -169,8 +206,29 @@ footer .footer-info{
     height: 100vh;
     max-height: 155px;
     border-bottom: solid 1px black;
+    padding-right: 0px !important;
+}
+footer .coin-block{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 40px;
+}
+footer .coin-left{
+    grid-column-start: 1;
+    justify-content: start; 
+}
+footer .coin-right{
+    grid-column-start: 2;
+    justify-content: end;     
+}
+footer .coin-right h4{
+    /* display: inline-block;  */
+    text-align: right;
 }
 footer hr{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 100%;
     margin: 0px;
     border-top: 2px solid black;
     vertical-align: bottom;
@@ -284,4 +342,68 @@ footer hr{
 #aboutme .about-info{
     color: white;
     line-height: 30px;
+}
+
+
+@media only screen and (max-width: 601px) {
+    
+    
+    /* footer區塊1 */
+    footer .footer-nav{
+        grid-template: 1fr 1fr/ 1fr;
+    }
+    footer .footer-nav .pic{    
+        justify-content: center; 
+        grid-area: 1 / 1;
+        text-align: center;
+    }
+    footer .footer-nav .footer-items{  
+        grid-area: 2 / 1;
+        justify-content: center; 
+        text-align: center;
+    }
+
+    /* footer區塊2 */
+    footer .copyright-block{
+        grid-template: 1fr 1fr/ 1fr;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    footer .copyright-text{
+        justify-content: center; 
+        grid-area: 1 / 1;
+        text-align: center;
+    }
+    footer .social-link{
+        grid-area: 2 / 1;
+        justify-content: center; 
+        text-align: center;        
+    }
+
+    /* footer 區塊3 */
+    footer .footer-info{
+        height: auto;
+        max-height: auto;     
+        border-bottom: none;   
+        margin-bottom: 20px;
+    }
+    footer .nft-row{
+        margin-bottom: 20px;
+        border-bottom: solid 1px black;
+    }
+
+    footer .coin-block{
+        grid-template: 1fr 1fr 1fr/ 1fr;
+    }
+    footer .coin-left{
+        grid-area: 1 / 1;
+        justify-content: start; 
+    }
+    footer .coin-right{
+        grid-area: 2 / 1;
+        justify-content: start; 
+    }
+    footer hr{
+        grid-area: 3 / 1;
+    }
 }
