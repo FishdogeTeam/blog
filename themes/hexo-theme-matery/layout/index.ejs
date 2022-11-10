@@ -20,13 +20,14 @@
         <p class="author-about"><%- page.author.about %></p>
     <% } %>
 
-    <!--首頁頭條輪播-->
-    <% if(page.current_url == ''){ %>
-        <%- partial('_partial/headlines-slider') %>
-    <% } %>
-
+    <div class="container">
+        <!--首頁頭條輪播-->
+        <% if(page.current_url == ''){ %>
+            <%- partial('_partial/headlines-slider') %>
+        <% } %>
+    </div>
     <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
+    <article id="articles" class="container articles">   
         <div class="row article-row">
             <% page.posts.forEach((post,index) => { %>
                 <% if (post.hide != true)  { %> <!-- 隐藏某个文章 -->
@@ -109,10 +110,10 @@
             <% } %> -->
         </div>
     </article>
-
     <div class="container">
         <button id="readmore" class="readmore center col s3">看更多</button>
     </div>
+
     <script>
         const articleDisplay=document.getElementsByClassName("article-main-post")
         const readmoreBtn=document.getElementById("readmore")

@@ -3,10 +3,10 @@
     configRoot = (configRoot === null || configRoot === undefined || configRoot === '/') ? '' : configRoot;
 %>
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<div class="container">  
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a> -->
+<div class="container nav">  
   <ul class="nav-menu white">
-    <li class="left nav-item"><a href="/"><img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img col s2" alt="LOGO"></a></li>
+    <li class="left nav-item logo-block"><a href="/"><img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img col s2" alt="LOGO"></a></li>
     <% Object.keys(theme.menu).forEach(function(key) { %>
     <li class="hide-on-med-and-down nav-item">
       <% if(!theme.menu[key].children) { %>
@@ -40,7 +40,7 @@
       <% } %>
     </li>
     <% }); %>
-    <div class="col s12 m4 l4 social-link right"><%- partial('_partial/social-link') %></div>
+    <div class="col s12 m4 l4 social-link right hide-on-med-and-down nav-item"><%- partial('_partial/social-link') %></div>
     <li class="right">
       <a href="#searchModal" class="modal-trigger waves-effect waves-light">
         <i id="searchIcon" class="fas fa-search orange-text" title="<%= __('search') %>" style="zoom: 0.85;"></i>

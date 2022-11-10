@@ -240,6 +240,16 @@ footer hr{
     padding-top: 20px;
     padding-bottom: 0px;
 }
+.nav .nav-menu{
+    padding: 0px;
+}
+.nav .nav-menu .logo-block a{
+    padding-left: 0px;
+}
+.nav .nav-menu .logo-img{
+    padding-left: 0px;
+    padding-right: 60px;
+}
 
 /*carousel*/
 .swiper{
@@ -347,6 +357,19 @@ footer hr{
 
 @media only screen and (max-width: 601px) {
     
+    article .card-title{
+        margin-top: 12px;
+    }
+    article .summary{
+        display: none;
+    }
+    article .card-image img {
+        max-height: 150px;
+    }
+    article .publish-info {
+        /* max-height: 150px; */
+        min-height: 150px;
+    }
     
     /* footer區塊1 */
     footer .footer-nav{

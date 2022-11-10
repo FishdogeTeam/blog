@@ -1,7 +1,7 @@
 <!-- <header class="navbar-fixed"> -->
  <header class="navbar">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div class="bitcoin-price">
+        <div class="bitcoin-price grey lighten-4">
             <div class="btc-price black">
                 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
@@ -60,135 +60,137 @@
                     </span>
                 </div>
             </div>
-            <div class="stock-price grey lighten-4">
-                <div class="swiper-container" style="height: 60px;">
-                    <div class="swiper mySwiper2">
-                        <div class="swiper-wrapper">
-                            
-                            <!-- get data from api by ejs axio -->
-                            <% for (var i =1; i <=10;  i++ ) { %>
-                                <div class="swiper-slide">
-                                    <span id="name-<%= i %>" >name</span>
-                                    <span id="price-<%= i %>">price</span>
-                                    <i id="price-<%= i %>_gain_img" class="fa-solid text-darken-3 "></i> 
-                                    <span id="price-<%= i %>_gain_text" class="text-darken-3"> 
-                                        <span id="price-<%= i %>_gain"></span>
-                                    </span>
-                                </div>                                                            
-                            <% } %>
-                            <script type="module">
-                                import {getStock} from '/js/crypto.js'
-                                import {setPriceGain} from '/js/crypto.js'
-                                let getDataurl = "<%- theme.stock.getCryptoUrl%>"
-                                let getStockurl = "<%- theme.stock.getStockUrl%>"
-                                const link = [
-                                    {
-                                        name: 'bitcoin',
-                                        coin: 'BTC',
-                                    },
-                                    {
-                                        name: 'ethereum',
-                                        coin: 'ETH',
-                                    },
-                                    {
-                                        name: 'ripple',
-                                        coin: 'XRP',
-                                    },
-                                    {
-                                        name: 'binance-peg-polkadot',
-                                        coin: 'DOT',
-                                    },
-                                    {
-                                        name: 'bitcoin-cash',
-                                        coin: 'BCH',
-                                    },
-                                    {
-                                        name: 'litecoin',
-                                        coin: 'LTC',
-                                    },
-                                    {
-                                        name: 'cardano',
-                                        coin: 'ADA',
-                                    },
-                                    {
-                                        name: 'solana',
-                                        coin: 'SOL',
-                                    },
-                                    {
-                                        name: 'aptos',
-                                        coin: 'APT',
-                                    },
-                                    {
-                                        name: 'mask-network',
-                                        coin: 'MASK',
-                                    }
-                                ]
+            <div class="container">
+                <div class="stock-price">
+                    <div class="swiper-container" style="height: 60px;">
+                        <div class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                                
+                                <!-- get data from api by ejs axio -->
+                                <% for (var i =1; i <=10;  i++ ) { %>
+                                    <div class="swiper-slide">
+                                        <span id="name-<%= i %>" >name</span>
+                                        <span id="price-<%= i %>">price</span>
+                                        <i id="price-<%= i %>_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-<%= i %>_gain_text" class="text-darken-3"> 
+                                            <span id="price-<%= i %>_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                <% } %>
+                                <script type="module">
+                                    import {getStock} from '/js/crypto.js'
+                                    import {setPriceGain} from '/js/crypto.js'
+                                    let getDataurl = "<%- theme.stock.getCryptoUrl%>"
+                                    let getStockurl = "<%- theme.stock.getStockUrl%>"
+                                    const link = [
+                                        {
+                                            name: 'bitcoin',
+                                            coin: 'BTC',
+                                        },
+                                        {
+                                            name: 'ethereum',
+                                            coin: 'ETH',
+                                        },
+                                        {
+                                            name: 'ripple',
+                                            coin: 'XRP',
+                                        },
+                                        {
+                                            name: 'binance-peg-polkadot',
+                                            coin: 'DOT',
+                                        },
+                                        {
+                                            name: 'bitcoin-cash',
+                                            coin: 'BCH',
+                                        },
+                                        {
+                                            name: 'litecoin',
+                                            coin: 'LTC',
+                                        },
+                                        {
+                                            name: 'cardano',
+                                            coin: 'ADA',
+                                        },
+                                        {
+                                            name: 'solana',
+                                            coin: 'SOL',
+                                        },
+                                        {
+                                            name: 'aptos',
+                                            coin: 'APT',
+                                        },
+                                        {
+                                            name: 'mask-network',
+                                            coin: 'MASK',
+                                        }
+                                    ]
 
-                                // 自動生成漲跌幅
-                                axios.get(getStockurl)
-                                .then((gain_res) => {
-                                    for (var i =1; i <=10;  i++ ) {
-                                        setPriceGain(`price-${i}_gain_img`, `price-${i}_gain_text`, `price-${i}_gain`, parseFloat(gain_res.data[i]["gain"]));
-                                    }
-                                })
-                                .catch((error) => {
-                                    console.log(error);
-                                });
-
-                                // 自動生成交易對
-                                for (let i = 0; i < 10; i++){
-                                    axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd`)
-                                    .then((response) => {
-                                        let data = JSON.parse(JSON.stringify(response.data));
-                                        document.getElementById(`price-${i+1}`).innerHTML = data[link[i].name].usd;
+                                    // 自動生成漲跌幅
+                                    axios.get(getStockurl)
+                                    .then((gain_res) => {
+                                        for (var i =1; i <=10;  i++ ) {
+                                            setPriceGain(`price-${i}_gain_img`, `price-${i}_gain_text`, `price-${i}_gain`, parseFloat(gain_res.data[i]["gain"]));
+                                        }
                                     })
                                     .catch((error) => {
-                                        let data;
-                                        let url = getDataurl + `coin=${link[i].coin}/USDT`;
-                                        // url need to be changed
-                                        axios.get(url)
+                                        console.log(error);
+                                    });
+
+                                    // 自動生成交易對
+                                    for (let i = 0; i < 10; i++){
+                                        axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd`)
                                         .then((response) => {
-                                            data = JSON.parse(JSON.stringify(response.data));
-                                            document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
-                                            document.getElementById(`price-${i+1}`).innerHTML = data.result.price;
-                                            return data;
+                                            let data = JSON.parse(JSON.stringify(response.data));
+                                            document.getElementById(`price-${i+1}`).innerHTML = data[link[i].name].usd;
                                         })
                                         .catch((error) => {
+                                            let data;
+                                            let url = getDataurl + `coin=${link[i].coin}/USDT`;
+                                            // url need to be changed
+                                            axios.get(url)
+                                            .then((response) => {
+                                                data = JSON.parse(JSON.stringify(response.data));
+                                                document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
+                                                document.getElementById(`price-${i+1}`).innerHTML = data.result.price;
+                                                return data;
+                                            })
+                                            .catch((error) => {
+                                                data = error;
+                                                console.log(error);
+                                            });
+                                            return data;
                                             data = error;
                                             console.log(error);
                                         });
-                                        return data;
-                                        data = error;
-                                        console.log(error);
-                                    });
-                                    document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
+                                        document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
 
-                                }
-                            </script>                                                                               
-                        </div>                        
-                        <div class="swiper-button-next">
-                          <i class="fa-solid fa-chevron-right" style="
-                          color: black;
-                          height: auto;
-                          font-size: x-large;
-                          position: absolute;
-                          left: 10px;
-                          width: 100%;
-                          text-align: center;
-                          "></i>
+                                    }
+                                </script>                                                                               
+                            </div>                        
+                            <div class="swiper-button-next">
+                            <i class="fa-solid fa-chevron-right" style="
+                            color: black;
+                            height: auto;
+                            font-size: x-large;
+                            position: absolute;
+                            left: 10px;
+                            width: 100%;
+                            text-align: center;
+                            "></i>
+                            </div>
+                            <div class="swiper-button-prev">
+                            <i class="fa-solid fa-chevron-left" style="
+                            color: black;
+                            height: auto;
+                            font-size: x-large;
+                            position: absolute;
+                            right: 10px;
+                            width: 100%;
+                            text-align: center;
+                            "></i>
+                            </div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <div class="swiper-button-prev">
-                          <i class="fa-solid fa-chevron-left" style="
-                          color: black;
-                          height: auto;
-                          font-size: x-large;
-                          position: absolute;
-                          right: 10px;
-                          width: 100%;
-                          text-align: center;
-                          "></i>
-                        </div>
-                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
