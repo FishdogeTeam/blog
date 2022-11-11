@@ -86,10 +86,11 @@
       prevEl: ".swiper-button-prev",
       },      
   });
-
+  
   const btc_block_swiper = new Swiper(".myBtcSwiper", {
-      slidesPerView: Math.floor(width/400),
-      spaceBetween: -150,
+      slidesPerView: 3,
+      spaceBetween: (300*3 - width),
+      slidesOffsetAfter: 400,
       loop: false,
       loopFillGroupWithBlank: false,
       pagination: {
