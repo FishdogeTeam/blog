@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Open+Sans:wght@600&display=swap');
+
+body{
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
 #prenext-posts .bg-render{
     position: absolute;
     display: inline-block;
@@ -337,9 +343,14 @@ footer hr{
     position: fixed;
     right: 20px;
     top: 40vh;
+    text-align: center;
 }
-#social-expend{
-    display: none;
+#social-block a{
+    font-size: 20px;
+}
+#social-block-share{
+    font-style: normal;
+    font-size: 14px;
 }
 
 /*about page*/

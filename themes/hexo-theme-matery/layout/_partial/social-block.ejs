@@ -1,9 +1,9 @@
 <!--社交區塊按鈕-->
 <div id="social-block">
-    <ul id="social-expend">
+    <ul>
         <li>
             <a href="<%= theme.socialLink.facebook %>" class="tooltipped" target="_blank" data-tooltip="Facebook" data-position="top" data-delay="50">
-                <i class="fab fa-facebook-f black-text"></i>
+                <i id="social-block-share" class="black-text">分享</i>
             </a>
         </li>
         <li>
@@ -32,36 +32,15 @@
             </a>
         </li>
     </ul>
-    <button id="social-btn" style="
-        border: none;
-        color: white;
-        background-color: black;
-        left: 50%;
-        position: relative;
-        font-size: x-large;
-    ">
-        <i class="fa-solid fa-chevron-up"></i>
-    </button>
 </div>
 <script>
     const socialBlock=document.getElementById('social-block')
-    const socialBtn=document.getElementById('social-btn')
-    const expendBlock=document.getElementById('social-expend')
     const screenWidth=document.body.clientWidth
 
     if(screenWidth<540){
         socialBlock.style.display="none"
     }
 
-    function socialDisplay(){
-        if(expendBlock.style.display==="block"){
-            expendBlock.style.display="none"
-        }else{
-            expendBlock.style.display="block"
-        }
-    }
-
-    socialBtn.addEventListener('click',socialDisplay)
     window.addEventListener('resize',()=>{
         history.go(0)
     })
