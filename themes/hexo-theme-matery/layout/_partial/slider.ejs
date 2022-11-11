@@ -1,5 +1,5 @@
 <div class="slide-container">  
-  <div class="container ">
+  <div class="container">
     <div class="swiper mySwiper" style="background-color: white;">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><a href="/tags/比特">比特</a></div>
@@ -64,11 +64,16 @@
   var height = window.innerHeight
   || document.documentElement.clientHeight
   || document.body.clientHeight;
+  //show how many label
+  
+  
+  count = Math.floor(width*0.9/200);
+  space = (width*0.85-200*count);
   
   const swiper2 = new Swiper(".mySwiper2", {
-      slidesPerView: 3,
-      spaceBetween: -width/2,
-      slidesPerGroup: 3,
+      slidesPerView: count,
+      spaceBetween: -space,
+      slidesPerGroup: count,
       initialSlide: 5,
       loop: false,
       loopFillGroupWithBlank: false,
@@ -81,5 +86,16 @@
       prevEl: ".swiper-button-prev",
       },      
   });
-  
+
+  const btc_block_swiper = new Swiper(".myBtcSwiper", {
+      slidesPerView: Math.floor(width/400),
+      spaceBetween: -150,
+      loop: false,
+      loopFillGroupWithBlank: false,
+      pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      },
+  });
+
 </script>

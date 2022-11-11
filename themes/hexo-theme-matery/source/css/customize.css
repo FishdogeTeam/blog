@@ -215,17 +215,20 @@ footer .footer-info{
     padding-right: 0px !important;
 }
 footer .coin-block{
-    display: grid;
+    /* display: grid;
     grid-template-columns: 50% 50%;
-    margin-top: 40px;
+    margin-top: 40px; */
 }
 footer .coin-left{
     grid-column-start: 1;
-    justify-content: start; 
+    justify-content: start;
+    display: inline-block;
 }
 footer .coin-right{
     grid-column-start: 2;
-    justify-content: end;     
+    justify-content: end;
+    display: inline-block;
+    float: right;   
 }
 footer .coin-right h4{
     /* display: inline-block;  */
