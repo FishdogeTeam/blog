@@ -291,6 +291,18 @@ footer hr{
     color: white;
     content: ''
 }
+.swiper-btc-block-date{
+    width: 150px!important;
+    text-align:left!important;
+}
+.swiper-btc-block-value{
+    width: 240px!important;
+    text-align:left!important;
+}
+.swiper-btc-block-high{
+    width: 200px!important;
+    text-align:left!important;
+}
 
 /*content*/
 .content{

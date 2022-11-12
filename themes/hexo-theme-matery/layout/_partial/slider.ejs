@@ -10,7 +10,7 @@
         <div class="swiper-slide"><a href="/tags/NFT">NFT</a></div>
       </div>
       <div class="swiper-button-next">
-        <i class="fa-solid fa-chevron-right" style="
+        <!-- <i class="fa-solid fa-chevron-right" style="
         color: white;
         background-color: black;
         height: auto;
@@ -19,10 +19,15 @@
         left: 10px;
         width: 100%;
         text-align: center;
-        "></i>
+        "></i> -->
+        
+        
+
+        
+        <img src="../../source/medias/left.png">
       </div>
       <div class="swiper-button-prev">
-        <i class="fa-solid fa-chevron-left" style="
+        <!-- <i class="fa-solid fa-chevron-left" style="
         color: white;
         background-color: black;
         height: auto;
@@ -31,7 +36,8 @@
         right: 10px;
         width: 100%;
         text-align: center;
-        "></i>
+        "></i> -->
+        <img src="../../source/medias/right.png">
       </div>
       
       <div class="swiper-pagination"></div>
@@ -74,8 +80,8 @@
       slidesPerView: count,
       spaceBetween: -space,
       slidesPerGroup: count,
-      initialSlide: 5,
       loop: false,
+      centeredSlides: false,
       loopFillGroupWithBlank: false,
       pagination: {
       el: ".swiper-pagination",
@@ -86,16 +92,29 @@
       prevEl: ".swiper-button-prev",
       },      
   });
-  
+
+  count = Math.ceil(width*0.9/390);
+  space = (width*0.9 - 326*count);
+  initPos = 0
+  if (width > 800) {
+    count+= 3;
+    initPos = 4
+  }
+  else if ( 400 < width < 1000){
+    space = 200;
+  }
   const btc_block_swiper = new Swiper(".myBtcSwiper", {
-      slidesPerView: 3,
-      spaceBetween: (300*3 - width),
-      slidesOffsetAfter: 400,
+      slidesPerView: count,
+      spaceBetween: -20,
+      slidesPerGroup: count,
+      initialSlide: initPos,
       loop: false,
       loopFillGroupWithBlank: false,
+      updateOnWindowResize: false,
       pagination: {
       el: ".swiper-pagination",
       clickable: true,
+      // centeredSlides: false,
       },
   });
 

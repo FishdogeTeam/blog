@@ -2,25 +2,31 @@
  <header class="navbar">
     <nav id="headNav" class="bg-color nav-transparent">
         <div class="bitcoin-price grey lighten-4">
-            <div class="btc-price black">
+            <div class="btc-price black ">
             
                 <div class="swiper-container" style="height:60px;">
                     <div class="container">
                         <div class="swiper myBtcSwiper">
-                            <div class="swiper-wrapper" >
+                            <div class="swiper-wrapper">
                                         
                                 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
                             
-                                <div class="swiper-slide" style="height:60px;">
+                                <!-- 
+                                        height: 60px;
+                                        width: 128.933px;
+                                        /* margin-right: -129.89999999999998px; */
+                                        margin-right: -33.89999999999998px;
+                                 -->
+                                <div class="swiper-slide swiper-btc-block-date" style="height:60px;">
 x                                    <span style="color: white">
                                         <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCal) %>" class="responsive-img" alt="iconCal" style="height:15px; width: 15px; display: inline-block;">
                                         <%- date(Date.now(), 'YYYY/M/D') %>
                                     </span>
                                 </div>
-                                <div class="swiper-slide" style="height:60px;">
+                                <div class="swiper-slide swiper-btc-block-value" style="height:60px;">
                                     <span id="header_cropto_name" style="color: white">
-                                        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img" alt="iconMoney" style="height:15px; width: 15px; display: inline-block;">
                                         BTC/USDT
+                                        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img" alt="iconMoney" style="height:15px; width: 15px; display: inline-block;">                                        
                                     </span>
                                 
                                     <span style="color: white">價格：
@@ -56,9 +62,9 @@ x                                    <span style="color: white">
                                         </span>
                                     </span>
                                 </div>
-                                
-                                <div class="swiper-slide" style="height:60px;">                                  
+                                <div class="swiper-slide swiper-btc-block-high" style="height:60px;">                                  
                                     <span style="color: white">
+                                        |
                                         <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img" alt="iconBlock" style="height:15px; width: 15px; display: inline-block;">
                                         區塊高度：
                                         <span id="header_crypto_blockhigh" style="color: white">
@@ -73,7 +79,8 @@ x                                    <span style="color: white">
                                             </script>
                                         </span>
                                     </span>
-                                </div>
+                                </div>                                
+                                
                                 
                             </div>
                             <div class="swiper-pagination"></div>
