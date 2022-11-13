@@ -40,29 +40,31 @@ configRoot = (configRoot === null || configRoot === undefined || configRoot === 
 			<%- __(key) %>
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
-            <ul <%if(theme.navMenu&&theme.navMenu.bgColor){%> style="background: <%-theme.navMenu.bgColor%>;"<%}%> >
-              <% for(let childrenLink of theme.menu[key].children){ %>
-                <li>
+    <ul <%if(theme.navMenu&&theme.navMenu.bgColor){%> style="background: <%-theme.navMenu.bgColor%>;"<%}%> >
+      <% for(let childrenLink of theme.menu[key].children){ %>
+      <li>
 
-                  <a href="<%- url_for(childrenLink.url)%> " style="margin-left:<% if (theme.navMenu && theme.navMenu.mleft) {%>50px<%}else{%>75px<%}%>">
-				  <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
-				   <i class="fa <%- childrenLink.icon %>" style="position: absolute;left:<%if(theme.navMenu&&theme.navMenu.mleft){%>28px<%}else{%>50px<%}%>" ></i>
-			      <% } %>
-		          <span><%- childrenLink.name %></span>
-                  </a>
-                </li>
-              <% } %>
-            </ul>
+        <a href="<%- url_for(childrenLink.url)%> " style="margin-left:50px">
+          <!-- <%if (theme.navMenu && theme.navMenu.mleft) {%>50px<%}else{%>75px<%}%> -->
+        <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
+          <i class="fa <%- childrenLink.icon %>" style="position: absolute;left:50px" ></i>
+          <!-- <%if(theme.navMenu&&theme.navMenu.mleft){%>28px<%}else{%>50px<%}%> -->
           <% } %>
-        </li>
-        <% }); %>
+            <span><%- childrenLink.name %></span>
+              </a>
+              </li>
+            <% } %>
+          </ul>
+        <% } %>
+      </li>
+      <% }); %>
         <% if (theme.githubLink && theme.githubLink.enable) { %>
         <li><div class="divider"></div></li>
         <li>
-            <a href="<%- theme.githubLink.url %>" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i><%- theme.githubLink.title %>
-            </a>
+          <a href="<%- theme.githubLink.url %>" class="waves-effect waves-light" target="_blank">
+              <i class="fab fa-github-square fa-fw"></i><%- theme.githubLink.title %>
+          </a>
         </li>
-        <% } %>
+      <% } %>
     </ul>
 </div>

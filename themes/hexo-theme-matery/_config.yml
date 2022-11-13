@@ -157,6 +157,12 @@ iconCalBlack: /medias/icon-calender-black.png
 iconMoney: /medias/icon-money.png
 iconBlock: /medias/icon-block.png
 
+#tag圖示
+tagLeft: /medias/left.png
+tagRight: /medias/right.png
+
+#收納三條線圖示
+tagMenu: /medias/Menu-Icon.png
 # The configuration of the second button in the home banner,
 # including the display name of the button, the font awesome icon, and the hyperlink to the button.
 # 首页 banner 中的第二个按钮的配置，包括按钮的显示名称、font awesome图标和按钮的超链接.

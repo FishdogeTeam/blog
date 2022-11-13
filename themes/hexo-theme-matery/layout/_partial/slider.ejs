@@ -9,35 +9,11 @@
         <div class="swiper-slide"><a href="/tags/GameFi">GameFi</a></div>
         <div class="swiper-slide"><a href="/tags/NFT">NFT</a></div>
       </div>
-      <div class="swiper-button-next">
-        <!-- <i class="fa-solid fa-chevron-right" style="
-        color: white;
-        background-color: black;
-        height: auto;
-        font-size: x-large;
-        position: absolute;
-        left: 10px;
-        width: 100%;
-        text-align: center;
-        "></i> -->
-        
-        
-
-        
-        <img src="../../source/medias/left.png">
+      <div class="swiper-button-next">       
+        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.tagRight) %>">
       </div>
       <div class="swiper-button-prev">
-        <!-- <i class="fa-solid fa-chevron-left" style="
-        color: white;
-        background-color: black;
-        height: auto;
-        font-size: x-large;
-        position: absolute;
-        right: 10px;
-        width: 100%;
-        text-align: center;
-        "></i> -->
-        <img src="../../source/medias/right.png">
+        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.tagLeft) %>">
       </div>
       
       <div class="swiper-pagination"></div>
@@ -50,7 +26,7 @@
 <script>
   //輪播套件js
   const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 9,
+    slidesPerView: 6,
     spaceBetween: -10,
     slidesPerGroup: 3,
     loop: true,
@@ -64,6 +40,7 @@
       prevEl: ".swiper-button-prev",
     },
   });
+
   var width = window.innerWidth
   || document.documentElement.clientWidth
   || document.body.clientWidth;
@@ -84,24 +61,20 @@
       centeredSlides: false,
       loopFillGroupWithBlank: false,
       pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+        el: ".swiper-pagination",
+        clickable: true,
       },
       navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },      
   });
 
   count = Math.ceil(width*0.9/390);
-  space = (width*0.9 - 326*count);
   initPos = 0
   if (width > 800) {
     count+= 3;
     initPos = 4
-  }
-  else if ( 400 < width < 1000){
-    space = 200;
   }
   const btc_block_swiper = new Swiper(".myBtcSwiper", {
       slidesPerView: count,
@@ -112,8 +85,8 @@
       loopFillGroupWithBlank: false,
       updateOnWindowResize: false,
       pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+        el: ".swiper-pagination",
+        clickable: true,
       // centeredSlides: false,
       },
   });
