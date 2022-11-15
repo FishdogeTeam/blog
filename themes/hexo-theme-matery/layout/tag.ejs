@@ -15,7 +15,7 @@
     };
     %>
     <!--現在位置-->
-    <h1 class="url-now"><%- page.tag %></h1>
+    <p class="url-now"><%- page.tag %></p>
 
     <!--標籤文章卡片-->
     <article id="articles" class="container articles">
@@ -73,6 +73,48 @@
             <% }); %>
         </div>
     </article>
+    <div class="container">
+        <button id="tag-readmore" class="readmore center col s3">看更多</button>
+    </div>
+
+    <script>
+        const tagArticleDisplay=document.getElementsByClassName("tag-post")
+        const tagReadmoreBtn=document.getElementById("tag-readmore")
+        let tagArticleArray=[]
+        let tagClickCount=0
+
+        //文章少於4篇看更多不出現
+        if(tagArticleDisplay.length < 4 ){
+            tagReadmoreBtn.style.visibility="hidden"
+        }
+
+        for(let i=0;i<tagArticleDisplay.length;i++){
+            if((i+1) > 4){
+                tagArticleDisplay[i].style.display="none"
+            }
+        }
+
+        for(let i=0;i<tagArticleDisplay.length;i++){
+            if(i % 4 == 0 && i != 0){
+                tagArticleArray.push(i)
+            }
+        }
+
+        function readMore(){
+            try{
+                tagClickCount++
+                for(let i=0;i<4;i++){
+                    tagArticleDisplay[(tagArticleArray[tagClickCount-1])+i].style.display="block"
+                }
+            }
+            catch(err){
+                // err.message="沒有更多文章了"
+                tagReadmoreBtn.style.visibility="hidden";
+            }
+        }
+
+        tagReadmoreBtn.addEventListener('click',readMore)       
+    </script>
 </main>
 
 <% if (page.total > 1) { %>

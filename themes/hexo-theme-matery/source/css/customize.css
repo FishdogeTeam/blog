@@ -320,7 +320,6 @@ footer hr{
 
 /*url-now*/
 .url-now{
-    display: inline-block;
     font-size: 15px;
     margin: 0px;
     margin-top: 45px ;
@@ -332,6 +331,14 @@ footer hr{
 }
 .author-about{
     color: black !important;
+}
+.author-link-block{
+    display: flex;
+    padding: 0;
+}
+.author-link{
+    font-size: 25px;
+    margin-right: 15px;
 }
 
 /*articles*/

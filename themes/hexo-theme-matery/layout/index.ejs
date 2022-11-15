@@ -18,20 +18,44 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">         
         <div class="row article-row">
-            <div class="col s12 m6 l4 swiper-headline" data-aos="zoom-in">
-                <!--現在位置-->
-                <% if(page.current_url !== ''){ %>
-                    <p class="url-now">專欄 &gt; <%- page.author.id %></p>
+            <!--首頁頭條輪播-->
+            <% if(page.current_url == ''){ %>
+                <div class="col s12 m6 l4 swiper-headline" data-aos="zoom-in">
+                    <div class="headline-block">        
+                        <%- partial('_partial/headlines-slider') %> 
+                    </div> 
+                </div>
+            <% } %>
+            <!--現在位置-->
+            <% if(page.current_url !== ''){ %>
+                <p class="url-now">專欄 &gt; <%- page.author.id %></p>
+                <div class="author-block">
                     <h1 class="author-name"><%- page.author.id %></h1>
                     <p class="author-about"><%- page.author.about %></p>
-                <% } %>
-                <div class="headline-block">        
-                    <!--首頁頭條輪播-->
-                    <% if(page.current_url == ''){ %>
-                        <%- partial('_partial/headlines-slider') %>
-                    <% } %>
-                </div> 
-            </div>
+                    <ul class="author-link-block">
+                        <li class="author-link">
+                            <a href="<%= theme.socialLink.facebook %>" class="tooltipped" target="_blank" data-tooltip="Facebook" data-position="top" data-delay="50">
+                                <i class="fab fa-facebook-f black-text"></i>
+                            </a>
+                        </li>
+                        <li class="author-link">
+                            <a href="<%= theme.socialLink.twitter %>" class="tooltipped" target="_blank" data-tooltip="Twitter" data-position="top" data-delay="50">
+                                <i class="fab fa-twitter black-text"></i>
+                            </a>
+                        </li>
+                        <li class="author-link">
+                            <a href="<%= theme.socialLink.line %>" class="tooltipped" target="_blank" data-tooltip="line" data-position="top" data-delay="50">
+                                <i class="fab fa-line black-text"></i>
+                            </a>
+                        </li>
+                        <li class="author-link">
+                            <a href="<%= theme.socialLink.youtube %>" class="tooltipped" target="_blank" data-tooltip="Youtube" data-position="top" data-delay="50">
+                                <i class="fab fa-youtube black-text"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            <% } %>
             <% page.posts.forEach((post,index) => { %>
                 <% if (post.hide != true)  { %> <!-- 隐藏某个文章 -->
                     <div class="article-main-post col s12 m6 l4" data-aos="zoom-in">
@@ -123,6 +147,11 @@
         const readmoreBtn=document.getElementById("readmore")
         let articleArray=[]
         let clickCount=0
+
+        //文章少於4篇看更多不出現
+        if(articleDisplay.length < 4 ){
+            readmoreBtn.style.visibility="hidden"
+        }
 
         for(let i=0;i<articleDisplay.length;i++){
             if((i+1) > 4){
