@@ -303,6 +303,14 @@ footer hr{
     width: 200px!important;
     text-align:left!important;
 }
+.swiper-headline{
+    width: 50%!important;
+    height: 50%!important;
+}
+.swiper-headline-block{
+    width: 50%!important;
+    height: 100px!important;
+}
 
 /*content*/
 .content{

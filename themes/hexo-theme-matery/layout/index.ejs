@@ -13,22 +13,25 @@
         return hash;
     };
     %>
-    <!--現在位置-->
-    <% if(page.current_url !== ''){ %>
-        <p class="url-now">專欄 &gt; <%- page.author.id %></p>
-        <h1 class="author-name"><%- page.author.id %></h1>
-        <p class="author-about"><%- page.author.about %></p>
-    <% } %>
-
-    <div class="headline-block">
-        <!--首頁頭條輪播-->
-        <% if(page.current_url == ''){ %>
-            <%- partial('_partial/headlines-slider') %>
-        <% } %>
-    </div>
+    
+       
     <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">   
+    <article id="articles" class="container articles">         
         <div class="row article-row">
+            <div class="col s12 m6 l4 swiper-headline" data-aos="zoom-in">
+                <!--現在位置-->
+                <% if(page.current_url !== ''){ %>
+                    <p class="url-now">專欄 &gt; <%- page.author.id %></p>
+                    <h1 class="author-name"><%- page.author.id %></h1>
+                    <p class="author-about"><%- page.author.about %></p>
+                <% } %>
+                <div class="headline-block">        
+                    <!--首頁頭條輪播-->
+                    <% if(page.current_url == ''){ %>
+                        <%- partial('_partial/headlines-slider') %>
+                    <% } %>
+                </div> 
+            </div>
             <% page.posts.forEach((post,index) => { %>
                 <% if (post.hide != true)  { %> <!-- 隐藏某个文章 -->
                     <div class="article-main-post col s12 m6 l4" data-aos="zoom-in">
