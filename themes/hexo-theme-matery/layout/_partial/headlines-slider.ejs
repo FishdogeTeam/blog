@@ -3,7 +3,7 @@
         <% page.posts.forEach( (post,index) =>{ %>
             <% if(post.headline == true){ %>
                 <div class="swiper-slide">
-                    <a href="<%- url_for(post.path) %>"><img src="<%- url_for(post.img) %>">
+                    <a href="<%- url_for(post.path) %>"><img src="<%- url_for(post.img) %>" class="swiper-slide-headimg">
                         <span class="card-content article-content col s12 m7">
                             <div class="headline-publish-info">
                                 <!-- 標題 -->                                    
@@ -55,50 +55,56 @@
             <% } %>
         <% }) %>
     </div>
-    <div class="headlineswiper-button-next">
-        <i class="fa-solid fa-chevron-right" style="
-        color: white;
-        background-color: black;
-        height: auto;
-        font-size: x-large;
-        position: absolute;
-        right: 10%;
-        bottom: 55%;
-        width: 20px;
-        text-align: center;
-        cursor: pointer;
-        z-index: 5;
-        "></i>
-    </div>
-    <div class="headlineswiper-button-prev">
-        <i class="fa-solid fa-chevron-left" style="
-        color: white;
-        background-color: black;
-        height: auto;
-        font-size: x-large;
-        position: absolute;
-        left: 10%;
-        bottom: 55%;
-        width: 20px;
-        text-align: center;
-        cursor: pointer;
-        z-index: 5;
-        "></i>
-    </div>
 </div>
 
 
 <style>
     .headline-block{
       width: 100%;
-      height: 100%!important;
+      height: 250%!important;
       max-height: 18%;
       padding: 3%;
       position: relative;
     }
+    .swiper-slide-headimg{
+        display: block;
+        width: 96%;
+        height: 300px;
+        object-fit: cover;
+    }
+    @media only screen and (max-width: 600px){
+        .headline-block{
+            width: 215%;
+            margin-left: auto;
+            float: left;
+            padding: 0%;
+            height: 300%!important;
+            position: relative;
+        }
+        .swiper-slide-headimg{
+            height: 300px!important;
+        }
+    } 
+    @media only screen and (max-width: 850px){
+        .swiper-slide-headimg{
+            height: 350px!important;
+        }
+    } 
+    @media only screen and (min-width: 850px){
+        .swiper-slide-headimg{
+            height: 420px!important;
+        }
+    }  
     #headlinesSwiper {
       overflow: hidden;
     }
+    .swiper-slide img {
+      display: block;
+      width: 96%;
+      height: 54%;
+      object-fit: cover;
+    }
+    
     .swiper-slide img {
       display: block;
       width: 96%;

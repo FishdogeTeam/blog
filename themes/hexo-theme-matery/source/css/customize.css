@@ -317,6 +317,11 @@ footer hr{
     padding-top: 5%;
     clear: both;
 }
+@media only screen and (max-width: 600px){
+    .content{
+        padding-top: 15%;        
+    }
+} 
 
 /*url-now*/
 .url-now{
