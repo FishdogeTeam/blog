@@ -1,5 +1,8 @@
 /*全局基础样式*/
 /*小屏幕下(手机类)的样式*/
+.article-main-post{
+    display: inline-block;
+}
 @media only screen and (max-width: 601px) {
     .container {
         width: 95%;
@@ -12,6 +15,18 @@
         min-height: 190px;
         margin-top: 40px;
     }
+    .headline-block{
+        width: 245%;
+        margin-left: auto;
+        float: left;
+        padding: 0%;
+        height: 300%!important;
+        position: relative;
+        margin: -2.2em;
+    }
+    .swiper-slide-headimg{
+        height: 300px!important;
+    }
 }
 
 /*中等屏幕下(平板类)的样式*/
@@ -21,10 +36,22 @@
     }
     .article-main-post{
         /* height: 100vmax; */
-        height: 26vmax;
+        height: 20vmax;
         max-height: 100vmax; 
         min-height: 190px;
         margin-top: 40px;
+    }
+    .headline-block{
+        width: 100%;
+        margin-left: auto;
+        float: left;
+        padding: 0%;
+        height: 300%!important;
+        position: relative;
+        margin-top: 40px;
+    }
+    .swiper-slide-headimg{
+        height: 385px!important;
     }
 }
 
@@ -54,19 +81,43 @@
         min-height: 190px;
         margin-top: 10px;
     }
+    .headline-block{
+        width: 100%;
+        margin-left: auto;
+        float: left;
+        padding: 0%;
+        height: 300%!important;
+        position: relative;
+        margin-top: 6px;
+    }
+    .swiper-slide-headimg{
+        height: 350px!important;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
     .article-main-post{
         /* height: 100vmax; */
-        height: 17vmax;
+        height: 19vmax;
         max-height: 100vmax; 
         min-height: 190px;
         margin-top: 10px;
     }
+    .headline-block{
+        width: 100%;
+        margin-left: auto;
+        float: left;
+        padding: 0%;
+        height: 300%!important;
+        position: relative;
+        margin-top: 10px;
+    }
+    .swiper-slide-headimg{
+        height: 375px!important;
+    }
 }
 
-@media only screen and (min-width: 900px) and (max-width: 992px) {
+@media only screen and (min-width: 881px) and (max-width: 992px) {
     .article-main-post{
         /* height: 100vmax; */
         height: 20vmax;
@@ -74,35 +125,106 @@
         min-height: 190px;
         margin-top: 10px;
     }
+    .headline-block{
+        width: 100%;
+        margin-left: auto;
+        float: left;
+        padding: 0%;
+        height: 300%!important;
+        position: relative;
+        margin-top: 10px;
+    }
+    .swiper-slide-headimg{
+        height: 360px!important;
+    }
 }
 
-@media only screen and (min-width: 760px) and (max-width: 800px) {
+@media only screen and (min-width: 760px) and (max-width: 880px) {
     .article-main-post{
         /* height: 100vmax; */
-        height: 24vmax;
+        height: 20vmax;
         max-height: 100vmax; 
         min-height: 190px;
-        margin-top: 10px;
+        margin-top: 19px;
+    }
+    .headline-block{
+        width: 100%;
+        margin-left: auto;
+        float: left;
+        padding: 0%;
+        height: 300%!important;
+        position: relative;
+        margin-top: 19px;
+    }
+    .swiper-slide-headimg{
+        height: 335px!important;
     }
 }
 
 @media only screen and (min-width: 700px) and (max-width: 759px) {
     .article-main-post{
         /* height: 100vmax; */
-        height: 28vmax;
+        height: 20vmax;
         max-height: 100vmax; 
         min-height: 190px;
+        margin-top: 20px;
+    }
+    .headline-block{
+        width: 100%;
+        margin-left: auto;
+        float: left;
+        padding: 0%;
+        height: 300%!important;
+        position: relative;
+        margin-top: 20px;
+    }
+    .swiper-slide-headimg{
+        height: 360px!important;
+    }
+    
+}
+
+@media only screen and (min-width: 1200px) {
+    .article-main-post{
+        /* height: 100vmax; */
+        height: 16vmax;
+        max-height: 100vmax; 
+        min-height: 220px;
         margin-top: 10px;
+    }
+    .headline-block{
+        width: 100%;
+        margin-left: auto;
+        float: left;
+        padding: 0%;
+        height: 300%!important;
+        position: relative;
+        margin-top: 7px;
+    }
+    .swiper-slide-headimg{
+        height: 395px!important;
     }
 }
 
 @media only screen and (min-width: 1440px) {
     .article-main-post{
         /* height: 100vmax; */
-        height: 12vmax;
+        height: 14vmax;
         max-height: 100vmax; 
         min-height: 190px;
         margin-top: 10px;
+    }
+    .headline-block{
+        width: 100%;
+        margin-left: auto;
+        float: left;
+        padding: 0%;
+        height: 300%!important;
+        position: relative;
+        margin-top: 7px;
+    }
+    .swiper-slide-headimg{
+        height: 363px!important;
     }
 }
 
@@ -932,14 +1054,20 @@ article .card-title {
     margin-top: 0px;
     margin-bottom: 12px;
     font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 article .summary {
     font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 article .card-image img {
     height: 100vmax;
-    max-height: 190px;
+    max-height: 180px;
 }
 
 article .card-image.col {
