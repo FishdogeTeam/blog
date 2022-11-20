@@ -3,7 +3,15 @@
 body{
     font-family: 'Noto Sans TC', sans-serif;
 }
-
+h1{
+    margin-left: 10px;
+}
+.author-block .author-about{
+    margin-left: 10px;
+}
+.author-block .author-link-block{
+    margin-left: 10px;
+}
 #slide-out{
     padding-left: 0px;
 }
@@ -12,6 +20,27 @@ body{
 }
 .stock-price .swiper-slide{
     min-width: 220px !important;
+}
+.topic-block{
+    padding-top: 50px;
+    text-align: center;
+}
+.topic-block a{
+    color: black;
+}
+.topic-block a:hover{
+    color: orange;
+}
+.topic-block span{
+    font-size: 20px;
+    margin: 10px;
+}
+
+.point-color{
+    color: black;
+}
+.point-color:hover{
+    color: orange;
 }
 #prenext-posts .bg-render{
     position: absolute;

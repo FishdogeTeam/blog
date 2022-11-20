@@ -19,6 +19,7 @@
 
     <!--標籤文章卡片-->
     <article id="articles" class="container articles">
+        <h1><%- page.tag %></h1>
         <div class="row tags-posts article-row">
             <% page.posts.sort('date').reverse().forEach(post => { %>
             <%

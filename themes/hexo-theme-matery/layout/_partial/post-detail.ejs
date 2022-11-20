@@ -47,19 +47,19 @@
                 <div class="article-tag">
                     <% page.tags.forEach(function(tag) { %>
                         <a href="<%- url_for(tag.path) %>">
-                            <span class="black-text">#<%= tag.name %></span>
+                            <span class="point-color">#<%= tag.name %></span>
                         </a>
                     <% }); %>
                 </div>
                 <% } else { %>
                         <div class="article-tag">
-                        <span class="black-text"><%- __("notag")  %></span>
+                        <span class="point-color"><%- __("notag")  %></span>
                         </div>
                 <% } %>
             </div>
             <hr class="clearfix">
             <!-- author -->
-            作者：<a class="black-text post-info-author" href="/author/<%- page.authorId %>" rel="external nofollow noreferrer"><%- page.authorId %></a>
+            作者：<a class="point-color post-info-author" href="/author/<%- page.authorId %>" rel="external nofollow noreferrer"><%- page.authorId %></a>
             <hr class="clearfix down-hr">
         </div>
 
