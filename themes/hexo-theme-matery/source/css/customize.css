@@ -4,6 +4,13 @@ body{
     font-family: 'Noto Sans TC', sans-serif;
 }
 
+#slide-out{
+    padding-left: 0px;
+}
+
+.stock-price .swiper-slide{
+    min-width: 220px !important;
+}
 #prenext-posts .bg-render{
     position: absolute;
     display: inline-block;
@@ -304,8 +311,8 @@ footer hr{
     text-align:left!important;
 }
 .swiper-headline{
-    width: 50%!important;
-    height: 50%!important;
+    width: 50% !important;
+    height: 40vmax!important;
 }
 .swiper-headline-block{
     width: 50%!important;
@@ -474,5 +481,22 @@ footer hr{
     }
     footer hr{
         grid-area: 3 / 1;
+    }
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .swiper-headline{
+        height: 38vmax!important;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .swiper-headline{
+        height: 32vmax!important;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    .swiper-headline{
+        height: 28vmax!important;
     }
 }

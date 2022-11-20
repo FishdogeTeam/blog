@@ -18,14 +18,14 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">         
         <div class="row article-row">
-            <!--首頁頭條輪播-->
-            <% if(page.current_url == ''){ %>
-                <div class="col s12 m6 l4 swiper-headline" data-aos="zoom-in">
+            <!--首頁頭條輪播--> 
+            <%/* if(page.current_url == ''){ */%>
+                <!-- <div class="col s12 m12 l12 swiper-headline" data-aos="zoom-in">
                     <div class="headline-block">        
-                        <%- partial('_partial/headlines-slider') %> 
+                        <%-/* partial('_partial/headlines-slider') */%> 
                     </div> 
-                </div>
-            <% } %>
+                </div> -->
+            <%/* } */%>
             <!--現在位置-->
             <% if(page.current_url !== ''){ %>
                 <p class="url-now">專欄 &gt; <%- page.author.id %></p>
