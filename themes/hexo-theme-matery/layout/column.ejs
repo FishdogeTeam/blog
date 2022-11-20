@@ -11,18 +11,26 @@
   %>
   <div class="container">
     <div class="row article-row">
-        <% noRepeatAuthors.forEach(author => { %>
+        <% noRepeatAuthors.forEach(author => { %>          
           <div class="article-main-post col s12 m6 l4" data-aos="zoom-in">
+              <!-- 照片 -->
+              <div class="card-image col s12 m5">
+                  <% if (author.img) { %>
+                    <img src="<%- url_for(author.img) %>" class="responsive-img" alt="<%= author.name %>">
+                  <% } else { %>
+                    <img src="<%- url_for(author.img) %>" class="responsive-img" alt="<%= author.name %>">
+                  <% } %>
+              </div>
               <!-- 資訊 -->
               <div class="card-content article-content col s12 m7">
-                  <div class="publish-info">
-                    <!-- 作者 -->
-                    <span class="publish-author">
-                        <a href="/author/<%= author %>/"><%= author %></a>
-                    </span><br>
-                  </div>
-              </div>
-          </div> 
+                <div class="publish-info">
+                  <!-- 作者 -->
+                  <span class="publish-author point-color">
+                      <a  class="point-color" href="/author/<%= author %>/"><%= author %></a>
+                  </span><br>
+                </div>
+              </div>            
+        </div> 
         <% }); %>
     </div>
   </div>
