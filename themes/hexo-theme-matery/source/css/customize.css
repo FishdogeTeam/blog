@@ -7,7 +7,9 @@ body{
 #slide-out{
     padding-left: 0px;
 }
-
+#articles{
+    height: auto !important;
+}
 .stock-price .swiper-slide{
     min-width: 220px !important;
 }
