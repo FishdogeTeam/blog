@@ -6,6 +6,10 @@ body{
 h1{
     margin-left: 10px;
 }
+button:focus {
+    outline: none;
+    background-color: none !important;
+}
 .author-block .author-about{
     margin-left: 10px;
 }
@@ -33,6 +37,10 @@ h1{
 }
 .topic-block span{
     font-size: 20px;
+    margin: 10px;
+}
+.topic-block span:hover{
+    /* font-size: 25px; */
     margin: 10px;
 }
 
@@ -380,7 +388,7 @@ footer hr{
     padding: 0;
 }
 .author-link{
-    font-size: 25px;
+    /* font-size: 25px; */
     margin-right: 15px;
 }
 .author-info{
