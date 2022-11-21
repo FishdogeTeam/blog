@@ -112,13 +112,28 @@
                                         <% } %>
                                     </div>
                                     <!-- 關鍵字 -->
-                                    <% if(post.tags && post.tags.length > 0) { %>
+                                    <!--index文章若超過5個tags取前五顯示-->
+                                    <% 
+                                        let fiveTags=post.tags.filter((tag,index,arr) => {
+                                        return index < 5
+                                        })
+                                     %>
+                                    <% if(post.tags && post.tags.length < 6) { %>
                                         <div class="card-action article-tags">
                                             <% post.tags.forEach(tag => { %>
                                             <a href="<%- url_for(tag.path) %>">
                                                 <span class="black-text">#<%= tag.name %></span>
                                             </a>
                                             <% }); %>
+                                        </div>
+                                    <% } else{ %>
+                                        <div class="card-action article-tags">
+                                            <% fiveTags.forEach(tag => { %>
+                                            <a href="<%- url_for(tag.path) %>">
+                                                <span class="black-text">#<%= tag.name %></span>
+                                            </a>
+                                            <% }); %>
+                                            <span>...</span>
                                         </div>
                                     <% } %>
                                 </div>
