@@ -235,8 +235,7 @@ footer .footer-nfts h3{
 }
 footer .footer-nfts h4{
     margin: 0;
-    padding-top: 0px;
-    padding-bottom: 20px;
+    padding:20px 0;
     color: black;
 }
 footer .footer-nfts a{
@@ -277,8 +276,50 @@ footer .coin-right{
     float: right;   
 }
 footer .coin-right h4{
-    /* display: inline-block;  */
-    text-align: right;
+    display: inline;
+    text-align: left;
+    vertical-align: middle;
+}
+footer .coin-right .open-source-btn{
+    width: 64px;
+    height: 36px;
+    margin-left: 15px;
+    border: none;
+    border-radius: 25px;
+    vertical-align: super;
+}
+footer .toggle {
+    position: relative;
+}
+footer .toggle .open-source-btn {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+footer .onOff-btn {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.5);
+    transition: 0.4s;
+    width: 64px;
+    height: 36px !important;
+}
+footer .open-source-btn:checked + .onOff-btn {
+    background-color: #F7931B;
+  }
+footer .open-source-btn:checked + .onOff-btn:before {
+    transform: translateX(28px);
+}
+footer .onOff-btn.round {
+    margin-left: 15px;
+    border-radius: 20px;
+    vertical-align: middle;
+}
+footer .onOff-btn.round::before {
+    background-color: #F7F7FC;
+    border-radius: 20px;
 }
 footer hr{
     grid-column-start: 1;
@@ -372,7 +413,7 @@ footer hr{
 /*url-now*/
 .url-now{
     font-size: 15px;
-    margin: 0px;
+    margin-left: 10px;
     margin-top: 45px ;
     padding: 0px;
     color: black !important;
