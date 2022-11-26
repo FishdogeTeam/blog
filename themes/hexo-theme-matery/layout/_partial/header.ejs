@@ -104,7 +104,7 @@
             </div>
             <div class="container">
                 <div class="stock-price">
-                    <div class="swiper-container" style="height: 60px;">
+                    <div class="swiper-container" style="height: 60px;  width: 90%; margin-left: 5%;">
                         <div class="swiper mySwiper2">
                             <div class="swiper-wrapper">
                                 
@@ -120,10 +120,12 @@
                                     </div>                                                            
                                 <% } %>
                                 
+                                <% for (var i = 0; i < 5;  i++ ) { %>
                                     <div class="swiper-slide">
                                         <span id="name-empty" ></span>
                                         <span id="price-empty"></span>                                    
-                                    </div>
+                                    </div>                                                     
+                                <% } %>                                
 
                                 <!-- 從 api.fishdogeweb.store 取得資料，即 api.py -->
                                 <script type="module">
@@ -186,80 +188,111 @@
                                     //         console.log(error);
                                     //     });
                                     // }
-                                    
 
                                     // 自動生成交易對
-                                    for (let i = 0; i < 10; i++){
-                                        axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd&include_24hr_change=true`)
-                                        .then((response) => {
-                                            let data = JSON.parse(JSON.stringify(response.data));
-                                            let gain = data[link[i].name].usd_24h_change;
-                                            gain = Math.round((gain + Number.EPSILON) * 100)/100;
-                                            console.log(gain)
-                                            if (gain > 0){
-                                                document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-up");
-                                                document.getElementById(`price-${i+1}_gain_img`).classList.add("green-text");
-                                                document.getElementById(`price-${i+1}_gain_text`).classList.add("green-text");
-                                                                                                    
-                                            } else if (gain == 0){
-
-                                            }
-                                            else{
-                                                document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-down");
-                                                document.getElementById(`price-${i+1}_gain_img`).classList.add("red-text");
-                                                document.getElementById(`price-${i+1}_gain_text`).classList.add("red-text");
-                                                gain *= -1;
-                                            }                                    
-                                            document.getElementById(`price-${i+1}_gain`).innerHTML = gain + "%";
-                                            document.getElementById(`price-${i+1}`).innerHTML = data[link[i].name].usd;
-                                        })
-                                        .catch((error) => {
-                                            let data;
-                                            let url = getDataurl + `coin=${link[i].coin}/USDT`;
-                                            // url need to be changed
-                                            axios.get(url)
+                                    function autoSpawnCryto(){                                    
+                                        for (let i = 0; i < 10; i++){
+                                            axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd&include_24hr_change=true`)
                                             .then((response) => {
-                                                data = JSON.parse(JSON.stringify(response.data));
-                                                document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
-                                                document.getElementById(`price-${i+1}`).innerHTML = data.result.price;
-                                                return data;
+                                                let data = JSON.parse(JSON.stringify(response.data));
+                                                let gain = data[link[i].name].usd_24h_change;
+                                                gain = Math.round((gain + Number.EPSILON) * 100)/100;
+                                                if (gain > 0){
+                                                    document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-up");
+                                                    document.getElementById(`price-${i+1}_gain_img`).classList.add("green-text");
+                                                    document.getElementById(`price-${i+1}_gain_text`).classList.add("green-text");
+                                                                                                        
+                                                } else if (gain == 0){
+
+                                                }
+                                                else{
+                                                    document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-down");
+                                                    document.getElementById(`price-${i+1}_gain_img`).classList.add("red-text");
+                                                    document.getElementById(`price-${i+1}_gain_text`).classList.add("red-text");
+                                                    gain *= -1;
+                                                }                                    
+                                                document.getElementById(`price-${i+1}_gain`).innerHTML = gain + "%";
+                                                document.getElementById(`price-${i+1}`).innerHTML = data[link[i].name].usd;
                                             })
                                             .catch((error) => {
+                                                let data;
+                                                let url = getDataurl + `coin=${link[i].coin}/USDT`;
+                                                // url need to be changed
+                                                axios.get(url)
+                                                .then((response) => {
+                                                    data = JSON.parse(JSON.stringify(response.data));
+                                                    document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
+                                                    document.getElementById(`price-${i+1}`).innerHTML = data.result.price;
+                                                    return data;
+                                                })
+                                                .catch((error) => {
+                                                    data = error;
+                                                    console.log(error);
+                                                });
+                                                return data;
                                                 data = error;
                                                 console.log(error);
                                             });
-                                            return data;
-                                            data = error;
-                                            console.log(error);
-                                        });
-                                        document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
-
+                                            document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
+                                        }
                                     }
+                                    
+                                    //init
+                                    autoSpawnCryto();
+
+                                    setTimeout(function(){
+                                        autoSpawnCryto();
+                                    }, 30000);
+                                    
                                 </script>                                                                               
-                            </div>                        
-                            <div class="swiper-button-next">
-                            <i class="fa-solid fa-chevron-right" style="
-                            color: black;
-                            height: auto;
-                            font-size: x-large;
-                            position: absolute;
-                            left: 10px;
-                            width: 100%;
-                            text-align: center;
-                            "></i>
+                            </div>                       
+			                <div class="swiper-button-next">                                                      
+                                <i class="fa-solid fa-chevron-right swiper-button-right" id="next"></i>
                             </div>
-                            <div class="swiper-button-prev">
-                            <i class="fa-solid fa-chevron-left" style="
-                            color: black;
-                            height: auto;
-                            font-size: x-large;
-                            position: absolute;
-                            right: 10px;
-                            width: 100%;
-                            text-align: center;
-                            "></i>
-                            </div>
+			                <span class="fa-solid"></span>			    
+                            <div class="swiper-button-prev" style="z-index: 999;">			    
+                                <i class="fa-solid fa-chevron-left swiper-button-left" id="prev"></i>
+                            </div>                            
                             <div class="swiper-pagination"></div>
+                            <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+                            <script>
+                                $(function(){
+                                  $(window).bind('scroll',function(){
+                                    $("#next").css("top", `${82 - $(document).scrollTop()}px`);
+                                    $("#prev").css("top", `${82 - $(document).scrollTop()}px`);
+                                  })                                
+                                }) 
+                            </script>
+                            <style>
+                                .swiper-button-right{                                    
+                                    color: black;
+                                    height: auto;
+                                    font-size: x-large;
+                                    position: fixed;
+                                    left: 45%;
+				                    top: 82px;                                                        
+                                    width: 100%;
+                                    text-align: center;                            
+                                }
+                                .swiper-button-left{                                    
+                                    color: black;
+                                    height: auto;
+                                    font-size: x-large;
+                                    position: fixed;
+                                    right: 45%;                               
+				                    top: 82px;                         
+                                    width: 100%;
+                                    text-align: center;                            
+                                }
+                                @media screen and (min-width:1460px) {
+                                    .swiper-button-right{                                    
+                                        left: 33%;                                                                                   
+                                    }
+                                    .swiper-button-left{                                    
+                                        right: 33%;                                                                                      
+                                    }
+                                }
+                            </style>
                         </div>
                     </div>
                 </div>
