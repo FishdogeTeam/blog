@@ -188,31 +188,19 @@
                                     //         console.log(error);
                                     //     });
                                     // }
-
                                     // 自動生成交易對
-                                    function autoSpawnCryto(){                                    
+                                    function autoSpawnCryto(){      
+                                        let count = 0;                
                                         for (let i = 0; i < 10; i++){
                                             axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd&include_24hr_change=true`)
                                             .then((response) => {
-                                                let data = JSON.parse(JSON.stringify(response.data));
-                                                let gain = data[link[i].name].usd_24h_change;
-                                                gain = Math.round((gain + Number.EPSILON) * 100)/100;
-                                                if (gain > 0){
-                                                    document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-up");
-                                                    document.getElementById(`price-${i+1}_gain_img`).classList.add("green-text");
-                                                    document.getElementById(`price-${i+1}_gain_text`).classList.add("green-text");
-                                                                                                        
-                                                } else if (gain == 0){
-
+                                                let data = JSON.parse(JSON.stringify(response.data));                                                
+                                                document.cookie = `gian${i}=${Math.round((data[link[i].name].usd_24h_change + Number.EPSILON) * 100)/100};`; 
+                                                document.cookie = `value${i}=${data[link[i].name].usd};`;
+                                                count++;                                                
+                                                if(count==9){                                                    
+                                                    getCookie();
                                                 }
-                                                else{
-                                                    document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-down");
-                                                    document.getElementById(`price-${i+1}_gain_img`).classList.add("red-text");
-                                                    document.getElementById(`price-${i+1}_gain_text`).classList.add("red-text");
-                                                    gain *= -1;
-                                                }                                    
-                                                document.getElementById(`price-${i+1}_gain`).innerHTML = gain + "%";
-                                                document.getElementById(`price-${i+1}`).innerHTML = data[link[i].name].usd;
                                             })
                                             .catch((error) => {
                                                 let data;
@@ -228,20 +216,49 @@
                                                 .catch((error) => {
                                                     data = error;
                                                     console.log(error);
+                                                    getCookie();
                                                 });
                                                 return data;
                                                 data = error;
-                                                console.log(error);
+                                                console.log(error);     
+                                                getCookie();                                           
                                             });
                                             document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
-                                        }
+                                        }                                                                                                                 
+                                    }
+
+                                    function getCookie() {                                                
+                                        var Data = document.cookie.split("; ");     
+                                        console.log(Data);
+                                        Data.forEach(element => {
+                                            if(element.substring(0, 4) == "gian"){    
+                                                let gain = parseFloat(element.split('=')[1])
+                                                if (gain > 0){
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_img`).classList.add("fa-caret-up");
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_img`).classList.add("green-text");
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_text`).classList.add("green-text");                                                                                                        
+                                                } else if (gain == 0){
+
+                                                }
+                                                else{
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_img`).classList.add("fa-caret-down");
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_img`).classList.add("red-text");
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_text`).classList.add("red-text");
+                                                    gain *= -1;
+                                                }                                                                                                                                
+                                                document.getElementById(`price-${parseInt(element[4])+1}_gain`).innerHTML = gain + "%";
+                                            }
+                                            else if(element.substring(0, 5) == "value"){                                                   
+                                                document.getElementById(`price-${parseInt(element[5])+1}`).innerHTML = element.split('=')[1];
+                                            }
+                                        });
                                     }
                                     
                                     //init
                                     autoSpawnCryto();
 
                                     setTimeout(function(){
-                                        autoSpawnCryto();
+                                        autoSpawnCryto();                                        
                                     }, 30000);
                                     
                                 </script>                                                                               
