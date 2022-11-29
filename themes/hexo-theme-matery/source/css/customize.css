@@ -10,6 +10,13 @@ button:focus {
     outline: none;
     background-color: none !important;
 }
+.sidenav li a{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.sidenav i{
+    font-size: 20px !important;
+}
 .author-block .author-about{
     margin-left: 10px;
 }
@@ -157,8 +164,10 @@ button:focus {
 }
 
 .btc-price span{
+    line-height: 55px;
     margin-right: 10px;
     font-size: 16px;
+    font-weight: 500;
     padding-top: 0px;
     vertical-align: top;
 }
@@ -166,6 +175,16 @@ button:focus {
     font-size: 16px;
     height: 20px;
 }
+.btc-price #btc-block-date{
+    margin-left: 4px;
+}
+.btc-price .iconMoney{
+    margin-left: 28px;
+}
+.btc-price .iconBlock{
+    margin-left: 20px;
+}
+
 .stock-price i{
     font-size: 16px;
     height: 20px;
@@ -338,13 +357,53 @@ footer hr{
 }
 .nav .nav-menu{
     padding: 0px;
+    /* height: 110px; */
 }
 .nav .nav-menu .logo-block a{
-    padding-left: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 .nav .nav-menu .logo-img{
     padding-left: 0px;
-    padding-right: 60px;
+    margin-right: 60px;
+    padding-bottom: 0px;
+    width: 69px;
+    height: 42px;
+    margin-top: 34px;
+    margin-bottom: 34px;
+}
+.nav .nav-menu a{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    height: auto;
+    font-style: normal;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.nav .nav-menu i{
+    height: auto;
+    font-size: 25px;
+    line-height: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.nav .nav-menu .right {
+    height: 110px;
+}
+.nav .nav-menu .right a{
+    height: 100%;
+}
+.nav .nav-menu .modal-trigger {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.nav .nav-menu .modal-trigger #searchIcon{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    line-height: 30px;
+    font-size: 25px;
+    zoom: 1 !important;
 }
 
 /*carousel*/
@@ -379,15 +438,15 @@ footer hr{
     content: ''
 }
 .swiper-btc-block-date{
-    width: 150px!important;
+    width: 135px!important;
     text-align:left!important;
 }
 .swiper-btc-block-value{
-    width: 250px!important;
+    width: 220px!important;
     text-align:left!important;
 }
 .swiper-btc-block-high{
-    width: 200px!important;
+    width: 220px!important;
     text-align:left!important;
 }
 .swiper-headline{
@@ -494,6 +553,35 @@ footer hr{
 
 @media only screen and (max-width: 601px) {
     
+    .nav .nav-menu .right {
+        height: 60px;
+    }
+    .nav .nav-menu .logo-block img{
+        height: 30px;
+        width: 50px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .nav .nav-menu .logo-block a{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .nav .nav-menu .right .tagMenu{
+        width: 20px;
+        height: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }    
+    .nav .nav-menu .right #searchIcon{
+        font-size: 20px;
+        height: 30px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .nav .nav-menu .right i{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
     article .card-title{
         margin-top: 12px;
     }

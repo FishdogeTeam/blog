@@ -50,8 +50,8 @@
 /*大屏幕下(桌面类)的样式*/
 @media only screen and (min-width: 993px) {
     .container {
-        width: 90%;
-        max-width: 1280px;
+        width: 100%;
+        max-width: 94%;
     }
 
     .head-container {

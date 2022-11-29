@@ -50,7 +50,7 @@
 
       <!-- 展開的三條線 tagMenu-->
       <a data-target="slide-out" class="hide-on-med-and-up modal-trigger waves-effect waves-light">
-        <img href="#" src="<%- theme.jsDelivr.url %><%- url_for(theme.tagMenu) %>" alt="">
+        <img href="#" class ="tagMenu" src="<%- theme.jsDelivr.url %><%- url_for(theme.tagMenu) %>" alt="">
         <!-- <i id="MenuIcon" class="fas fa-search orange-text" title="<%= __('search') %>" style="zoom: 0.85;"></i> -->
       </a>
       <ul id="slide-out" class="sidenav" style="transform: translateX(0%); display: none;">
@@ -87,7 +87,7 @@
             <% } %>
           </li>
           <% }); %>
-        <div class="col s12 m4 l4 social-link right hide-on-med-and-up nav-item" style="margin-left: 20px;"><%- partial('_partial/social-link') %></div>
+        <div class="col s12 m4 l4 social-link hide-on-med-and-up nav-item" style=""><%- partial('_partial/social-link') %></div>
       </ul>
     </li>
   </ul>
