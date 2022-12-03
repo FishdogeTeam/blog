@@ -40,15 +40,13 @@
       <% } %>
     </li>
     <% }); %>
+         
     <div class="col s12 m4 l4 social-link right hide-on-med-and-down nav-item"><%- partial('_partial/social-link') %></div>
     
     <li class="right">
-      <!-- 搜尋 -->
-      <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-        <i id="searchIcon" class="fas fa-search orange-text" title="<%= __('search') %>" style="zoom: 0.85;"></i>
-      </a>
+      
 
-      <!-- 展開的三條線 tagMenu-->
+           <!-- 展開的三條線 tagMenu-->
       <a data-target="slide-out" class="hide-on-med-and-up modal-trigger waves-effect waves-light">
         <img href="#" class ="tagMenu" src="<%- theme.jsDelivr.url %><%- url_for(theme.tagMenu) %>" alt="">
         <!-- <i id="MenuIcon" class="fas fa-search orange-text" title="<%= __('search') %>" style="zoom: 0.85;"></i> -->
@@ -88,8 +86,16 @@
           </li>
           <% }); %>
         <div class="col s12 m4 l4 social-link hide-on-med-and-up nav-item" style=""><%- partial('_partial/social-link') %></div>
+
       </ul>
     </li>
+<!-- 搜尋 -->
+	<div class="right">
+		<a href="#searchModal" class="modal-trigger waves-effect waves-light">
+		        <i id="searchIcon" class="fas fa-search orange-text" title="<%= __('search') %>" style="zoom: 0.85;"></i>
+	      </a>
+	</div>
+
   </ul>
 
         
