@@ -418,6 +418,14 @@ footer hr{
 .slide-container{
     box-shadow: -2px 2px 3px 1px rgba(128, 128, 128, 0.3);   
 }
+.swiper .tagRight{
+    position: absolute;
+    left: 1px;
+}
+.swiper .tagLeft{
+    position: absolute;
+    right: 1px;
+}
 /* .container{
     min-width: 98%;
 } */
