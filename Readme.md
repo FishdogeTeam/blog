@@ -6,10 +6,10 @@
 
 ## 安裝hexo套件與blog檔案
 4. 打開Vscode，點擊左上角檔案總管->開啟資料夾->選擇資料夾，到要下載檔案的資料夾
-5. 上方介面點擊終端機(terminal)->新增終端 6.下方命令列(cmd)輸入 npm install -g he xo-cli
-7. 下方命令列(cmd)輸入 git clone https://github.com/FishdogeTeam/blog.git
-8. 下方命令列(cmd)輸入 cd blog，用意為進入blog資料夾
-9. 下方命令列(cmd)輸入 npm install，系統會開始安裝相依套件 前置工作完成~~~~
+5. 上方介面點擊終端機(terminal)->新增終端->下方命令列(cmd)輸入 npm install -g hexo-cli
+6. 下方命令列(cmd)輸入 git clone https://github.com/FishdogeTeam/blog.git
+7. 下方命令列(cmd)輸入 cd blog，用意為進入blog資料夾
+8. 下方命令列(cmd)輸入 npm install，系統會開始安裝相依套件，前置工作完成~~~~
 
 # 新增作者步驟
 1. 打開Vscode，點擊左上角檔案總管->開啟資料夾->選擇到blog資料夾(很重要!!!)
