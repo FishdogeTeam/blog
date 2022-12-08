@@ -24,8 +24,8 @@
 2. 上方介面點擊終端機(terminal)->新增終端(確認下方命令列路徑必須是在blog資料夾)
 3. 下方命令列(cmd)輸入 hexo new post 「文章名稱」
 4. 左側介面點擊打開source->_posts，點擊進入剛剛新增的文章
-5. 上下---之中內容為文章的設定，剛開始會幫你新增好title、date，tags(關鍵字)、authorId(作者名稱)、summary(內文預覽)、img(文章大圖位址)需自行寫入
-6. tags以- 「關鍵字名稱」，重要性由上至下寫入，其餘authorId、summary、img可參考範例文章(記得冒號後面要加一個空格!!!)
+5. 上下---之中內容為文章的設定，剛開始會幫你新增好title、date，tags(關鍵字)、authorId(作者名稱)、summary(內文預覽)、quotation(內文引述)(可以不寫)、img(文章大圖位址)需自行寫入
+6. tags以- 「關鍵字名稱」，重要性由上至下寫入，其餘authorId、summary、quotation、img可參考範例文章(記得冒號後面要加一個空格!!!)
 7. ---下方開始撰寫文章內容，若要新增文章內圖片，語法為 「圖片名稱(自定義)」，撰寫完成後按下ctrl+s進行儲存
 8. 下方命令列(cmd)輸入 hexo clean->輸入hexo deploy
 9. 到https://www.fishdogeweb.store/ 確認更新生效，部署需要一些時間，有時須等候一下

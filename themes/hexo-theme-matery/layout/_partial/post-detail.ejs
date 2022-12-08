@@ -31,13 +31,15 @@
                 <img src="<%- url_for(page.img) %>" class="responsive-img" alt="">
             <% } %>
             <div class="img-bg"></div>
-            <div class="quotation black">
-                <p class="white-text">
-                    <p class="white-text q-mark">“<br></p> 
-                    <p class="white-text q-content"><%- page.quotation %><br></p>
-                    <p class="white-text q-mark" style="text-align: right">”</p> 
-                </p>
-            </div>
+            <% if(page.quotation != undefined){ %>
+                <div class="quotation black">
+                    <p class="white-text">
+                        <p class="white-text q-mark">“<br></p> 
+                        <p class="white-text q-content"><%- page.quotation %><br></p>
+                        <p class="white-text q-mark" style="text-align: right">”</p> 
+                    </p>
+                </div>
+            <% } %>
         </div>
         <!-- 資訊 -->
         <div class="post-info">
