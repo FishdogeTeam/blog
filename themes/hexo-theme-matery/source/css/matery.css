@@ -129,7 +129,7 @@
         height: 20vmax;
         max-height: 100vmax; 
         min-height: 190px;
-        margin-top: 19px;
+        margin-top: 30px;
     }
     .headline-block{
         width: 100%;
@@ -863,13 +863,6 @@ header .go-back i {
     }
 }
 
-/*中等屏幕下(平板类)的样式*/
-@media only screen and (min-width: 600px) and (max-width: 992px) {
-    .index-card .card .card-content {
-        padding: 20px 20px;
-    }
-}
-
 .recommend .row .col {
     padding: 0 1.25rem;
 }
@@ -1253,9 +1246,27 @@ article .article-tags {
     #artDetail .article-info {
         padding: 15px 15px 1px 15px;
         margin-bottom: -5px;
+    }    
+    .article-main-post{
+        margin-top: 20px;
     }
 }
-
+/*中等屏幕下(平板类)的样式*/
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    .index-card .card .card-content {
+        padding: 20px 20px;
+    }
+    article .publish-info {
+        max-height: 12vmax;
+        min-height: 12vmax;
+    }
+    article .card-image img {
+        max-height: 12vmax;
+    }
+    article .article-main-post {
+        height: 12vmax;
+    }
+}
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     #artDetail .article-card-content {
         padding: 0 30px 20px 32px;

@@ -484,7 +484,7 @@ footer hr{
 
 /*content*/
 .content{
-    padding-top: 7%;
+    padding-top: 9%;
     clear: both;
 }
 @media only screen and (max-width: 600px){
@@ -587,6 +587,46 @@ footer hr{
 
 
 @media only screen and (max-width: 601px) {
+    .url-now{        
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    #artDetail .container{
+        width: 100%;
+    }
+    #artDetail .post-info,.post-title,.card-content{
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    #prenext-posts .related-posts{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #prenext-posts .article-row{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #artDetail .post-img img {
+        height: 100vmax;
+        max-height: 320px;
+        object-fit: cover;
+        width: 100vw;
+        /* min-width: 100vw; */
+    }
+    #artDetail .post-img .quotation {
+        padding: 20px 12px;
+        width: 100vmax;
+        max-width: 335px;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        bottom: -60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #artDetail .post-info-tags {
+        margin-top: 80px;
+    }
     .author-pic{
         max-width: 100px;
         max-height: 100px;
@@ -627,11 +667,11 @@ footer hr{
         display: none;
     }
     article .card-image img {
-        max-height: 150px;
+        max-height: 170px;
     }
     article .publish-info {
         /* max-height: 150px; */
-        min-height: 150px;
+        min-height: 120px;
     }
     
     /* footer區塊1 */
