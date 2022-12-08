@@ -732,3 +732,8 @@ footer hr{
         height: 28vmax!important;
     }
 }
+@media only screen and (min-width: 1440px) {
+    .content{
+        padding-top: 5%;        
+    }
+}
