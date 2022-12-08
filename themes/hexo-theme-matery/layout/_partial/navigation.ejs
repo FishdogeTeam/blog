@@ -55,14 +55,14 @@
         <% Object.keys(theme.menu).forEach(function(key) { %>
           <li class="hide-on-med-and-up nav-item">
             <% if(!theme.menu[key].children) { %>
-            <a href="#<%- url_for(theme.menu[key].url) %>" class="waves-effect waves-light black-text bold">
+            <a href="<%- url_for(theme.menu[key].url) %>" class="waves-effect waves-light black-text bold">
               <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
               <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
               <% } %>
               <span><%- __(key) %></span>
             </a>
             <% } else { %>
-            <a href="#<%- theme.menu[key].url %>" class="waves-effect waves-light">
+            <a href="<%- theme.menu[key].url %>" class="waves-effect waves-light">
       
               <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
               <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
@@ -73,7 +73,7 @@
             <ul class="sub-nav menus_item_child ">
               <% for(let childrenLink of theme.menu[key].children){ %>
               <li>
-                <a href="#<%- url_for(childrenLink.url)%>">
+                <a href="<%- url_for(childrenLink.url)%>">
                   <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
                   <i class="<%- childrenLink.icon %>" style="margin-top: -20px; zoom: 0.6;"></i>
                   <% } %>
