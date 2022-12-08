@@ -1749,12 +1749,12 @@ thead {
     color: #777;
 }
 
-#aboutme .social-link {
+.about-container .social-link {
     margin: 0.5rem 0;
     text-align: center;
 }
 
-#aboutme .social-link a {
+.about-container .social-link a {
     display: inline-block;
     width: 2.3rem;
     height: 2.3rem;

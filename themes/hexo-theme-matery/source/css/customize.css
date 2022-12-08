@@ -169,14 +169,11 @@ button:focus {
     font-weight: 500;
 }
 
-#aboutme h1{
+.about-container h1{
     padding-top: 30px;
 }
-#aboutme .social-link{
+.about-container .social-link{
     padding-bottom: 30px;
-}
-#aboutme.about-container{
-    margin-bottom: 30px;
 }
 
 .btc-price span{
@@ -563,15 +560,17 @@ footer hr{
 }
 
 /*about page*/
-#aboutme{
+.about-container{
     background: #3f3f3f;
+    margin-bottom: 30px;
 }
-#aboutme h1{
+.about-container h1{
     color: white;
 }
-#aboutme .about-info{
+.about-container .about-info{
     color: white;
     line-height: 30px;
+    margin-top: 70px;
 }
 
 /* author-block */
