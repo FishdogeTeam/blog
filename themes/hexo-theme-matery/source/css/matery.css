@@ -1048,8 +1048,9 @@ article .card .card-content {
 
 article .article-content .summary {
     padding-left: 0;
-    margin-top: 4px;
+    /* margin-top: 4px; */
     margin-bottom: 4px;
+    line-height: 23.17px;
     word-break: break-all;
 }
 

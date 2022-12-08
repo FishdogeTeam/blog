@@ -6,9 +6,25 @@ body{
 h1{
     margin-left: 10px;
 }
+.author-pic{
+    max-width: 200px;
+    max-height: 200px;
+}
+.content{
+    min-height: 60vh !important;
+}
 button:focus {
     outline: none;
     background-color: none !important;
+}
+#articles .article-pic{
+    object-fit: cover;
+}
+#articles .author-link{
+    margin-bottom: 4px;
+}
+#articles .publish-date{
+    margin-bottom: 4px;    
 }
 .sidenav li a{
     padding-left: 10px;
@@ -468,7 +484,7 @@ footer hr{
 
 /*content*/
 .content{
-    padding-top: 5%;
+    padding-top: 7%;
     clear: both;
 }
 @media only screen and (max-width: 600px){
@@ -500,7 +516,7 @@ footer hr{
     margin-right: 15px;
 }
 .author-info{
-    position: absolute;
+    /* position: absolute; */
     bottom: 40px;
 }
 
@@ -558,9 +574,23 @@ footer hr{
     line-height: 30px;
 }
 
+/* author-block */
+.author-block{
+    margin-bottom: 20px;
+}
+.author-block span{
+    display: block;
+}
+.authors-page{
+    margin-bottom: 5vh;    
+}
+
 
 @media only screen and (max-width: 601px) {
-    
+    .author-pic{
+        max-width: 100px;
+        max-height: 100px;
+    }
     .nav .nav-menu .right {
         height: 60px;
     }
@@ -646,26 +676,48 @@ footer hr{
     footer .nft-row{
         margin-bottom: 20px;
         border-bottom: solid 1px black;
+        padding-right: 0px !important;
     }
 
     footer .coin-block{
-        grid-template: 1fr 1fr 1fr/ 1fr;
+        display: grid;
+        grid-template: 1fr 1fr 1fr / 100%;
+        margin: 0px;
+        width: 100%;
     }
     footer .coin-left{
-        grid-area: 1 / 1;
+        grid-column: 1;
+        grid-row: 1;
         justify-content: start; 
     }
     footer .coin-right{
-        grid-area: 2 / 1;
+        grid-column: 1;
+        grid-row: 2;
         justify-content: start; 
     }
+    footer .coin-left h2{
+        display: inline-block;
+        text-align: left;
+        padding: 0px;
+        margin: 0px;
+    }
+    footer .coin-right h4{
+        display: inline-block;
+        text-align: left;
+        padding: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
     footer hr{
-        grid-area: 3 / 1;
+        grid-column: 1;
+        grid-row: 3;
     }
 }
 
-
 @media only screen and (min-width: 1000px) {
+    .content{
+        padding-top: 10%;        
+    }
     .swiper-headline{
         height: 38vmax!important;
     }
