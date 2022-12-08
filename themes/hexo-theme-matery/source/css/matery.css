@@ -30,6 +30,10 @@
     .container {
         width: 90%;
     }
+    /* #prenext-posts{
+        padding-left: 5%;
+        padding-right: 5%;
+    } */
     .article-main-post{
         /* height: 100vmax; */
         height: 20vmax;
@@ -1729,7 +1733,11 @@ thead {
 
 @media only screen and (max-width: 601px) {
     .about-container {
-        width: 95%;
+        width: 100%;
+    }
+    .about-info{
+        padding-left: 4%;
+        padding-right: 4%;
     }
 }
 

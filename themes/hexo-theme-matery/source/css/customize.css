@@ -586,14 +586,16 @@ footer hr{
 
 
 @media only screen and (max-width: 601px) {
-    .url-now{        
+    /* .url-now{        
         padding-left: 4%;
         padding-right: 4%;
-    }
+    } */
     #artDetail .container{
         width: 100%;
     }
     #artDetail .post-info,.post-title,.card-content{
+        padding-left: 0!important;
+        padding-right: 0!important;
         margin-left: 4%;
         margin-right: 4%;
     }
