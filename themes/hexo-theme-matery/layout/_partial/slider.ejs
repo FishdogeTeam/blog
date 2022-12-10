@@ -9,10 +9,10 @@
         <div class="swiper-slide"><a href="/tags/GameFi">GameFi</a></div>
         <div class="swiper-slide"><a href="/tags/NFT">NFT</a></div>
       </div>
-      <div class="swiper-button-next">       
+      <div class="swiper-button-next" style="right: 14px;">       
         <img class="tagRight" src="<%- theme.jsDelivr.url %><%- url_for(theme.tagRight) %>">
       </div>
-      <div class="swiper-button-prev">
+      <div class="swiper-button-prev" style="left: 14px;">
         <img class="tagLeft" src="<%- theme.jsDelivr.url %><%- url_for(theme.tagLeft) %>">
       </div>
       
@@ -27,8 +27,9 @@
   //輪播套件js
   const swiper = new Swiper(".mySwiper", {
     slidesPerView: 10,
-    spaceBetween: -10,
+    spaceBetween: -25,
     slidesPerGroup: 3,
+    initialSlide: 3,
     loop: true,
     loopFillGroupWithBlank: false,
     pagination: {
