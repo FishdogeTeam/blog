@@ -993,12 +993,6 @@ article a {
     text-transform: none !important;
 }
 
-article a:hover {
-    font-weight: bold;
-    color: #42b983;
-    text-decoration: underline;
-}
-
 .articles .row {
     margin-left: 0;
     margin-right: 0;
@@ -1011,7 +1005,7 @@ article .card {
 article .publish-info {
     border-bottom: solid 1px black;
     max-height: 13vmax;
-    min-height: 190px;
+    min-height: 180px;
 }
 
 article .card-title {

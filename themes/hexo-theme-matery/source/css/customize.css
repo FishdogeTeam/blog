@@ -17,6 +17,44 @@ button:focus {
     outline: none;
     background-color: none !important;
 }
+/*ads*/
+.ad-block{
+    background-image: url("/medias/ads.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    -ms-content-zooming: none;
+    position: relative;
+    width: 100vw;
+    height: 110px;
+}
+.ad-text{
+    position: absolute;
+    font-size: 24px;
+    color: white;
+    width: 264px;
+    height: 72px;
+    top:13%;
+    left: 9%;
+}
+.ad-close{
+    position: absolute;
+    width: 39px;
+    height: 39px;
+    top: 30%;
+    right: 10%;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.ad-close img{
+    width: 39px;
+    height: 39px;
+}
+
 #articles .article-pic{
     object-fit: cover;
 }
@@ -634,35 +672,6 @@ footer hr{
         max-width: 100px;
         max-height: 100px;
     }
-    .nav .nav-menu .right {
-        height: 60px;
-    }
-    .nav .nav-menu .logo-block img{
-        height: 30px;
-        width: 50px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    .nav .nav-menu .logo-block a{
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
-    .nav .nav-menu .right .tagMenu{
-        width: 20px;
-        height: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }    
-    .nav .nav-menu .right #searchIcon{
-        font-size: 20px;
-        height: 30px;
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    .nav .nav-menu .right i{
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
     article .card-title{
         margin-top: 12px;
     }
@@ -755,8 +764,48 @@ footer hr{
         grid-column: 1;
         grid-row: 3;
     }
+    .ad-text{
+        width: 180px;
+        font-size: 16px;
+        top:21%;
+        left: 10%;
+    }
+    .ad-close img{
+        width: 30px;
+        height: 30px;
+    }
 }
-
+@media only screen and (max-width: 991px) {    
+    .nav .nav-menu .right {
+        height: 60px;
+    }
+    .nav .nav-menu .logo-block img{
+        height: 30px;
+        width: 50px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .nav .nav-menu .logo-block a{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .nav .nav-menu .right .tagMenu{
+        width: 20px;
+        height: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }    
+    .nav .nav-menu .right #searchIcon{
+        font-size: 20px;
+        height: 30px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .nav .nav-menu .right i{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
 @media only screen and (min-width: 1000px) {    
     .content{
         padding-top: 10%;        
@@ -778,5 +827,22 @@ footer hr{
 @media only screen and (min-width: 1440px) {
     .content{
         padding-top: 5%;        
+    }
+    
+}
+@media only screen and (min-width: 1441px) {
+    .ad-text{
+        left: 19%;
+    }
+    .ad-close{
+        right: 20%;
+    }
+}
+@media only screen and (min-width: 2560px) {
+    .ad-text{
+        left: 26%;
+    }
+    .ad-close{
+        right: 26%;
     }
 }

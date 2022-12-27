@@ -69,6 +69,19 @@
                 <hr>
             </div>
         </div>
+        <div id="bottom-ad" class="ad-block">
+            <span class="ad-text">廣告廣告廣告廣告廣告廣告廣告廣告</span>
+            <button id="bottom-closeBtn" class="ad-close"><img src="/medias/ad-close.svg"></button>
+        </div>
     </div>
+    <!--移除底部廣告-->
+    <script>
+        const bottomCloseBtn=document.getElementById('bottom-closeBtn')
+        const bottomAD=document.getElementById('bottom-ad') 
+
+        bottomCloseBtn.addEventListener('click',()=>{
+            bottomAD.remove() 
+        }) 
+    </script>
 </footer>
 <!-- <div class="progress-bar"></div> -->

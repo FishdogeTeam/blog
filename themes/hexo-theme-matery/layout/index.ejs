@@ -115,7 +115,7 @@
                                     <!--index文章若超過5個tags取前五顯示-->
                                     <% 
                                         let fiveTags=post.tags.filter((tag,index,arr) => {
-                                        return index < 5
+                                        return index < 3
                                         })
                                      %>
                                     <% if(post.tags && post.tags.length < 6) { %>

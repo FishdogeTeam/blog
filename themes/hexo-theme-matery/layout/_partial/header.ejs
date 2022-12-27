@@ -1,6 +1,10 @@
 
 <!-- <header class="navbar-fixed"> -->
  <header class="navbar">
+    <div id="header-ad" class="ad-block">
+        <span class="ad-text">廣告廣告廣告廣告廣告廣告廣告廣告</span>
+        <button id="header-closeBtn" class="ad-close"><img src="/medias/ad-close.svg"></button>
+    </div>
     <nav id="headNav" class="bg-color nav-transparent">
         <div class="bitcoin-price grey lighten-4">
             <div class="btc-price black ">
@@ -305,6 +309,15 @@
                 </div>
             </div>
         </div>
+        <!--移除頂部廣告-->
+        <script>
+            const headerCloseBtn=document.getElementById('header-closeBtn')
+            const headerAD=document.getElementById('header-ad') 
+
+            headerCloseBtn.addEventListener('click',()=>{
+                headerAD.remove() 
+            }) 
+        </script>
         <%- partial('_partial/navigation') %>
         <%- partial('_partial/slider') %>
 
