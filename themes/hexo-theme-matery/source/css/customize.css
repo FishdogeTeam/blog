@@ -646,6 +646,17 @@ footer hr{
         padding-left: 4%;
         padding-right: 4%;
     } */
+    footer .footer-info h3 {
+        font-size: 16px;
+        font-weight: 400;
+        padding-bottom: 15px;
+    }
+    footer .nftimg {
+        max-height: 75px;
+    }
+    footer .nft-rows.row {
+        max-height: 100px;
+    }
     #artDetail .container{
         width: 100%;
     }
