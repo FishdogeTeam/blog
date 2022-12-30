@@ -53,6 +53,9 @@
 
 /*大屏幕下(桌面类)的样式*/
 @media only screen and (min-width: 993px) {
+    #articles {
+        max-width: 1280px;
+    }
     .container {
         width: 95%;
         max-width: 1360px;
@@ -2212,7 +2215,7 @@ p.search-result-summary{
 }
 
 .nav-show i[aria-hidden=true] {
-    -webkit-transform: rotate(180deg) !important;
+    /* -webkit-transform: rotate(180deg) !important;
     -moz-transform: rotate(180deg) !important;
     -o-transform: rotate(180deg) !important;
     -ms-transform: rotate(180deg) !important;
@@ -2220,7 +2223,7 @@ p.search-result-summary{
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -o-transition: all .3s;
-    transition: all .3s;
+    transition: all .3s; */
 }
 
 .menus_item_child {
@@ -2266,7 +2269,7 @@ p.search-result-summary{
 }
 
 .m-nav-show .m-icon {
-    -webkit-transform: rotate(90deg) !important;
+    /* -webkit-transform: rotate(90deg) !important;
     -moz-transform: rotate(90deg) !important;
     -o-transform: rotate(90deg) !important;
     -ms-transform: rotate(90deg) !important;
@@ -2274,13 +2277,13 @@ p.search-result-summary{
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -o-transition: all .3s;
-    transition: all .3s;
+    transition: all .3s; */
 }
 
 .m-nav-show,
 .m-nav-item > a:hover {
-    color: #FFF;
-    background: rgba(255, 255, 255, .8);
+    /* color: #FFF; */ */
+    /* background: rgba(255, 255, 255, .8);
 }
 
 .m-nav-show > a:before,

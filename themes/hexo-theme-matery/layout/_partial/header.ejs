@@ -22,76 +22,82 @@
                                         margin-right: -33.89999999999998px;
                                  -->
                                 <div class="swiper-slide swiper-btc-block-date" style="height:60px;">
-                                    <span style="color: white">
-                                        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCal) %>" class="responsive-img" alt="iconCal" style="height:15px; width: 15px; display: inline-block;">
-                                        <span id="btc-block-date" style="display: inline-block; color: white">
-                                            <script>
-                                                var today = new Date();
-                                                var dd = String(today.getDate()).padStart(2, '0');
-                                                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0
-                                                var yyyy = today.getFullYear();
-                                                today = yyyy+ '/' + mm + '/' + dd;
-                                                document.getElementById("btc-block-date").innerHTML =  today;                           
-                                            </script>
+                                    <a href="">
+                                        <span style="color: white">
+                                            <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCal) %>" class="responsive-img" alt="iconCal" style="margin-top: 20px; height:16px; width: 16px; display: inline-block;">
+                                            <span id="btc-block-date" style="display: inline-block; color: white">
+                                                <script>
+                                                    var today = new Date();
+                                                    var dd = String(today.getDate()).padStart(2, '0');
+                                                    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0
+                                                    var yyyy = today.getFullYear();
+                                                    today = yyyy+ '/' + mm + '/' + dd;
+                                                    document.getElementById("btc-block-date").innerHTML =  today;                           
+                                                </script>
+                                            </span>
                                         </span>
-                                    </span>
+                                    </a>
                                 </div>
                                 <div class="swiper-slide swiper-btc-block-value" style="height:60px;">
-                                    <span id="header_cropto_name" style="color: white">
-                                        BTC
-                                        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img iconMoney" alt="iconMoney" style="height:15px; width: 15px; display: inline-block;">                                        
-                                    </span>
-                                
-                                    <span style="color: white">價格：
-                                        <span id="header_crypto_price" style="color: White; display:inline-block; width:60px; margin: 0px;">
-                                            <script type="module">
-                                                // get data from the func "getData"
-                                                // let priceMsg;
-                                                let data;
-    
-                                                axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
-                                                    .then((response) => {
-                                                        data = JSON.parse(JSON.stringify(response.data));
-                                                        document.getElementById("header_crypto_price").innerHTML = data.bitcoin.usd;
-                                                    })
-                                                    .catch((error) => {
-                                                        let data;
-                                                        let url = "<%- theme.stock.getCryptoUrl%>" + 'coin=BTC/USDT';
-                                                        // url need to be changed
-                                                        axios.get(url)
+                                    <a href="">
+                                        <span id="header_cropto_name" style="color: white">
+                                            <span>BTC</span> 
+                                            <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img iconMoney" alt="iconMoney" style="margin-top: 20px; height:16px; width: 16px; display: inline-block;">                                        
+                                        </span>
+                                    
+                                        <span style="color: white">價格：
+                                            <span id="header_crypto_price" style="color: White; display:inline-block; width:60px; margin: 0px;">
+                                                <script type="module">
+                                                    // get data from the func "getData"
+                                                    // let priceMsg;
+                                                    let data;
+        
+                                                    axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
                                                         .then((response) => {
                                                             data = JSON.parse(JSON.stringify(response.data));
-                                                            document.getElementById("header_crypto_price").innerHTML = data.result.price;
+                                                            document.getElementById("header_crypto_price").innerHTML = data.bitcoin.usd;
                                                         })
                                                         .catch((error) => {
+                                                            let data;
+                                                            let url = "<%- theme.stock.getCryptoUrl%>" + 'coin=BTC/USDT';
+                                                            // url need to be changed
+                                                            axios.get(url)
+                                                            .then((response) => {
+                                                                data = JSON.parse(JSON.stringify(response.data));
+                                                                document.getElementById("header_crypto_price").innerHTML = data.result.price;
+                                                            })
+                                                            .catch((error) => {
+                                                                data = error;
+                                                                console.log(error);
+                                                            });
+                                                            return data;
                                                             data = error;
                                                             console.log(error);
                                                         });
-                                                        return data;
-                                                        data = error;
-                                                        console.log(error);
-                                                    });
-                                            </script>
+                                                </script>
+                                            </span>
                                         </span>
-                                    </span>
+                                    </a>
                                 </div>
-                                <div class="swiper-slide swiper-btc-block-high" style="height:60px;">                                  
-                                    <span style="color: white">
-                                        |
-                                        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img iconBlock" alt="iconBlock" style="height:15px; width: 15px; display: inline-block;">
-                                        區塊高度：
-                                        <span id="header_crypto_blockhigh" style="color: White; display:inline-block; width:60px; margin: 0px;">
-                                            <script type="module">
-                                                // get data from the func "getBlockHeight"
-                                                import {getBlockHeight} from '/js/crypto.js'
-                                                getBlockHeight().then( res => {
-                                                    // let blockhighMsg = res; //res.result.區塊高度;
-                                                    // show the blockhigh
-                                                    document.getElementById("header_crypto_blockhigh").innerHTML = res;
-                                                });
-                                            </script>
+                                <div class="swiper-slide swiper-btc-block-high" style="height:60px;">    
+                                    <a href="">                       
+                                        <span style="color: white">
+                                            <span>|</span> 
+                                            <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img iconBlock" alt="iconBlock" style="margin-top: 20px; height:16px; width: 16px; display: inline-block;">
+                                            <span>區塊高度：</span>
+                                            <span id="header_crypto_blockhigh" style="color: White; display:inline-block; width:60px; margin: 0px;">
+                                                <script type="module">
+                                                    // get data from the func "getBlockHeight"
+                                                    import {getBlockHeight} from '/js/crypto.js'
+                                                    getBlockHeight().then( res => {
+                                                        // let blockhighMsg = res; //res.result.區塊高度;
+                                                        // show the blockhigh
+                                                        document.getElementById("header_crypto_blockhigh").innerHTML = res;
+                                                    });
+                                                </script>
+                                            </span>
                                         </span>
-                                    </span>
+                                    </a>       
                                 </div>                                
                                 
                                 
