@@ -50,17 +50,18 @@ button:focus {
 }
 .ad-close{
     position: absolute;
-    width: 39px;
-    height: 39px;
-    top: 30%;
+    width: 28px;
+    height: 28px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 10%;
     cursor: pointer;
     background: none;
     border: none;
 }
 .ad-close img{
-    width: 39px;
-    height: 39px;
+    width: 28px;
+    height: 28px;
 }
 
 #articles .article-pic{
