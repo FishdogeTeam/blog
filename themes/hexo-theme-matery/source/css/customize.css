@@ -9,6 +9,9 @@ body{
 h1{
     margin-left: 10px;
 }
+.responsive-img{
+    object-fit: cover;
+}
 .author-pic{
     max-width: 200px;
     max-height: 200px;
