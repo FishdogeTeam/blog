@@ -344,6 +344,17 @@ footer .footer-info{
     border-bottom: solid 1px black;
     padding-right: 0px !important;
 }
+footer .footer-info h3{
+    font-family: Noto Sans TC;
+    font-size: 20px;
+    font-weight: 500;
+}
+footer .footer-info a{
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 30px;
+    height: 50px;
+}
 footer .nftimg{
     height: 100vh;
     max-height: 155px;
@@ -647,13 +658,23 @@ footer hr{
         padding-left: 4%;
         padding-right: 4%;
     } */
+    
+    footer .footer-info a{
+        padding: 6px 15px;
+        font-size: 16px;
+        line-height: 30px;
+        height: 42px;
+    }
+    footer .footer-info .btn-right{
+        margin-right: 0px;
+    }
     footer .footer-info h3 {
         font-size: 16px;
         font-weight: 400;
         padding-bottom: 15px;
     }
     footer .nftimg {
-        max-height: 75px;
+        max-height: 80px;
     }
     footer .nft-rows.row {
         max-height: 100px;
