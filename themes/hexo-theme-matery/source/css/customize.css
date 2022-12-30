@@ -190,9 +190,9 @@ button:focus {
     display: inline-block;
     /* margin-left: 474px; */
     padding: 20px 12px;
-    max-width: 400px;
+    width: 100%;
     position: absolute;
-    right: 26px;
+    left: 0%;
     bottom: -30px;
 }
 #artDetail .post-img .quotation p{
