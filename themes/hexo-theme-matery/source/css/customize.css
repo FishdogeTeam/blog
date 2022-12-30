@@ -658,7 +658,9 @@ footer hr{
         padding-left: 4%;
         padding-right: 4%;
     } */
-    
+    .ad-block{
+        height: 80px;
+    }
     footer .footer-info a{
         padding: 6px 15px;
         font-size: 16px;
