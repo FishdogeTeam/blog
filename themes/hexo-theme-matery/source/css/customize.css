@@ -332,16 +332,22 @@ footer .nft-rows{
     height: 100vh;
     max-height: 155px;
 }
+footer .nft-row{
+    box-sizing: border-box;
+    padding-right: 32px !important;
+}
 footer .footer-info{
     height: 100vh;
     max-height: 155px;
     border-bottom: solid 1px black;
     padding-right: 0px !important;
 }
-footer .coin-block{
-    /* display: grid;
-    grid-template-columns: 50% 50%;
-    margin-top: 40px; */
+footer .nftimg{
+    height: 100vh;
+    max-height: 155px;
+}
+footer .nftimg .responsive-img{
+    height: 100%;
 }
 footer .coin-left{
     grid-column-start: 1;
