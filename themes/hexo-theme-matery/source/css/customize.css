@@ -257,8 +257,8 @@ button:focus {
 
 /* footer區塊1 */
 footer .footer-nav{
-    margin-top: 25px;
-    margin-bottom: 25px;
+    padding-top: 55px;
+    padding-bottom: 55px;
     display: grid;
     grid-template-columns: 30% 70%;
 }
@@ -276,6 +276,7 @@ footer .footer-nav .footer-item{
     display: inline-block;
     margin-left: 15px;
     margin-right: 15px;
+    line-height: 45px;
 }
 
 /* footer區塊2 */
