@@ -20,11 +20,12 @@
         <div class="row article-row">
             <!--首頁頭條輪播--> 
             <%/* if(page.current_url == ''){ */%>
-                <!-- <div class="col s12 m12 l12 swiper-headline" data-aos="zoom-in">
-                    <div class="headline-block">        
-                        <%-/* partial('_partial/headlines-slider') */%> 
-                    </div> 
-                </div> -->
+                <div class="col s12 m12 l12 swiper-headline" data-aos="zoom-in" style="margin-top: 2.5px; padding-right: 20px;">
+                    <div class="headline-block" style="height: 100%;">      
+                        <%- partial('_partial/headlines-slider') %> 
+                    </div>
+                    
+                </div>
             <%/* } */%>
             <!--現在位置-->
             <% if(page.current_url !== ''){ %>

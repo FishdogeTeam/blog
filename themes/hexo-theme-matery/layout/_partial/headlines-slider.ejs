@@ -1,9 +1,10 @@
-<div id="headlinesSwiper" class="headlineSwiper">
+<div id="headlinesSwiper" class="headlineSwiper" style="height: 100%;">
     <div id="headline-wrapper" class="swiper-wrapper">
         <% page.posts.forEach( (post,index) =>{ %>
             <% if(post.headline == true){ %>
                 <div class="swiper-slide">
-                    <a href="<%- url_for(post.path) %>"><img src="<%- url_for(post.img) %>" class="swiper-slide-headimg">
+                    <a href="<%- url_for(post.path) %>">
+                        <img src="<%- url_for(post.img) %>" class="swiper-slide-headimg">
                         <span class="card-content article-content col s12 m7">
                             <div class="headline-publish-info">
                                 <!-- 標題 -->                                    
@@ -55,6 +56,8 @@
             <% } %>
         <% }) %>
     </div>
+    <button class="swiper-button-prev headline-swiper-button">&lt;</button>
+    <button class="swiper-button-next headline-swiper-button"">></button>
 </div>
 
 
@@ -62,27 +65,31 @@
     .swiper-slide-headimg{
         display: block;
         width: 96%;
-        height: 30  0px;
+        height: 97%;
         object-fit: cover;
     }
 
+    .headline-swiper-button{
+        color: white;
+        background: rgba(0,0,0,0%); 
+        border: 0px;
+        font-size: 72px;
+    }
+
+    .headline-swiper-button:hover{
+        color: orange;
+    }
 
     #headlinesSwiper {
       overflow: hidden;
-    }
-    .swiper-slide img {
+    }   
+
+    /* .swiper-slide img {
       display: block;
       width: 96%;
-      height: 54%;
+      height: 100%;
       object-fit: cover;
-    }
-    
-    .swiper-slide img {
-      display: block;
-      width: 96%;
-      height: 54%;
-      object-fit: cover;
-    }
+    } */
     .headline-publish-info{
         position: absolute;
         left: 8%;
@@ -107,21 +114,33 @@
     .headline-article-tags span{
         color: white;
     }
+    .headlineswiper-button-next{
+        position: relative;
+        right: 20px;
+        top: 50%;
+        z-index: 999;
+    }
+    .headlineswiper-button-prev{
+        position: relative;
+        left: 20px;
+        top: 50%;
+        z-index: 999;
+    }
 </style>
 
 <!-- Initialize Swiper -->
 <script>
     const headlinesSwiper = new Swiper(".headlineSwiper", {
     slidesPerView: 'auto',
-    spaceBetween:1000,
+    spaceBetween: 0,
     loop: true,
     autoplay: {
           delay: 5000,
           disableOnInteraction: false,
     },
     navigation: {
-        nextEl: ".headlineswiper-button-next",
-        prevEl: ".headlineswiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
     });
 

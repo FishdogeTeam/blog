@@ -2279,10 +2279,10 @@ p.search-result-summary{
     -o-transition: all .3s;
     transition: all .3s; */
 }
-
+/*
 .m-nav-show,
 .m-nav-item > a:hover {
-    /* color: #FFF; */ */
+    color: #FFF; */
     /* background: rgba(255, 255, 255, .8);
 }
 
@@ -2297,7 +2297,7 @@ p.search-result-summary{
     height: 50px;
     padding: 0;
     margin: 0;
-}
+} */
 
 /* tag button */
 body.DarkMode .theme-btn {

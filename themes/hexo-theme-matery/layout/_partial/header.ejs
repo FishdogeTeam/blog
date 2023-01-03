@@ -45,55 +45,29 @@
                                             <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img iconMoney" alt="iconMoney" style="margin-top: 20px; height:16px; width: 16px; display: inline-block;">                                        
                                         </span>
                                     
-                                        <span style="color: white">價格：
+                                        <span style="color: white; float: right">價格：
                                             <span id="header_crypto_price" style="color: White; display:inline-block; width:60px; margin: 0px;">
-                                                <script type="module">
-                                                    // get data from the func "getData"
-                                                    // let priceMsg;
-                                                    let data;
-        
-                                                    axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd')
-                                                        .then((response) => {
-                                                            data = JSON.parse(JSON.stringify(response.data));
-                                                            document.getElementById("header_crypto_price").innerHTML = data.bitcoin.usd;
-                                                        })
-                                                        .catch((error) => {
-                                                            let data;
-                                                            let url = "<%- theme.stock.getCryptoUrl%>" + 'coin=BTC/USDT';
-                                                            // url need to be changed
-                                                            axios.get(url)
-                                                            .then((response) => {
-                                                                data = JSON.parse(JSON.stringify(response.data));
-                                                                document.getElementById("header_crypto_price").innerHTML = data.result.price;
-                                                            })
-                                                            .catch((error) => {
-                                                                data = error;
-                                                                console.log(error);
-                                                            });
-                                                            return data;
-                                                            data = error;
-                                                            console.log(error);
-                                                        });
-                                                </script>
                                             </span>
                                         </span>
                                     </a>
                                 </div>
                                 <div class="swiper-slide swiper-btc-block-high" style="height:60px;">    
                                     <a href="">                       
-                                        <span style="color: white">
-                                            <span>|</span> 
+                                        <span style="color: white; width: 360px;">
+                                            <span style="margin-left: 30px; font-size: 24px; font-weight: 100; top: -3px; position: relative;">|</span> 
                                             <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img iconBlock" alt="iconBlock" style="margin-top: 20px; height:16px; width: 16px; display: inline-block;">
                                             <span>區塊高度：</span>
                                             <span id="header_crypto_blockhigh" style="color: White; display:inline-block; width:60px; margin: 0px;">
                                                 <script type="module">
                                                     // get data from the func "getBlockHeight"
-                                                    import {getBlockHeight} from '/js/crypto.js'
-                                                    getBlockHeight().then( res => {
-                                                        // let blockhighMsg = res; //res.result.區塊高度;
-                                                        // show the blockhigh
-                                                        document.getElementById("header_crypto_blockhigh").innerHTML = res;
-                                                    });
+                                                    // import {getBlockHeight} from '/js/crypto.js'
+                                                    // getBlockHeight().then( res => {
+                                                    //     // let blockhighMsg = res; //res.result.區塊高度;
+                                                    //     // show the blockhigh
+                                                    //     document.getElementById("header_crypto_blockhigh").innerHTML = res;
+                                                    // });
+
+                                                    
                                                 </script>
                                             </span>
                                         </span>
@@ -102,17 +76,15 @@
                                 
                                 
                             </div>
-                            <div class="swiper-pagination"></div>
                         </div>
-                    </div>
-                    <div class="swiper-pagination"></div>    
+                    </div>    
                 </div>
             </div>
             <div class="container">
                 <div class="stock-price">
                     <div class="swiper-container" style="height: 60px;">
-                        <div class="swiper mySwiper2" style="height: 55px!important">
-                            <div class="swiper-wrapper">
+                        <div class="swiper mySwiper2" style="height: 60px;">
+                            <div class="swiper-wrapper" style="line-height: 60px;">
                                 
                                 <!-- get data from api by ejs axio -->
                                 <% for (var i =1; i <=10;  i++ ) { %>
@@ -126,7 +98,7 @@
                                     </div>                                                            
                                 <% } %>
                                 
-                                <% for (var i = 0; i < 5;  i++ ) { %>
+                                <% for (var i = 0; i < 3;  i++ ) { %>
                                     <div class="swiper-slide">
                                         <span id="name-empty" ></span>
                                         <span id="price-empty"></span>                                    
@@ -194,9 +166,24 @@
                                     //         console.log(error);
                                     //     });
                                     // }
+                                    // get BTC block height
+                                    function getBlockHeight(){
+                                        axios.get('https://chain.api.btc.com/v3/block/latest')
+                                        .then((response) => {
+                                            let data = JSON.parse(JSON.stringify(response.data));
+                                            document.cookie = `height=${data['data']['height']}`;
+                                            document.getElementById("header_crypto_blockhigh").innerHTML = data['data']['height'];
+                                        })
+                                        .catch((error) => {
+                                            getCookie()
+                                        })
+                                    }
+
+                                    
                                     // 自動生成交易對
                                     function autoSpawnCryto(){      
-                                        let count = 0;                
+                                        let count = 0;         
+                                        getBlockHeight();    
                                         for (let i = 0; i < 10; i++){
                                             axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd&include_24hr_change=true`)
                                             .then((response) => {
@@ -224,20 +211,19 @@
                                                     console.log(error);
                                                     getCookie();
                                                 });
-                                                return data;
                                                 data = error;
                                                 console.log(error);     
-                                                getCookie();                                           
+                                                getCookie(); 
+                                                return data;
                                             });
                                             document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
                                         }                                                                                                                 
                                     }
 
                                     function getCookie() {                                                
-                                        var Data = document.cookie.split("; ");     
-                                        console.log(Data);
+                                        var Data = document.cookie.split("; ");
                                         Data.forEach(element => {
-                                            if(element.substring(0, 4) == "gian"){    
+                                            if(element.substring(0, 4) == "gian") {    
                                                 let gain = parseFloat(element.split('=')[1])
                                                 if (gain > 0){
                                                     document.getElementById(`price-${parseInt(element[4])+1}_gain_img`).classList.add("fa-caret-up");
@@ -254,8 +240,14 @@
                                                 }                                                                                                                                
                                                 document.getElementById(`price-${parseInt(element[4])+1}_gain`).innerHTML = gain + "%";
                                             }
-                                            else if(element.substring(0, 5) == "value"){                                                   
+                                            else if(element.substring(0, 5) == "value") {                                                
                                                 document.getElementById(`price-${parseInt(element[5])+1}`).innerHTML = element.split('=')[1];
+                                                if(element[5] == "0") {
+                                                    document.getElementById("header_crypto_price").innerHTML = element.split('=')[1];
+                                                }
+                                            }
+                                            else if(element.substring(0, 6) == "height") {
+                                                document.getElementById("header_crypto_blockhigh").innerHTML = element.split('=')[1];
                                             }
                                         });
                                     }
@@ -270,33 +262,28 @@
                                 </script>                                                                               
                             </div>                       
 			                <div class="swiper-button-next">                                                      
-                                <i class="fa-solid fa-chevron-right swiper-button-right" id="next"></i>
+                                <i class="fa-solid fa-chevron-right swiper-button-right top10swiper" id="next"></i>
                             </div>
 			                <span class="fa-solid"></span>			    
                             <div class="swiper-button-prev" style="z-index: 999;">			    
-                                <i class="fa-solid fa-chevron-left swiper-button-left" id="prev"></i>
+                                <i class="fa-solid fa-chevron-left swiper-button-left top10swiper" id="prev"></i>
                             </div>                            
-                            <div class="swiper-pagination"></div>
 
                             <style>
                                 .swiper-button-right{                                    
                                     color: black;
-                                    height: auto;
-                                    font-size: x-large;
                                     position: relative;
                                     width: 100%;
-				                    top: 8px;
+				                    top: 3px;
                                     right: -14px;
                                     text-align: center;             
                                     background-color: rgb(247, 247, 247);               
                                 }
                                 .swiper-button-left{                                    
                                     color: black;
-                                    height: auto;
-                                    font-size: x-large;
                                     position: relative;
                                     width: 100%;
-				                    top: 8px;
+				                    top: 3px;
                                     left: -14px;
                                     text-align: center;   
                                     background-color: rgb(247, 247, 247);                         
