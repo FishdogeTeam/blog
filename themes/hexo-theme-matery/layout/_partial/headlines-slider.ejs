@@ -9,36 +9,10 @@
                             <div class="headline-publish-info">
                                 <!-- 標題 -->                                    
                                 <p class="headline-card-title"><%= post.title %></p>
-                                <!-- 作者 -->
-                                <span class="publish-author">
-                                    <% if (post.categories && post.categories.length > 0) { %>
-                                    <% post.categories.forEach(category => { %>
-                                    <a href="<%- url_for(category.path) %>" class="post-category">
-                                        <%- category.name %>
-                                    </a>
-                                    <% }); %>
-                                    <% } else if (post.authorId && post.authorId.length > 0) { %>
-                                    <a href="/author/<%- post.authorId %>" class="headline-author-link">
-                                        <%- post.authorId %>
-                                    </a>
-                                    <% } else { %>
-                                    <%- config.author %>
-                                    <% } %>
-                                </span><br>
                                 <!-- 日期 -->
                                 <span class="headline-publish-date">
                                     <%= date(post.date, config.date_format) %>
                                 </span><br>
-                                <!-- 文章摘要 -->
-                                <div class="headline-summary">
-                                    <% if (post.summary && post.summary.length > 0) { %>
-                                        <%- post.summary %>...
-                                    <% } else if (post.excerpt && post.excerpt.length > 0) { %>
-                                        <%- strip_html(post.excerpt).substring(0, 120) %>
-                                    <% } else if (post.content && post.content.length > 0) { %>
-                                        <%- strip_html(post.content).substring(0, 120) %>
-                                    <% } %>
-                                </div>
                                 <!-- 關鍵字 -->
                                 <% if(post.tags && post.tags.length > 0) { %>
                                     <div class="card-action headline-article-tags">
@@ -63,10 +37,11 @@
 
 <style>
     .swiper-slide-headimg{
-        display: block;
-        width: 96%;
-        height: 97%;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
+        top: 0%;
     }
 
     .headline-swiper-button{

@@ -525,6 +525,9 @@ footer hr{
     text-align: center;
     padding: 0 10px;
 }
+#headlinesSwiper .swiper-slide{
+    padding: 0px;
+}
 .swiper-slide a{
     color: black;
     border: 1px ;
@@ -545,10 +548,6 @@ footer hr{
 .swiper-btc-block-high{
     width: 220px!important;
     text-align:left!important;
-}
-.swiper-headline{
-    width: 50% !important;
-    height: 40vmax!important;
 }
 .swiper-headline-block{
     width: 50%!important;
@@ -870,20 +869,8 @@ footer hr{
     .content{
         padding-top: 10%;        
     }
-    .swiper-headline{
-        height: 38vmax!important;
-    }
 }
-@media only screen and (min-width: 1200px) {
-    .swiper-headline{
-        height: 32vmax!important;
-    }
-}
-@media only screen and (min-width: 1440px) {
-    .swiper-headline{
-        height: 28vmax!important;
-    }
-}
+
 @media only screen and (min-width: 1440px) {
     .content{
         padding-top: 5%;        
