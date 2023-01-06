@@ -351,7 +351,7 @@ footer .nft-row{
 footer .footer-info{
     height: 100vh;
     max-height: 155px;
-    border-bottom: solid 1px black;
+    border-bottom: solid 2px black;
     padding-right: 0px !important;
 }
 footer .footer-info h3{
@@ -787,7 +787,7 @@ footer hr{
     }
     footer .nft-row{
         margin-bottom: 20px;
-        border-bottom: solid 1px black;
+        border-bottom: solid 2px black;
         padding-right: 0px !important;
     }
 
