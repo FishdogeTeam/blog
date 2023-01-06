@@ -317,6 +317,7 @@ footer .footer-nfts h2{
     padding-top: 0px;
     padding-bottom: 20px;
     color: black;
+    margin-inline-start: 0px;
 }
 footer .footer-nfts h3{
     margin: 0;
@@ -440,13 +441,16 @@ footer hr{
 }
 
 /*nav*/
+.nav{
+    border-bottom: 1px solid #F2F2F2;
+}
 .nav-menu{
     padding-top: 20px;
     padding-bottom: 0px;
 }
 .nav .nav-menu{
     padding: 0px;
-    /* height: 110px; */
+    height: 110px;
 }
 .nav .nav-menu .logo-block a{
     padding: 0px;
@@ -507,6 +511,12 @@ footer hr{
 .slide-container{
     box-shadow: -2px 2px 3px 1px rgba(128, 128, 128, 0.3);   
 }
+.slide-container .swiper{ 
+    height: 80px;
+}
+nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
+    line-height: 80px !important;
+}
 .swiper .tagRight{
     position: absolute;
     left: 1px;
@@ -561,14 +571,14 @@ footer hr{
 }
 @media only screen and (max-width: 600px){
     .content{
-        padding-top: 20%;        
+        padding-top: 64px;        
     }
 } 
 
 /*url-now*/
 .url-now{
     font-size: 15px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     margin-top: 45px ;
     padding: 0px;
     color: black !important;
@@ -658,6 +668,23 @@ footer hr{
 .authors-page{
     margin-bottom: 5vh;    
 }
+.post-info .post-date{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    position: relative;
+}
+.post-info .post-date span{
+    position: absolute;
+    top: 0px;
+    margin-left: 8px;
+}
+.post-info .post-date-icon{
+    width: 20px;
+    height: 20px;
+}
+
 
 
 
@@ -667,6 +694,19 @@ footer hr{
         padding-left: 4%;
         padding-right: 4%;
     } */
+    
+    .readmore{
+        margin-top: 0px;
+    }
+    .slide-container .swiper{ 
+        height: 64px;
+    }
+    nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
+        line-height: 64px !important;
+    }
+    .url-now{
+        margin-left: 15px;
+    }
     .ad-block{
         height: 80px;
     }
@@ -739,7 +779,7 @@ footer hr{
         display: none;
     }
     article .card-image img {
-        max-height: 170px;
+        max-height: 150px;
     }
     article .publish-info {
         /* max-height: 150px; */
@@ -835,6 +875,11 @@ footer hr{
     }
 }
 @media only screen and (max-width: 991px) {    
+    
+    .nav .nav-menu{
+        padding: 0px;
+        height: 60px;
+    }
     .nav .nav-menu .right {
         height: 60px;
     }
@@ -873,7 +918,7 @@ footer hr{
 
 @media only screen and (min-width: 1440px) {
     .content{
-        padding-top: 5%;        
+        padding-top: 126px;        
     }
     
 }
