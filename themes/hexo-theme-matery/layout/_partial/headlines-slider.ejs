@@ -5,6 +5,7 @@
                 <div class="swiper-slide">
                     <a href="<%- url_for(post.path) %>">
                         <img src="<%- url_for(post.img) %>" class="swiper-slide-headimg">
+                        <span class="swiper-slide-headimg" style="position: absolute; top: 0; left: 0; background: linear-gradient(to top, black, 15%, transparent 50%); height: 100%;"></span>                        
                         <span class="card-content article-content col s12 m7">
                             <div class="headline-publish-info">
                                 <!-- 標題 -->                                    
@@ -109,10 +110,10 @@
     slidesPerView: 'auto',
     spaceBetween: 0,
     loop: true,
-    autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-    },
+    // autoplay: {
+    //       delay: 5000,
+    //       disableOnInteraction: false,
+    // },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",

@@ -54,8 +54,8 @@
                                 <div class="swiper-slide swiper-btc-block-high" style="height:60px;">    
                                     <a href="">                       
                                         <span style="color: white; width: 360px;">
-                                            <span style="margin-left: 30px; font-size: 24px; font-weight: 100; top: -3px; position: relative;">|</span> 
-                                            <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img iconBlock" alt="iconBlock" style="margin-top: 20px; height:16px; width: 16px; display: inline-block;">
+                                            <span style="margin-left: 20px; font-size: 24px; font-weight: 50; top: -3px; position: relative;">|</span> 
+                                            <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img iconBlock" alt="iconBlock" style="margin-left: 10px; margin-top: 20px; height:16px; width: 16px; display: inline-block;">
                                             <span>區塊高度：</span>
                                             <span id="header_crypto_blockhigh" style="color: White; display:inline-block; width:60px; margin: 0px;">
                                                 <script type="module">
@@ -168,6 +168,7 @@
                                     // }
                                     // get BTC block height
                                     function getBlockHeight(){
+                                        // https://chain.api.btc.com/v3/block/latest
                                         axios.get('https://chain.api.btc.com/v3/block/latest')
                                         .then((response) => {
                                             let data = JSON.parse(JSON.stringify(response.data));
@@ -175,7 +176,8 @@
                                             document.getElementById("header_crypto_blockhigh").innerHTML = data['data']['height'];
                                         })
                                         .catch((error) => {
-                                            getCookie()
+                                            console.log(error)
+                                            getCookie()                                        
                                         })
                                     }
 
@@ -254,7 +256,7 @@
                                     
                                     //init
                                     autoSpawnCryto();
-
+                                    getCookie();
                                     setTimeout(function(){
                                         autoSpawnCryto();                                        
                                     }, 30000);
