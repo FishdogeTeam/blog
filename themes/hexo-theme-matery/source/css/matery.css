@@ -109,6 +109,16 @@
     }
 }
 
+@media only screen and (max-width: 1024px) {
+    .swiper-headline{
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .swiper-headline .headline-block{
+        margin-top: 0px;
+    }
+}
 @media only screen and (min-width: 881px) and (max-width: 992px) {
     .headline-block{
         width: 100%;
@@ -1218,13 +1228,13 @@ article .article-tags {
     .index-card .card .card-content {
         padding: 20px 20px;
     }
-    article .publish-info {
+    /* article .publish-info {
         max-height: 12vmax;
         min-height: 12vmax;
     }
     article .card-image img {
         max-height: 12vmax;
-    }
+    } */
 }
 @media only screen and (min-width: 600px) and (max-width: 992px) {
     #artDetail .article-card-content {

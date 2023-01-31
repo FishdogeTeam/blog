@@ -59,7 +59,7 @@
             <% } %>
             <% page.posts.forEach((post,index) => { %>
                 <% if (post.hide != true)  { %> <!-- 隐藏某个文章 -->
-                    <div class="article-main-post col s12 m6 l4" >
+                    <div class="article-main-post col s12 m12 l4" >
                         <a href="<%- url_for(post.path) %>">
                             <!-- 照片 -->
                             <div class="card-image col s12 m5">

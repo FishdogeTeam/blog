@@ -566,12 +566,12 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
 
 /*content*/
 .content{
-    padding-top: 9%;
+    padding-top: 80px;
     clear: both;
 }
 @media only screen and (max-width: 600px){
     .content{
-        padding-top: 64px;        
+        padding-top:67px;        
     }
 } 
 
