@@ -270,6 +270,10 @@ button:focus {
 .page-footer{
     border-top: solid 1px black;
 }
+footer .nfts-heading{
+    font-size: 20px;
+    font-weight: 500;
+}
 /* footer區塊1 */
 footer .footer-nav{
     padding-top: 55px;
@@ -335,7 +339,7 @@ footer .footer-nfts h4{
     color: black;
 }
 footer .footer-nfts a{
-    margin-right: 10px;
+    margin-right: 5px;
 }
 footer .row .col{
     padding-left: 0px;
@@ -356,7 +360,7 @@ footer .nft-row{
 footer .footer-info{
     height: 100vh;
     max-height: 155px;
-    border-bottom: solid 2px black;
+    border-bottom: solid 1px black;
     padding-right: 0px !important;
 }
 footer .footer-info h3{
@@ -365,10 +369,10 @@ footer .footer-info h3{
     font-weight: 500;
 }
 footer .footer-info a{
-    padding: 10px 20px;
+    padding: 7px 12px;
     font-size: 16px;
     line-height: 30px;
-    height: 50px;
+    height: 45px;
 }
 footer .nftimg{
     height: 100vh;
@@ -439,7 +443,7 @@ footer hr{
     grid-column-end: 3;
     width: 100%;
     margin: 0px;
-    border-top: 2px solid black;
+    border-top: 1px solid black;
     vertical-align: bottom;
     padding-bottom: 50px;
 }
@@ -557,7 +561,7 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
     text-align:left!important;
 }
 .swiper-btc-block-value{
-    width: 220px!important;
+    width: 190px!important;
     text-align:left!important;
 }
 .swiper-btc-block-high{
@@ -721,10 +725,10 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
         height: 80px;
     }
     footer .footer-info a{
-        padding: 6px 15px;
-        font-size: 16px;
+        padding: 4px 12px;
+        font-size: 14px;
         line-height: 30px;
-        height: 42px;
+        height: 40px;
     }
     footer .footer-info .btn-right{
         margin-right: 0px;
@@ -837,7 +841,7 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
     }
     footer .nft-row{
         margin-bottom: 20px;
-        border-bottom: solid 2px black;
+        border-bottom: solid 1px black;
         padding-right: 0px !important;
     }
 
