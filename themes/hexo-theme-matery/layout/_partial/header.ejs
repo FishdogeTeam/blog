@@ -5,9 +5,9 @@
         <span class="ad-text">廣告廣告廣告廣告廣告廣告廣告廣告</span>
         <button id="header-closeBtn" class="ad-close"><img src="/medias/ad-close.svg"></button>
     </div>
-    <nav id="headNav" class="bg-color nav-transparent">
+    <nav id="headNav" class="bg-color white nav-transparent">
         <div class="bitcoin-price grey lighten-4">
-            <div class="btc-price black ">
+            <div class="btc-price white">
                 <div class="swiper-container" style="height:55px;">
                     <div class="container">
                         <div class="swiper myBtcSwiper">
@@ -23,9 +23,9 @@
                                  -->
                                 <div class="swiper-slide swiper-btc-block-date" style="height:60px;">
                                     <a href="">
-                                        <span style="color: white">
+                                        <span>
                                             <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCal) %>" class="responsive-img" alt="iconCal" style="margin-top: 20px; height:16px; width: 16px; display: inline-block;">
-                                            <span id="btc-block-date" style="display: inline-block; color: white">
+                                            <span id="btc-block-date" style="display: inline-block;">
                                                 <script>
                                                     var today = new Date();
                                                     var dd = String(today.getDate()).padStart(2, '0');
@@ -40,24 +40,24 @@
                                 </div>
                                 <div class="swiper-slide swiper-btc-block-value" style="height:60px;">
                                     <a href="">
-                                        <span id="header_cropto_name" style="color: white">
+                                        <span id="header_cropto_name">
                                             <span>BTC</span> 
                                             <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconMoney) %>" class="responsive-img iconMoney" alt="iconMoney" style="margin-top: 20px; height:16px; width: 16px; display: inline-block;">                                        
                                         </span>
                                     
-                                        <span style="color: white; float: right">價格：
-                                            <span id="header_crypto_price" style="color: White; display:inline-block; width:60px; margin: 0px;">
+                                        <span style=" float: right">價格：
+                                            <span id="header_crypto_price" style="display:inline-block; width:60px; margin: 0px;">
                                             </span>
                                         </span>
                                     </a>
                                 </div>
                                 <div class="swiper-slide swiper-btc-block-high" style="height:60px;">    
                                     <a href="">                       
-                                        <span style="color: white; width: 360px;">
+                                        <span style=" width: 360px;">
                                             <span style="margin-left: 20px; font-size: 24px; font-weight: 50; top: -3px; position: relative;">|</span> 
                                             <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconBlock) %>" class="responsive-img iconBlock" alt="iconBlock" style="margin-left: 10px; margin-top: 20px; height:16px; width: 16px; display: inline-block;">
                                             <span>區塊高度：</span>
-                                            <span id="header_crypto_blockhigh" style="color: White; display:inline-block; width:60px; margin: 0px;">
+                                            <span id="header_crypto_blockhigh" style="color: black; display:inline-block; width:60px; margin: 0px;">
                                                 <script type="module">
                                                     // get data from the func "getBlockHeight"
                                                     // import {getBlockHeight} from '/js/crypto.js'

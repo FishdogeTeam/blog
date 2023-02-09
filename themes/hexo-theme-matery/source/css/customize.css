@@ -238,7 +238,7 @@ button:focus {
     display: inline-block;
     line-height: 55px;
     margin-right: 10px;
-    font-size: 16px;
+    /* font-size: 16px; */
     font-weight: 500;
     vertical-align: top;
 }
@@ -267,6 +267,9 @@ button:focus {
     margin-right: 32px;
 }
 
+.page-footer{
+    border-top: solid 1px black;
+}
 /* footer區塊1 */
 footer .footer-nav{
     padding-top: 55px;
@@ -297,6 +300,7 @@ footer .copyright-block{
     grid-template-columns: 50% 50%;
 }
 footer .copyright-text{
+    color: Black;
     justify-content: start; 
     grid-column-start: 1;
 }
@@ -645,6 +649,11 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
 }
 
 /*about page*/
+.footer-copyright{
+    background-color: white !important;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
 .about-container{
     background: #3f3f3f;
     margin-bottom: 30px;

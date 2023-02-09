@@ -1954,7 +1954,8 @@ footer .social-statis {
 }
 
 footer a {
-    color: #fff;
+    /* color: #fff; */
+    color: black;
 }
 
 footer .copy-right {
