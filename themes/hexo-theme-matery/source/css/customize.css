@@ -250,7 +250,7 @@ button:focus {
     margin-left: 4px;
 }
 .btc-price .iconMoney{
-    margin-left: 28px;
+    /* margin-left: 28px; */
 }
 .btc-price .iconBlock{
     margin-left: 20px;
