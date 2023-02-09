@@ -538,6 +538,7 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
 .swiper-slide{
     text-align: center;
     padding: 0 10px;
+    padding-left: 0px;
 }
 #headlinesSwiper .swiper-slide{
     padding: 0px;
