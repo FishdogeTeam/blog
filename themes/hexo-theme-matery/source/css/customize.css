@@ -2,6 +2,7 @@
 
 html{
     width: 100vw;
+    appearance: none;
 }
 body{
     font-family: 'Noto Sans TC', sans-serif;
@@ -626,6 +627,8 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
 }
 
 .readmore{
+    color: black;
+    border: solid 2px black;
     margin-top: 80px;
     margin-bottom: 80px;
     background: none;
@@ -635,7 +638,9 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
     padding: 10px 120px;    
     position: relative;
     left: 50%;
+    -webkit-appearance: none;  /* Safari 和 Chrome，常用於iOS下移除內建樣式 */
     transform: translateX(-50%); 
+    appearance: none;
 }
 
 /*social-block*/
