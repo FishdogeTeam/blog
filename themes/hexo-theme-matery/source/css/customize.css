@@ -55,9 +55,8 @@ button:focus {
 }
 .ad-close{
     position: absolute;
-    width: 30px;
-    height: 30px;
-    padding: 0px;
+    width: 28px;
+    height: 28px;
     top: 50%;
     transform: translateY(-50%);
     right: 10%;
@@ -66,8 +65,8 @@ button:focus {
     border: none;
 }
 .ad-close img{
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
 }
 
 #articles .article-pic{
@@ -577,12 +576,12 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
 
 /*content*/
 .content{
-    padding-top: 80px;
+    padding-top: 40px;
     clear: both;
 }
 @media only screen and (max-width: 600px){
     .content{
-        padding-top:67px;        
+        padding-top: 0px;        
     }
 } 
 
@@ -930,18 +929,18 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
         margin-bottom: 0px;
     }
 }
-@media only screen and (min-width: 1000px) {    
+/* @media only screen and (min-width: 1000px) {    
     .content{
         padding-top: 10%;        
     }
-}
+} */
 
-@media only screen and (min-width: 1440px) {
+/* @media only screen and (min-width: 1440px) {
     .content{
         padding-top: 126px;        
     }
     
-}
+} */
 @media only screen and (min-width: 1441px) {
     .ad-text{
         left: 19%;
