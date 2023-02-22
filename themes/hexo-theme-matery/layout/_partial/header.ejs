@@ -88,7 +88,7 @@
                                 
                                 <!-- get data from api by ejs axio -->
                                 <% for (var i =1; i <=10;  i++ ) { %>
-                                    <div class="swiper-slide">
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
                                         <span id="name-<%= i %>" ></span>
                                         <span id="price-<%= i %>"></span>
                                         <i id="price-<%= i %>_gain_img" class="fa-solid text-darken-3 "></i> 
@@ -98,12 +98,12 @@
                                     </div>                                                            
                                 <% } %>
                                 
-                                <% for (var i = 0; i < 3;  i++ ) { %>
+                                <!-- <% for (var i = 0; i < 3;  i++ ) { %>
                                     <div class="swiper-slide">
                                         <span id="name-empty" ></span>
                                         <span id="price-empty"></span>                                    
                                     </div>                                                     
-                                <% } %>                                
+                                <% } %>                                 -->
 
                                 <!-- 從 api.fishdogeweb.store 取得資料，即 api.py -->
                                 <script type="module">

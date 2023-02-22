@@ -56,13 +56,15 @@
   
   count = Math.floor(width*0.9/200);
   space = (width*0.85-200*count);
+
+  swiper2_touch = width > 601 ? true : false
   
   const swiper2 = new Swiper(".mySwiper2", {
-      slidesPerView: count,
-      spaceBetween: -space,
+      slidesPerView: 'auto',
+      spaceBetween: 0,
       slidesPerGroup: count,
-      loop: false,
       centeredSlides: false,
+      allowTouchMove: swiper2_touch,
       loopFillGroupWithBlank: false,
       pagination: {
         el: ".swiper-pagination",

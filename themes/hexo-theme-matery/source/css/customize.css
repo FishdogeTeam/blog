@@ -55,9 +55,8 @@ button:focus {
 }
 .ad-close{
     position: absolute;
-    width: 30px;
-    height: 30px;
-    padding: 0px;
+    width: 28px;
+    height: 28px;
     top: 50%;
     transform: translateY(-50%);
     right: 10%;
@@ -66,8 +65,8 @@ button:focus {
     border: none;
 }
 .ad-close img{
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
 }
 
 #articles .article-pic{
