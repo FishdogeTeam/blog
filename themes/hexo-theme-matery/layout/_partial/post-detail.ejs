@@ -8,14 +8,14 @@
         <div class="post-info row">
             <% if (theme.postInfo.date) { %>
             <div class="post-date ">                
-                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCalBlack) %>" class="post-date-icon responsive-img black-text" alt="iconCal">
+                <img src="/medias/icon-calender-black.png" class="post-date-icon responsive-img black-text" alt="iconCal">
                 <span><%- date(page.date, 'YYYY/MM/DD') %></span>
             </div>
             <% } %>
 
             <% if (theme.postInfo.update) { %>
             <div class="post-date ">
-                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.iconCalBlack) %>" class="post-date-icon responsive-img black-text" alt="iconCal"><%- __('updateDate') %>:&nbsp;&nbsp;
+                <img src="/medias/icon-calender-black.png" class="post-date-icon responsive-img black-text" alt="iconCal"><%- __('updateDate') %>:&nbsp;&nbsp;
                 <span><%- date(page.date, 'YYYY/MM/DD') %></span>
             </div>
             <% } %>
