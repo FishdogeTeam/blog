@@ -3,10 +3,11 @@
 html{
     width: 100vw;
     appearance: none;
+    -webkit-overflow-scrolling: auto;
 }
 body{
     font-family: 'Noto Sans TC', sans-serif;
-    overflow-x: hidden;
+    -webkit-overflow-scrolling: auto;
 }
 h1{
     margin-left: 10px;
@@ -778,8 +779,8 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
     }
     #artDetail .post-img .quotation {
         padding: 20px 12px;
-        width: 100vmax;
-        max-width: 335px;
+        width: 100%;
+        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
         position: absolute;
