@@ -1,0 +1,1313 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="標籤: 駭客, 比特幣中文頻道網站">
+    <meta name="description" content="比特幣中文頻道網站">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>標籤: 駭客 | 比特幣中文頻道網站</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+<!-- 客製化Css -->
+<link rel="stylesheet" type="text/css" href="/css/customize.css">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+<script>
+    //響應式，依螢幕寬度匯入不同css檔
+    function includeCss(url) {
+        let link = document.createElement("link");
+        link.rel = "stylesheet"
+        link.type = "text/css"
+        link.href = url
+        document.getElementsByTagName("head")[0].appendChild(link)
+    }
+
+    if(window.innerWidth <540){
+        window.onload=includeCss("/css/mobile.css")
+    }
+</script>
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    
+<!-- <header class="navbar-fixed"> -->
+ <header class="navbar">
+    <div id="header-ad" class="ad-block">
+        <span class="ad-text">廣告廣告廣告廣告廣告廣告廣告廣告</span>
+        <button id="header-closeBtn" class="ad-close"><img src="/medias/ad-close.svg"></button>
+    </div>
+    <nav id="headNav" class="bg-color white nav-transparent" style="height: auto;">
+        <div class="bitcoin-price grey lighten-4">
+            <div class="btc-price">
+                <div class="swiper-container" style="height:55px;">
+                    <div class="container">
+                        <div class="swiper myBtcSwiper">
+                            <div class="swiper-wrapper">
+                                        
+                                <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                            
+                                <!-- 
+                                        height: 60px;
+                                        width: 128.933px;
+                                        /* margin-right: -129.89999999999998px; */
+                                        margin-right: -33.89999999999998px;
+                                 -->
+                                <div class="swiper-slide swiper-btc-block-date" style="height:60px;">
+                                    <a href="">
+                                        <span style="color: black;">
+                                            <img src="/medias/icon-calender-black.png" class="responsive-img" alt="iconCal" style="margin-top: 20px; height:16px; width: 16px; display: inline-block;">
+                                            <span id="btc-block-date" style="display: inline-block;">
+                                                <script>
+                                                    var today = new Date();
+                                                    var dd = String(today.getDate()).padStart(2, '0');
+                                                    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0
+                                                    var yyyy = today.getFullYear();
+                                                    today = yyyy+ '/' + mm + '/' + dd;
+                                                    document.getElementById("btc-block-date").innerHTML =  today;                           
+                                                </script>
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide swiper-btc-block-value" style="height:60px;">
+                                    <a href="">
+                                        <span id="header_cropto_name" style="color: black;">
+                                            <span>BTC</span> 
+                                            <svg style="top: 3px; position: relative;" width="16" height="16" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.80469 15.1484C8.83073 15.1484 9.79427 14.9531 10.6953 14.5625C11.5964 14.1719 12.3906 13.6328 13.0781 12.9453C13.7708 12.2578 14.3125 11.4635 14.7031 10.5625C15.0938 9.65625 15.2891 8.6901 15.2891 7.66406C15.2891 6.64323 15.0911 5.68229 14.6953 4.78125C14.3047 3.875 13.763 3.07812 13.0703 2.39062C12.3828 1.69792 11.5885 1.15625 10.6875 0.765625C9.78646 0.375 8.82292 0.179688 7.79688 0.179688C6.77604 0.179688 5.8151 0.375 4.91406 0.765625C4.01302 1.15625 3.21615 1.69792 2.52344 2.39062C1.83594 3.07812 1.29688 3.875 0.90625 4.78125C0.515625 5.68229 0.320312 6.64323 0.320312 7.66406C0.320312 8.6901 0.515625 9.65625 0.90625 10.5625C1.30208 11.4635 1.84375 12.2578 2.53125 12.9453C3.21875 13.6328 4.01302 14.1719 4.91406 14.5625C5.8151 14.9531 6.77865 15.1484 7.80469 15.1484ZM7.80469 14.0156C6.92448 14.0156 6.09896 13.8516 5.32812 13.5234C4.5625 13.1953 3.89062 12.7422 3.3125 12.1641C2.73438 11.5807 2.28125 10.9062 1.95312 10.1406C1.625 9.36979 1.46094 8.54427 1.46094 7.66406C1.46094 6.78906 1.625 5.96875 1.95312 5.20312C2.28125 4.43229 2.73438 3.75781 3.3125 3.17969C3.89062 2.59635 4.5625 2.14062 5.32812 1.8125C6.09375 1.48438 6.91667 1.32031 7.79688 1.32031C8.68229 1.32031 9.50781 1.48438 10.2734 1.8125C11.0391 2.14062 11.7109 2.59635 12.2891 3.17969C12.8724 3.75781 13.3281 4.43229 13.6562 5.20312C13.9844 5.96875 14.1484 6.78906 14.1484 7.66406C14.1536 8.54427 13.9922 9.36979 13.6641 10.1406C13.3359 10.9062 12.8802 11.5807 12.2969 12.1641C11.7188 12.7422 11.0443 13.1953 10.2734 13.5234C9.50781 13.8516 8.6849 14.0156 7.80469 14.0156ZM7.80469 11.8672C7.89844 11.8672 7.97396 11.8385 8.03125 11.7812C8.09375 11.7188 8.125 11.6406 8.125 11.5469V11.0078C8.70312 10.9609 9.1875 10.776 9.57812 10.4531C9.96875 10.125 10.1641 9.6875 10.1641 9.14062C10.1641 8.65104 10.0026 8.25781 9.67969 7.96094C9.36198 7.66406 8.88542 7.45312 8.25 7.32812L8.125 7.30469V5.17969C8.41146 5.22656 8.65104 5.33333 8.84375 5.5C9.04167 5.66146 9.17448 5.86979 9.24219 6.125C9.3151 6.35417 9.45312 6.46875 9.65625 6.46875C9.77083 6.46875 9.86458 6.43229 9.9375 6.35938C10.0156 6.28125 10.0547 6.18229 10.0547 6.0625C10.0547 6.02604 10.0521 5.98958 10.0469 5.95312C10.0417 5.91146 10.0339 5.875 10.0234 5.84375C9.92969 5.44792 9.70833 5.1224 9.35938 4.86719C9.01562 4.60677 8.60417 4.44792 8.125 4.39062V3.88281C8.125 3.78906 8.09375 3.71094 8.03125 3.64844C7.97396 3.58594 7.89844 3.55469 7.80469 3.55469C7.58594 3.55469 7.47656 3.66406 7.47656 3.88281V4.39062C6.91927 4.45312 6.46094 4.64583 6.10156 4.96875C5.7474 5.29167 5.57031 5.70312 5.57031 6.20312C5.57031 6.66146 5.72396 7.03385 6.03125 7.32031C6.34375 7.60156 6.80469 7.8151 7.41406 7.96094L7.47656 7.96875V10.2266C7.1276 10.1849 6.84635 10.0729 6.63281 9.89062C6.42448 9.70833 6.29167 9.48698 6.23438 9.22656C6.19792 9.10677 6.14323 9.01823 6.07031 8.96094C6.0026 8.90365 5.91667 8.875 5.8125 8.875C5.69792 8.875 5.60417 8.91406 5.53125 8.99219C5.45833 9.0651 5.42188 9.16406 5.42188 9.28906C5.42188 9.32031 5.42448 9.35417 5.42969 9.39062C5.4401 9.42708 5.44792 9.46354 5.45312 9.5C5.55729 9.92708 5.79427 10.2734 6.16406 10.5391C6.53906 10.7995 6.97656 10.9531 7.47656 11V11.5469C7.47656 11.7604 7.58594 11.8672 7.80469 11.8672ZM7.47656 7.14062L7.42188 7.125C7.07292 7.02604 6.8151 6.89844 6.64844 6.74219C6.48177 6.58594 6.39844 6.39062 6.39844 6.15625C6.39844 5.91667 6.49479 5.70833 6.6875 5.53125C6.88542 5.34896 7.14844 5.23177 7.47656 5.17969V7.14062ZM8.125 8.14062L8.28906 8.17188C8.66927 8.27604 8.9375 8.41146 9.09375 8.57812C9.25 8.73958 9.32812 8.94271 9.32812 9.1875C9.32812 9.46354 9.22656 9.69792 9.02344 9.89062C8.82031 10.0781 8.52083 10.1901 8.125 10.2266V8.14062Z"/>
+                                                </svg>                                        
+                                        </span>
+                                    
+                                        <span style="color: black;">價格：
+                                            <span id="header_crypto_price" style="display:inline-block; width:60px; margin: 0px;">
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide swiper-btc-block-high" style="height:60px;">    
+                                    <a href="">                       
+                                        <span style=" width: 360px;">
+                                            <span style="margin-left: 20px; font-size: 24px; font-weight: 50; top: -3px; position: relative;color: black;">|</span> 
+                                            <svg style="top: 1px; position: relative;" width="15" height="15" viewBox="0 0 15 15" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.10156 14.4297H8.17188V0.929688H7.10156V14.4297ZM0.882812 8.21875H14.3906V7.14062H0.882812V8.21875ZM3.14844 14.4297H12.1328C12.888 14.4297 13.4531 14.2422 13.8281 13.8672C14.2031 13.4922 14.3906 12.9349 14.3906 12.1953V3.16406C14.3906 2.42448 14.2031 1.86719 13.8281 1.49219C13.4531 1.11719 12.888 0.929688 12.1328 0.929688H3.14844C2.39323 0.929688 1.82552 1.11719 1.44531 1.49219C1.07031 1.86198 0.882812 2.41927 0.882812 3.16406V12.1953C0.882812 12.9401 1.07031 13.4974 1.44531 13.8672C1.82552 14.2422 2.39323 14.4297 3.14844 14.4297ZM3.16406 13.3516C2.77865 13.3516 2.48177 13.25 2.27344 13.0469C2.07031 12.8438 1.96875 12.5417 1.96875 12.1406V3.21875C1.96875 2.81771 2.07031 2.51562 2.27344 2.3125C2.48177 2.10938 2.77865 2.00781 3.16406 2.00781H12.1172C12.4974 2.00781 12.7917 2.10938 13 2.3125C13.2083 2.51562 13.3125 2.81771 13.3125 3.21875V12.1406C13.3125 12.5417 13.2083 12.8438 13 13.0469C12.7917 13.25 12.4974 13.3516 12.1172 13.3516H3.16406Z""/>
+                                                </svg>
+                                            <span style="color: black;">區塊高度：</span>
+                                            <span id="header_crypto_blockhigh" style="color: black; display:inline-block; width:60px; margin: 0px;">
+                                            </span>
+                                        </span>
+                                    </a>       
+                                </div>                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="container">
+                <div class="stock-price">
+                    <div class="swiper-container" style="height: 60px;">
+                        <div class="swiper mySwiper2" style="height: 60px;">
+                            <div class="swiper-wrapper" style="line-height: 60px;">
+                                
+                                <!-- get data from api by ejs axio -->
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-1" ></span>
+                                        <span id="price-1"></span>
+                                        <i id="price-1_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-1_gain_text" class="text-darken-3"> 
+                                            <span id="price-1_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-2" ></span>
+                                        <span id="price-2"></span>
+                                        <i id="price-2_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-2_gain_text" class="text-darken-3"> 
+                                            <span id="price-2_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-3" ></span>
+                                        <span id="price-3"></span>
+                                        <i id="price-3_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-3_gain_text" class="text-darken-3"> 
+                                            <span id="price-3_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-4" ></span>
+                                        <span id="price-4"></span>
+                                        <i id="price-4_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-4_gain_text" class="text-darken-3"> 
+                                            <span id="price-4_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-5" ></span>
+                                        <span id="price-5"></span>
+                                        <i id="price-5_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-5_gain_text" class="text-darken-3"> 
+                                            <span id="price-5_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-6" ></span>
+                                        <span id="price-6"></span>
+                                        <i id="price-6_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-6_gain_text" class="text-darken-3"> 
+                                            <span id="price-6_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-7" ></span>
+                                        <span id="price-7"></span>
+                                        <i id="price-7_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-7_gain_text" class="text-darken-3"> 
+                                            <span id="price-7_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-8" ></span>
+                                        <span id="price-8"></span>
+                                        <i id="price-8_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-8_gain_text" class="text-darken-3"> 
+                                            <span id="price-8_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-9" ></span>
+                                        <span id="price-9"></span>
+                                        <i id="price-9_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-9_gain_text" class="text-darken-3"> 
+                                            <span id="price-9_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                    <div class="swiper-slide" style="width: auto; padding: 0 15px;">
+                                        <span id="name-10" ></span>
+                                        <span id="price-10"></span>
+                                        <i id="price-10_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <span id="price-10_gain_text" class="text-darken-3"> 
+                                            <span id="price-10_gain"></span>
+                                        </span>
+                                    </div>                                                            
+                                
+                                
+                                <!-- 
+                                    <div class="swiper-slide">
+                                        <span id="name-empty" ></span>
+                                        <span id="price-empty"></span>                                    
+                                    </div>                                                     
+                                
+                                    <div class="swiper-slide">
+                                        <span id="name-empty" ></span>
+                                        <span id="price-empty"></span>                                    
+                                    </div>                                                     
+                                
+                                    <div class="swiper-slide">
+                                        <span id="name-empty" ></span>
+                                        <span id="price-empty"></span>                                    
+                                    </div>                                                     
+                                                                 -->
+
+                                <!-- 從 api.fishdogeweb.store 取得資料，即 api.py -->
+                                <script type="module">
+                                    import {getStock} from '/js/crypto.js'
+                                    import {setPriceGain} from '/js/crypto.js'
+                                    let getDataurl = "https://api2.fishdogeweb.store/getData?"
+                                    let getStockurl = "https://api2.fishdogeweb.store/getStock?"
+                                    const link = [
+                                        {
+                                            name: 'bitcoin',
+                                            coin: 'BTC',
+                                        },
+                                        {
+                                            name: 'ethereum',
+                                            coin: 'ETH',
+                                        },
+                                        {
+                                            name: 'ripple',
+                                            coin: 'XRP',
+                                        },
+                                        {
+                                            name: 'binance-peg-polkadot',
+                                            coin: 'DOT',
+                                        },
+                                        {
+                                            name: 'bitcoin-cash',
+                                            coin: 'BCH',
+                                        },
+                                        {
+                                            name: 'litecoin',
+                                            coin: 'LTC',
+                                        },
+                                        {
+                                            name: 'cardano',
+                                            coin: 'ADA',
+                                        },
+                                        {
+                                            name: 'solana',
+                                            coin: 'SOL',
+                                        },
+                                        {
+                                            name: 'aptos',
+                                            coin: 'APT',
+                                        },
+                                        {
+                                            name: 'mask-network',
+                                            coin: 'MASK',
+                                        }
+                                    ]
+
+                                    // 自動生成漲跌幅
+                                    // for(let i = 0; i < 10; i++){
+                                    //     axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd&include_24hr_change=true`)
+                                    //     .then((gain_res) => {                                       
+                                    //             let data = JSON.parse(JSON.stringify(gain_res.data));
+                                                
+                                                                                        
+                                    //     })
+                                    //     .catch((error) => {
+                                    //         console.log(error);
+                                    //     });
+                                    // }
+                                    // get BTC block height
+                                    function getBlockHeight(){
+                                        // https://chain.api.btc.com/v3/block/latest
+                                        axios.get('https://chain.api.btc.com/v3/block/latest')
+                                        .then((response) => {
+                                            let data = JSON.parse(JSON.stringify(response.data));
+                                            document.cookie = `height=${data['data']['height']}`;
+                                            document.getElementById("header_crypto_blockhigh").innerHTML = data['data']['height'];
+                                        })
+                                        .catch((error) => {
+                                            console.log(error)
+                                            getCookie()                                        
+                                        })
+                                    }
+
+                                    
+                                    // 自動生成交易對
+                                    function autoSpawnCryto(){      
+                                        let count = 0;         
+                                        getBlockHeight();    
+                                        for (let i = 0; i < 10; i++){
+                                            axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd&include_24hr_change=true`)
+                                            .then((response) => {
+                                                let data = JSON.parse(JSON.stringify(response.data));                                                
+                                                document.cookie = `gian${i}=${Math.round((data[link[i].name].usd_24h_change + Number.EPSILON) * 100)/100};`; 
+                                                document.cookie = `value${i}=${data[link[i].name].usd};`;
+                                                count++;                                                
+                                                if(count==9){                                                    
+                                                    getCookie();
+                                                }
+                                            })
+                                            .catch((error) => {
+                                                let data;
+                                                let url = getDataurl + `coin=${link[i].coin}/USDT`;
+                                                // url need to be changed
+                                                axios.get(url)
+                                                .then((response) => {
+                                                    data = JSON.parse(JSON.stringify(response.data));
+                                                    document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
+                                                    document.getElementById(`price-${i+1}`).innerHTML = data.result.price;
+                                                    return data;
+                                                })
+                                                .catch((error) => {
+                                                    data = error;
+                                                    console.log(error);
+                                                    getCookie();
+                                                });
+                                                data = error;
+                                                console.log(error);     
+                                                getCookie(); 
+                                                return data;
+                                            });
+                                            document.getElementById(`name-${i+1}`).innerHTML = `${link[i].coin}/USDT`;
+                                        }                                                                                                                 
+                                    }
+
+                                    function getCookie() {                                                
+                                        var Data = document.cookie.split("; ");
+                                        Data.forEach(element => {
+                                            if(element.substring(0, 4) == "gian") {    
+                                                let gain = parseFloat(element.split('=')[1])
+                                                if (gain > 0){
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_img`).classList.add("fa-caret-up");
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_img`).classList.add("green-text");
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_text`).classList.add("green-text");                                                                                                        
+                                                } else if (gain == 0){
+
+                                                }
+                                                else{
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_img`).classList.add("fa-caret-down");
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_img`).classList.add("red-text");
+                                                    document.getElementById(`price-${parseInt(element[4])+1}_gain_text`).classList.add("red-text");
+                                                    gain *= -1;
+                                                }                                                                                                                                
+                                                document.getElementById(`price-${parseInt(element[4])+1}_gain`).innerHTML = gain + "%";
+                                            }
+                                            else if(element.substring(0, 5) == "value") {                                                
+                                                document.getElementById(`price-${parseInt(element[5])+1}`).innerHTML = element.split('=')[1];
+                                                if(element[5] == "0") {
+                                                    document.getElementById("header_crypto_price").innerHTML = element.split('=')[1];
+                                                }
+                                            }
+                                            else if(element.substring(0, 6) == "height") {
+                                                document.getElementById("header_crypto_blockhigh").innerHTML = element.split('=')[1];
+                                            }
+                                        });
+                                    }
+                                    
+                                    //init
+                                    autoSpawnCryto();
+                                    getCookie();
+                                    setTimeout(function(){
+                                        autoSpawnCryto();                                        
+                                    }, 30000);
+                                    
+                                </script>                                                                               
+                            </div>                       
+			                <div class="swiper-button-next">                                                      
+                                <i class="fa-solid fa-chevron-right swiper-button-right top10swiper" style="color: black;" id="next"></i>
+                            </div>
+			                <span class="fa-solid"></span>			    
+                            <div class="swiper-button-prev" style="z-index: 999;">			    
+                                <i class="fa-solid fa-chevron-left swiper-button-left top10swiper" style="color: black;" id="prev"></i>
+                            </div>                            
+
+                            <style>
+                                .swiper-button-right{                                    
+                                    color: whites;
+                                    position: relative;
+                                    width: 100%;
+				                    top: 3px;
+                                    right: -19px;
+                                    text-align: center;             
+                                    background-color: rgb(247, 247, 247);               
+                                }
+                                .swiper-button-left{                                    
+                                    color: black;
+                                    position: relative;
+                                    width: 100%;
+				                    top: 3px;
+                                    left: -14px;
+                                    text-align: center;   
+                                    background-color: rgb(247, 247, 247);                         
+                                }
+                                @media screen and (max-width:610px) {
+                                    .swiper-button-right{    
+				                        top: 4px;                                                                             
+                                    }
+                                    .swiper-button-left{   
+				                        top: 4px;                                                                              
+                                    }
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--移除頂部廣告-->
+        <script>
+            const headerCloseBtn=document.getElementById('header-closeBtn')
+            const headerAD=document.getElementById('header-ad') 
+
+            headerCloseBtn.addEventListener('click',()=>{
+                headerAD.remove() 
+            }) 
+        </script>
+        
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a> -->
+<div class="container nav" style="background-color: white;">  
+  <ul class="nav-menu white">
+    <li class="left nav-item logo-block"><a href="/"><img src="/medias/logo.png" class="logo-img col s2" alt="LOGO"></a></li>
+    
+    <li class="hide-on-med-and-down nav-item">
+      
+      <a href="/about" class="black-text bold">
+        
+        <span>關於</span>
+      </a>
+      
+    </li>
+    
+    <li class="hide-on-med-and-down nav-item">
+      
+      <a href="/buybitcoin" class="black-text bold">
+        
+        <span>購買比特幣</span>
+      </a>
+      
+    </li>
+    
+    <li class="hide-on-med-and-down nav-item">
+      
+      <a href="/topic" class="black-text bold">
+        
+        <span>關鍵字</span>
+      </a>
+      
+    </li>
+    
+    <li class="hide-on-med-and-down nav-item">
+      
+      <a href="/column" class="black-text bold">
+        
+        <span>專欄</span>
+      </a>
+      
+    </li>
+    
+         
+    <!-- <div class="col s12 m4 l4 social-link right hide-on-med-and-down nav-item">
+    <a href="https://www.facebook.com/facebook/?brand_redir=123739327653840" class="tooltipped" target="_blank" data-tooltip="Facebook" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f black-text"></i>
+    </a>
+
+
+
+    <a href="https://www.instagram.com/instagram/" class="tooltipped" target="_blank" data-tooltip="Instagram" data-position="top" data-delay="50">
+        <i class="fab fa-instagram black-text"></i>
+    </a>
+
+
+
+    <a href="https://twitter.com/Twitter" class="tooltipped" target="_blank" data-tooltip="Twitter" data-position="top" data-delay="50">
+        <i class="fab fa-twitter black-text"></i>
+    </a>
+
+
+
+    <a href="https://www.youtube.com/" class="tooltipped" target="_blank" data-tooltip="Youtube" data-position="top" data-delay="50">
+        <i class="fab fa-youtube black-text"></i>
+    </a>
+
+
+
+    <a href="https://www.apple.com/tw/apple-podcasts/" class="tooltipped" target="_blank" data-tooltip="podcast" data-position="top" data-delay="50">
+        <i class="fa-solid fa-podcast black-text"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS" data-position="top" data-delay="50">
+        <i class="fas fa-rss black-text"></i>
+    </a>
+
+</div> -->
+    
+    <li class="right" style="position: relative; display: flex; align-content: center;">
+      
+
+           <!-- 展開的三條線 tagMenu-->
+      <a data-target="slide-out" class="hide-on-med-and-up modal-trigger waves-effect waves-light">
+        <img href="" class ="tagMenu" src="/medias/Menu-Icon.png" alt="">
+        <!-- <i id="MenuIcon" class="fas fa-search orange-text" title="搜尋" style="zoom: 0.85;"></i> -->
+      </a>
+      <ul id="slide-out" class="sidenav" style="transform: translateX(0%); display: none;">
+        
+          <li class="hide-on-med-and-up nav-item">
+            
+            <a href="/about" class="waves-effect waves-light black-text bold">
+              
+              <span>關於</span>
+            </a>
+            
+          </li>
+          
+          <li class="hide-on-med-and-up nav-item">
+            
+            <a href="/buybitcoin" class="waves-effect waves-light black-text bold">
+              
+              <span>購買比特幣</span>
+            </a>
+            
+          </li>
+          
+          <li class="hide-on-med-and-up nav-item">
+            
+            <a href="/topic" class="waves-effect waves-light black-text bold">
+              
+              <span>關鍵字</span>
+            </a>
+            
+          </li>
+          
+          <li class="hide-on-med-and-up nav-item">
+            
+            <a href="/column" class="waves-effect waves-light black-text bold">
+              
+              <span>專欄</span>
+            </a>
+            
+          </li>
+          
+        <div class="col s12 m4 l4 social-link hide-on-med-and-up nav-item" style="">
+    <a href="https://www.facebook.com/facebook/?brand_redir=123739327653840" class="tooltipped" target="_blank" data-tooltip="Facebook" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f black-text"></i>
+    </a>
+
+
+
+    <a href="https://www.instagram.com/instagram/" class="tooltipped" target="_blank" data-tooltip="Instagram" data-position="top" data-delay="50">
+        <i class="fab fa-instagram black-text"></i>
+    </a>
+
+
+
+    <a href="https://twitter.com/Twitter" class="tooltipped" target="_blank" data-tooltip="Twitter" data-position="top" data-delay="50">
+        <i class="fab fa-twitter black-text"></i>
+    </a>
+
+
+
+    <a href="https://www.youtube.com/" class="tooltipped" target="_blank" data-tooltip="Youtube" data-position="top" data-delay="50">
+        <i class="fab fa-youtube black-text"></i>
+    </a>
+
+
+
+    <a href="https://www.apple.com/tw/apple-podcasts/" class="tooltipped" target="_blank" data-tooltip="podcast" data-position="top" data-delay="50">
+        <i class="fa-solid fa-podcast black-text"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS" data-position="top" data-delay="50">
+        <i class="fas fa-rss black-text"></i>
+    </a>
+
+</div>
+
+      </ul>
+    </li>
+<!-- 搜尋 -->
+	<div class="right" style="position: relative;  display: flex; align-content: center;">
+		<a href="#searchModal" class="modal-trigger waves-effect waves-light">
+		        <i id="searchIcon" class="fas fa-search black-text" title="搜尋" style="zoom: 0.85;"></i>
+	      </a>
+	</div>
+
+  </ul>
+
+        
+</div>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">比特幣中文頻道網站</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw fa-link"></i>
+			
+			關於
+		</a>
+          
+      </li>
+      
+        <li class="m-nav-item">
+	  
+		<a href="/buybitcoin" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw fa-link"></i>
+			
+			購買比特幣
+		</a>
+          
+      </li>
+      
+        <li class="m-nav-item">
+	  
+		<a href="/topic" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw fa-link"></i>
+			
+			關鍵字
+		</a>
+          
+      </li>
+      
+        <li class="m-nav-item">
+	  
+		<a href="/column" class="waves-effect waves-light">
+			
+				<i class="fas fa-fw fa-link"></i>
+			
+			專欄
+		</a>
+          
+      </li>
+      
+        
+        <li><div class="divider"></div></li>
+        <li>
+          <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+              <i class="fab fa-github-square fa-fw"></i>Fork Me
+          </a>
+        </li>
+      
+    </ul>
+</div>
+
+
+        <div class="slide-container">  
+  <div class="container" style="background-color: white;">
+    <div class="swiper mySwiper" style="background-color: white;">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="/tags/比特">比特</a></div>
+        <div class="swiper-slide"><a href="/tags/乙太">乙太</a></div>
+        <div class="swiper-slide"><a href="/tags/Defi">Defi</a></div>
+        <div class="swiper-slide"><a href="/tags/區塊鏈">區塊鏈</a></div>
+        <div class="swiper-slide"><a href="/tags/GameFi">GameFi</a></div>
+        <div class="swiper-slide"><a href="/tags/NFT">NFT</a></div>
+        <div class="swiper-slide"><a href="/tags/比特">比特</a></div>
+        <div class="swiper-slide"><a href="/tags/區塊鏈">區塊鏈</a></div>
+        <div class="swiper-slide"><a href="/tags/NFT">NFT</a></div> 
+      </div>
+      <div class="swiper-button-next" style="right: 14px;">       
+        <img class="tagRight" src="/medias/right.png">
+      </div>
+      <div class="swiper-button-prev" style="left: 14px;">
+        <img class="tagLeft" src="/medias/left.png">
+      </div>
+      
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script>
+  //輪播套件js
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 9,
+    spaceBetween: -40,
+    slidesPerGroup: 3,
+    initialSlide: 3,
+    loop: true,
+    loopFillGroupWithBlank: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  var width = window.innerWidth
+  || document.documentElement.clientWidth
+  || document.body.clientWidth;
+  var height = window.innerHeight
+  || document.documentElement.clientHeight
+  || document.body.clientHeight;
+  //show how many label
+  
+  
+  count = Math.floor(width*0.9/200);
+  space = (width*0.85-200*count);
+
+  swiper2_touch = width > 601 ? true : false
+  
+  const swiper2 = new Swiper(".mySwiper2", {
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      slidesPerGroup: count,
+      centeredSlides: false,
+      allowTouchMove: swiper2_touch,
+      loopFillGroupWithBlank: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },      
+  });
+
+  count = Math.ceil(width*0.9/390);
+  initPos = 0
+  if (width > 800) {
+    count+= 3;
+    initPos = 4
+  }
+  const btc_block_swiper = new Swiper(".myBtcSwiper", {
+      slidesPerView: count,
+      spaceBetween: -20,
+      slidesPerGroup: count,
+      initialSlide: initPos,
+      loop: false,
+      loopFillGroupWithBlank: false,
+      updateOnWindowResize: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      // centeredSlides: false,
+      },
+  });
+
+</script>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+                
+    </nav>
+
+</header>
+
+    <main class="content">
+
+    
+    
+    <!--標籤文章卡片-->
+    <article id="articles" class="container articles">
+        <!--現在位置-->
+        <p class="url-now">關鍵字 &gt; 駭客</p>
+        <h1>駭客</h1>
+        <div class="row tags-posts article-row">
+            
+            
+            
+            <div class="article-main-post col s12 m6 l4" data-aos="zoom-in">
+                <a href="/2022/10/07/%E6%96%87%E7%AB%A0%E4%B8%80%E8%99%9F/">
+                    <!-- 照片 -->
+                    <div class="card-image col s12 m5">
+                        
+                        <img src="https://i.imgur.com/JQLHyBi.png" class="responsive-img" alt="文章一號">
+                        
+                    </div>
+                    <!-- 資訊 -->
+                    <div class="card-content article-content col s12 m7">
+                        <div class="publish-info">
+                            <!-- 標題 -->                                    
+                            <p class="card-title">文章一號</p>
+                            <!-- 作者 -->
+                            <span class="publish-author">
+                                
+                                <a href="/author/王大明" class="author-link">
+                                    王大明
+                                </a>
+                                
+                            </span><br>
+                            <!-- 日期 -->
+                            <span class="publish-date">
+                                2022/10/07
+                            </span><br>
+                            <!-- 文章摘要 -->
+                            <div class="summary">
+                                
+                                    內文預覽內文預覽內文預覽內文預覽內文預覽...
+                                
+                            </div>
+                            <!-- 關鍵字 -->
+                            <!--tag文章若超過5個tags取前五顯示-->
+                            
+                            
+                                <div class="card-action article-tags">
+                                    
+                                    <a href="/tags/%E9%87%91%E8%9E%8D/">
+                                        <span class="black-text">#金融</span>
+                                    </a>
+                                    
+                                    <a href="/tags/%E4%B9%99%E5%A4%AA/">
+                                        <span class="black-text">#乙太</span>
+                                    </a>
+                                    
+                                    <a href="/tags/Bitcoin/">
+                                        <span class="black-text">#Bitcoin</span>
+                                    </a>
+                                    
+                                    <a href="/tags/Binance/">
+                                        <span class="black-text">#Binance</span>
+                                    </a>
+                                    
+                                    <a href="/tags/FTX/">
+                                        <span class="black-text">#FTX</span>
+                                    </a>
+                                    
+                                    <span>...</span>
+                                </div>
+                            
+                        </div>
+                    </div>
+                </a>
+            </div> 
+            
+        </div>
+    </article>
+    <div class="container">
+        <button id="tag-readmore" class="readmore center col s3">看更多</button>
+    </div>
+
+    <script>
+        const tagArticleDisplay=document.getElementsByClassName("tag-post")
+        const tagReadmoreBtn=document.getElementById("tag-readmore")
+        let tagArticleArray=[]
+        let tagClickCount=0
+
+        //文章少於4篇看更多不出現
+        if(tagArticleDisplay.length < 4 ){
+            tagReadmoreBtn.style.visibility="hidden"
+        }
+
+        for(let i=0;i<tagArticleDisplay.length;i++){
+            if((i+1) > 4){
+                tagArticleDisplay[i].style.display="none"
+            }
+        }
+
+        for(let i=0;i<tagArticleDisplay.length;i++){
+            if(i % 4 == 0 && i != 0){
+                tagArticleArray.push(i)
+            }
+        }
+
+        function readMore(){
+            try{
+                tagClickCount++
+                for(let i=0;i<4;i++){
+                    tagArticleDisplay[(tagArticleArray[tagClickCount-1])+i].style.display="block"
+                }
+            }
+            catch(err){
+                // err.message="沒有更多文章了"
+                tagReadmoreBtn.style.visibility="hidden";
+            }
+        }
+
+        tagReadmoreBtn.addEventListener('click',readMore)       
+    </script>
+</main>
+
+
+
+    <footer class="page-footer white">
+    <div class="container white footer-nav">
+        <div class="pic">
+            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+        </div>
+        <div class="footer-items" style="width: auto">
+            <div class="footer-item" style="width: auto; color: black;"><a href="/about">關於</a></div>
+            <div class="footer-item" style="width: auto; color: black;"><a href="/buybitcoin">購買比特幣</a></div>
+            <div class="footer-item" style="width: auto; color: black;"><a href="/">合作夥伴</a></div>
+            <div class="footer-item" style="width: auto; color: black;"><a href="/">免責聲明</a></div>
+            <div class="footer-item" style="width: auto; color: black;"><a href="/">隱私政策</a></div>
+        </div>
+    </div>
+    <!-- 第二區 -->
+    <div class="footer-copyright">
+        <div class="container copyright-block">
+            <!-- <div class="row">                 -->
+                <div class="copyright-text">
+                    &copy;Photo,&nbsp;Inc.&nbsp;
+                    
+                        <span id="year">2022-2023</span>
+                    
+                    All rights reserved
+                </div>
+                <div class="social-link">
+    <a href="https://www.facebook.com/facebook/?brand_redir=123739327653840" class="tooltipped" target="_blank" data-tooltip="Facebook" data-position="top" data-delay="50">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+
+
+    <a href="https://www.instagram.com/instagram/" class="tooltipped" target="_blank" data-tooltip="Instagram" data-position="top" data-delay="50">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+
+
+    <a href="https://twitter.com/Twitter" class="tooltipped" target="_blank" data-tooltip="Twitter" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+    <a href="https://www.youtube.com/" class="tooltipped" target="_blank" data-tooltip="Youtube" data-position="top" data-delay="50">
+        <i class="fab fa-youtube"></i>
+    </a>
+
+
+
+    <a href="https://www.apple.com/tw/apple-podcasts/" class="tooltipped" target="_blank" data-tooltip="podcast" data-position="top" data-delay="50">
+        <i class="fa-solid fa-podcast"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>     
+            <!-- </div> -->
+        </div>
+    </div>
+    <div class="footer-nfts white">
+        <div class="container">
+            <div class="row">
+                <h1 class="nfts-heading">精選 NFT 欣賞</h1>
+            </div>
+            <div class="row nft-rows">
+                <div class="col s12 m6 l6 nft-row">
+                    <div class="col s5 m6 nftimg">
+                        <img src="/medias/nft_left.png" class="responsive-img" alt="nftIMG">
+                    </div>
+                    <div class="col s7 m6 footer-info">
+                        <h3>網站名稱</h3>
+                        <a class="waves-effect waves-light btn black white-text">官方網站</a>
+                        <a class="waves-effect waves-light btn black white-text btn-right">我要購買</a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l6 nft-row">
+                    <div class="col s5 m6 nftimg">
+                        <img src="/medias/nft_right.png" class="responsive-img" alt="nftIMG">
+                    </div>
+                    <div class="col s7 m6 footer-info">
+                        <h3>網站名稱</h3>
+                        <a class="waves-effect waves-light btn black white-text">官方網站</a>
+                        <a class="waves-effect waves-light btn black white-text btn-right">我要購買</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row coin-block">
+                <div class="coin-left">
+                    <h2 class="nfts-heading">門羅幣挖礦</h2>     
+                </div>                
+                <div class="coin-right">
+                    <h4 class="nfts-heading">Github 開源碼連結</h4>
+                    <label class="toggle">
+                        <input type="checkbox" class="open-source-btn">
+                        <span class="onOff-btn round"></span>	
+                    </label>
+                </div>
+                <hr>
+            </div> -->
+        </div>
+        <div id="bottom-ad" class="ad-block">
+            <span class="ad-text">廣告廣告廣告廣告廣告廣告廣告廣告</span>
+            <button id="bottom-closeBtn" class="ad-close"><img src="/medias/ad-close.svg"></button>
+        </div>
+    </div>
+    <!--移除底部廣告-->
+    <script>
+        const bottomCloseBtn=document.getElementById('bottom-closeBtn')
+        const bottomAD=document.getElementById('bottom-ad') 
+
+        bottomCloseBtn.addEventListener('click',()=>{
+            bottomAD.remove() 
+        }) 
+    </script>
+</footer>
+<!-- <div class="progress-bar"></div> -->
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜尋</span>
+            <input type="search" id="searchInput" name="s" placeholder="請輸入關鍵字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text(),
+                        tag: $("tag", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        var data_tag = data.tag;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var index_tag= -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                index_tag = data_tag.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0 && index_tag < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    <!-- 客製化js -->
+    <script src="/js/customize.js"></script>
+
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+    
+</body>
+
+</html>
