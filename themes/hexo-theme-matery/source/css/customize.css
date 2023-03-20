@@ -6,6 +6,7 @@ html{
 }
 body{
     font-family: 'Noto Sans TC', sans-serif;
+    overflow-x: hidden;
 }
 h1{
     margin-left: 10px;
@@ -194,9 +195,11 @@ button:focus {
     display: inline-block;
     /* margin-left: 474px; */
     padding: 20px 12px;
-    max-width: 400px;
+    /* max-width: 400px; */
+    width: 100%;
     position: absolute;
-    right: 26px;
+    right: 0px;
+    opacity: 0.5;
     bottom: -30px;
 }
 .about-block #artDetail .post-img .quotation{
