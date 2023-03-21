@@ -4,10 +4,12 @@ html{
     width: 100vw;
     appearance: none;
     -webkit-overflow-scrolling: auto;
+    overflow-x: hidden;
 }
 body{
     font-family: 'Noto Sans TC', sans-serif;
     -webkit-overflow-scrolling: auto;
+    overflow-x: hidden;
 }
 h1{
     margin-left: 10px;
@@ -56,6 +58,7 @@ button:focus {
     left: 8.7%;
 }
 .ad-close{
+    padding: 0px !important;
     position: absolute;
     width: 28px;
     height: 28px;
@@ -785,7 +788,7 @@ nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i{
         margin-right: auto;
         position: absolute;
         bottom: -60px;
-        left: 50%;
+        left: 50% !important;
         transform: translateX(-50%);
     }
     #artDetail .post-info-tags {
