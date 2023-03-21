@@ -18,8 +18,8 @@
     <!--標籤文章卡片-->
     <article id="articles" class="container articles">
         <!--現在位置-->
-        <p class="url-now">關鍵字 &gt; <%- page.tag %></p>
-        <h1><%- page.tag %></h1>
+        <p class="url-now" style="padding-left: 17px !important;">關鍵字 &gt; <%- page.tag %></p>
+        <h1 style="padding-left: 17px !important; margin-left: 0px;"><%- page.tag %></h1>
         <div class="row tags-posts article-row">
             <% page.posts.sort('date').reverse().forEach(post => { %>
             <%
@@ -32,7 +32,7 @@
                 var tags = tagArr.join(', ');
             %>
             
-            <div class="article-main-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article-main-post col s12 m6 l4" >
                 <a href="<%- url_for(post.path) %>">
                     <!-- 照片 -->
                     <div class="card-image col s12 m5">
