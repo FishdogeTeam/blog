@@ -19,41 +19,52 @@
     <article id="articles" class="container articles">         
         <div class="row article-row">
             <!--首頁頭條輪播--> 
-            <%/* if(page.current_url == ''){ */%>
+            <% console.log(page.author)%>
+            <% if(page.current_url == ''){ %>
                 <div class="col s12 m12 l12 swiper-headline">
                     <div class="headline-block" style="height: 100%;">      
                         <%- partial('_partial/headlines-slider') %> 
                     </div>
                     
                 </div>
-            <%/* } */%>
+            <% } %>
             <!--現在位置-->
             <% if(page.current_url !== ''){ %>
-                <p class="url-now">專欄 &gt; <%- page.author.id %></p>
-                <div class="author-block">
-                    <h1 class="author-name"><%- page.author.id %></h1>
-                    <p class="author-about"><%- page.author.about %></p>
-                    <ul class="author-link-block">
+                <p class="url-now" style="padding-left: 17px !important;">
+                    專欄 &gt; <%- page.author.id %>
+                </p>
+                <div class="author-block" style="padding-left: 17px !important;">
+                    <h1 class="author-name" style="margin-left: 0px !important; font-size: 24px;"><%- page.author.id %></h1>
+                    <p class="author-about" style="margin-left: 0px !important;"><%- page.author.about %></p>
+                    <ul class="author-link-block" style="margin-left: 0px !important;">
+                        <% if (page.author.facebook) {%>
                         <li class="author-link">
-                            <a href="<%= theme.socialLink.facebook %>" class="tooltipped" target="_blank" data-tooltip="Facebook" data-position="top" data-delay="50">
+                            <a href="<%= page.author.facebook %>" class="tooltipped" target="_blank" data-tooltip="Facebook" data-position="top" data-delay="50">
                                 <i class="fab fa-facebook-f black-text"></i>
                             </a>
                         </li>
+                        <% } %>
+                        <% if (page.author.twitter) {%>
                         <li class="author-link">
-                            <a href="<%= theme.socialLink.twitter %>" class="tooltipped" target="_blank" data-tooltip="Twitter" data-position="top" data-delay="50">
+                            <a href="<%= page.author.twitter %>" class="tooltipped" target="_blank" data-tooltip="Twitter" data-position="top" data-delay="50">
                                 <i class="fab fa-twitter black-text"></i>
                             </a>
                         </li>
+                        <% } %>
+                        <% if (page.author.line) {%>
                         <li class="author-link">
-                            <a href="<%= theme.socialLink.line %>" class="tooltipped" target="_blank" data-tooltip="line" data-position="top" data-delay="50">
+                            <a href="<%= page.author.line %>" class="tooltipped" target="_blank" data-tooltip="line" data-position="top" data-delay="50">
                                 <i class="fab fa-line black-text"></i>
                             </a>
                         </li>
+                        <% } %>
+                        <% if (page.author.youtube) {%>
                         <li class="author-link">
-                            <a href="<%= theme.socialLink.youtube %>" class="tooltipped" target="_blank" data-tooltip="Youtube" data-position="top" data-delay="50">
+                            <a href="<%= page.author.youtube %>" class="tooltipped" target="_blank" data-tooltip="Youtube" data-position="top" data-delay="50">
                                 <i class="fab fa-youtube black-text"></i>
                             </a>
                         </li>
+                        <% } %>
                     </ul>
                 </div>
             <% } %>

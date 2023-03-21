@@ -1,7 +1,7 @@
 <div id="headlinesSwiper" class="headlineSwiper" style="height: 100%;">
     <div id="headline-wrapper" class="swiper-wrapper">
         <% page.posts.forEach( (post,index) =>{ %>
-            <% if(post.headline == true){ %>
+            <% if(post.headline == true ){ %>
                 <div class="swiper-slide">
                     <a href="<%- url_for(post.path) %>">
                         <img src="<%- url_for(post.img) %>" class="swiper-slide-headimg">
