@@ -892,186 +892,20 @@
         <div class="row article-row">
             <!--首頁頭條輪播--> 
             
-                <div class="col s12 m12 l12 swiper-headline">
-                    <div class="headline-block" style="height: 100%;">      
-                        <div id="headlinesSwiper" class="headlineSwiper" style="height: 100%;">
-    <div id="headline-wrapper" class="swiper-wrapper">
-        
-            
-                <div class="swiper-slide">
-                    <a href="/2022/10/12/%E6%96%87%E7%AB%A0%E4%B8%83%E8%99%9F/">
-                        <img src="https://i.imgur.com/JQLHyBi.png" class="swiper-slide-headimg">
-                        <span class="swiper-slide-headimg" style="position: absolute; top: 0; left: 0; background: linear-gradient(to top, black, 15%, transparent 50%); height: 100%;"></span>                        
-                        <span class="card-content article-content col s12 m7">
-                            <div class="headline-publish-info">
-                                <!-- 標題 -->                                    
-                                <p class="headline-card-title">文章七號</p>
-                                <!-- 日期 -->
-                                <span class="headline-publish-date">
-                                    2022/10/12
-                                </span><br>
-                                <!-- 關鍵字 -->
-                                
-                                    <div class="card-action headline-article-tags">
-                                        
-                                        <a href="/tags/%E6%AF%94%E7%89%B9/">
-                                            <span>#比特</span>
-                                        </a>
-                                        
-                                        <a href="/tags/%E4%B9%99%E5%A4%AA/">
-                                            <span>#乙太</span>
-                                        </a>
-                                        
-                                        <a href="/tags/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/">
-                                            <span>#加密貨幣</span>
-                                        </a>
-                                        
-                                    </div>
-                                
-                            </div>
-                        </span>
-                    </a>
-                </div>
-            
-        
-            
-        
-            
-        
-    </div>
-    <button class="swiper-button-prev headline-swiper-button" style="width: 55px;">
-        <!-- <img src="png/arrow_left.svg" fill="white" style="
-            width: 45px;
-        "> -->
-        <svg fill="white" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "/></svg>
-    </button>
-    <button class="swiper-button-next headline-swiper-button" style="width: 55px;">
-        <!-- <img src="png/arrow_right.svg" style="
-            width: 45px;
-        "> -->
-        <svg fill="white" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon points="160,115.4 180.7,96 352,256 180.7,416 160,396.7 310.5,256 "/></svg>
-    </button>
-</div>
-
-
-<style>
-    .swiper-slide-headimg{
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0%;
-    }
-
-    .headline-swiper-button{
-        color: white;
-        background: rgba(0,0,0,0%); 
-        border: 0px;
-        font-size: 72px;
-    }
-
-    .headline-swiper-button:hover{
-        color: orange;
-    }
-
-    #headlinesSwiper {
-      overflow: hidden;
-    }   
-
-    /* .swiper-slide img {
-      display: block;
-      width: 96%;
-      height: 100%;
-      object-fit: cover;
-    } */
-    .headline-publish-info{
-        position: absolute;
-        left: 8%;
-        bottom: 6%;
-        text-align: left;
-        line-height: 25px;
-    }
-    .headline-card-title{
-        font-size: 20px;
-        color: white !important;
-        margin-bottom: 5px;
-    }
-    .headline-author-link{
-        color: white !important;
-    }
-    .headline-publish-date{
-        color: white;
-    }
-    .headline-summary{
-        color: white !important;
-    }
-    .headline-article-tags span{
-        color: white;
-    }
-    .headlineswiper-button-next{
-        position: relative;
-        right: 20px;
-        top: 50%;
-        z-index: 999;
-    }
-    .headlineswiper-button-prev{
-        position: relative;
-        left: 20px;
-        top: 50%;
-        z-index: 999;
-    }
-</style>
-
-<!-- Initialize Swiper -->
-<script>
-    const headlinesSwiper = new Swiper(".headlineSwiper", {
-    slidesPerView: 'auto',
-    spaceBetween: 0,
-    loop: true,
-    // autoplay: {
-    //       delay: 5000,
-    //       disableOnInteraction: false,
-    // },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    });
-
-    let headlinesArticle=[]
-
-</script> 
-                    </div>
-                    
-                </div>
             
             <!--現在位置-->
             
-                <p class="url-now">專欄 &gt; Peach</p>
-                <div class="author-block">
-                    <h1 class="author-name">Peach</h1>
-                    <p class="author-about">Front end developer</p>
-                    <ul class="author-link-block">
-                        <li class="author-link">
-                            <a href="https://www.facebook.com/facebook/?brand_redir=123739327653840" class="tooltipped" target="_blank" data-tooltip="Facebook" data-position="top" data-delay="50">
-                                <i class="fab fa-facebook-f black-text"></i>
-                            </a>
-                        </li>
-                        <li class="author-link">
-                            <a href="https://twitter.com/Twitter" class="tooltipped" target="_blank" data-tooltip="Twitter" data-position="top" data-delay="50">
-                                <i class="fab fa-twitter black-text"></i>
-                            </a>
-                        </li>
-                        <li class="author-link">
-                            <a href="" class="tooltipped" target="_blank" data-tooltip="line" data-position="top" data-delay="50">
-                                <i class="fab fa-line black-text"></i>
-                            </a>
-                        </li>
-                        <li class="author-link">
-                            <a href="https://www.youtube.com/" class="tooltipped" target="_blank" data-tooltip="Youtube" data-position="top" data-delay="50">
-                                <i class="fab fa-youtube black-text"></i>
-                            </a>
-                        </li>
+                <p class="url-now" style="padding-left: 17px !important;">
+                    專欄 &gt; Peach
+                </p>
+                <div class="author-block" style="padding-left: 17px !important;">
+                    <h1 class="author-name" style="margin-left: 0px !important; font-size: 24px;">Peach</h1>
+                    <p class="author-about" style="margin-left: 0px !important;">Front end developer</p>
+                    <ul class="author-link-block" style="margin-left: 0px !important;">
+                        
+                        
+                        
+                        
                     </ul>
                 </div>
             
