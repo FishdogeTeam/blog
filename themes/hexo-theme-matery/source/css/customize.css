@@ -4,10 +4,12 @@ html{
     width: 100vw;
     appearance: none;
     -webkit-overflow-scrolling: auto;
+    overflow-x: hidden;
 }
 body{
     font-family: 'Noto Sans TC', sans-serif;
     -webkit-overflow-scrolling: auto;
+    overflow-x: hidden;
 }
 h1{
     margin-left: 10px;
