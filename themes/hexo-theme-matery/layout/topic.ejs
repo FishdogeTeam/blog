@@ -1,16 +1,31 @@
 <main class="content">
   <!--找尋所有關鍵字-->
   <%
-  let allTags=[]
-  site.tags.data.forEach(e =>{
-    allTags.push(e.name)
-  })
+    let allTags=[]
+    site.tags.data.forEach(e =>{
+      allTags.push(e.name)
+    })
+
+    let tagCount=[]
+    let i = 0
+
+    allTags.forEach(eachTag => {
+      tagCount.push(0)
+      site.posts.data.forEach(e =>{
+        e.tags.data.forEach(tag =>{
+          if (tag.name == eachTag) {
+            tagCount[i]++
+          }
+        })
+      })
+      i++
+    })
   %>
   <div class="topic-block container">
-      <% allTags.forEach(tag => { %>
-        <a href="/tags/<%= tag %>/">
-          <span><%= tag %></span>
-        </a>
-      <% }); %>
+    <% allTags.forEach((tag, idx) => { %>
+      <a href="/tags/<%= tag %>/">
+        <div style="font-size: 22px;"><%= tag %><span style="font-size: 20px;">(<%= tagCount[idx] %>)</span></div>
+      </a>
+    <% }); %>
   </div>
 </main>

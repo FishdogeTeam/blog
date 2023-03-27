@@ -18,9 +18,11 @@
     <!--標籤文章卡片-->
     <article id="articles" class="container articles">
         <!--現在位置-->
-        <p class="url-now" style="padding-left: 17px !important;">關鍵字 &gt; <%- page.tag %></p>
-        <h1 style="padding-left: 17px !important; margin-left: 0px;"><%- page.tag %></h1>
-        <div class="row tags-posts article-row">
+        <p class="url-now">關鍵字 &gt; <%- page.tag %></p>
+        <div class="author-block">
+            <h1 class="author-name"><%- page.tag %></h1>
+        </div>
+        <div class="row tags-posts article-row">            
             <% page.posts.sort('date').reverse().forEach(post => { %>
             <%
                 var tagArr = [];
@@ -29,7 +31,7 @@
                         tagArr.push(tag.name);
                     });
                 }
-                var tags = tagArr.join(', ');
+                var tags = tagArr.join(', ');                      
             %>
             
             <div class="article-main-post col s12 m6 l4" >

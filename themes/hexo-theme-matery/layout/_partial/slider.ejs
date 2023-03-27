@@ -18,7 +18,6 @@
       <div class="swiper-button-prev" style="left: 14px;">
         <img class="tagLeft" src="<%- theme.jsDelivr.url %><%- url_for(theme.tagLeft) %>">
       </div>
-      
       <div class="swiper-pagination"></div>
     </div>
   </div>
@@ -29,10 +28,10 @@
 <script>
   //輪播套件js
   const swiper = new Swiper(".mySwiper", {
-    slidesPerView: 9,
-    spaceBetween: -40,
+    slidesPerView: 4,
     slidesPerGroup: 3,
-    initialSlide: 3,
+    spaceBetween: -60,
+    initialSlide: 0,
     loop: true,
     loopFillGroupWithBlank: false,
     pagination: {
@@ -43,6 +42,20 @@
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      400: {
+        slidesPerView: 5,
+      },
+      600: {
+        slidesPerView: 7,
+      },
+      800: {
+        slidesPerView: 8,
+      },
+      1000: {
+        slidesPerView: 9,
+      }
+  }
   });
 
   var width = window.innerWidth
@@ -65,6 +78,13 @@
       slidesPerGroup: count,
       centeredSlides: false,
       allowTouchMove: swiper2_touch,
+      autoplay:true,
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+      },
+      // loop: true,
       loopFillGroupWithBlank: false,
       pagination: {
         el: ".swiper-pagination",
@@ -76,17 +96,10 @@
       },      
   });
 
-  count = Math.ceil(width*0.9/390);
-  initPos = 0
-  if (width > 800) {
-    count+= 3;
-    initPos = 4
-  }
   const btc_block_swiper = new Swiper(".myBtcSwiper", {
-      slidesPerView: count,
+      slidesPerView: 'auto',
       spaceBetween: -20,
-      slidesPerGroup: count,
-      initialSlide: initPos,
+      slidesPerGroup: 1,
       loop: false,
       loopFillGroupWithBlank: false,
       updateOnWindowResize: false,
@@ -98,3 +111,10 @@
   });
 
 </script>
+
+<style>
+  .mySwiper .swiper-slide {
+    width: fit-content;
+    left: 40px;
+  }
+</style>

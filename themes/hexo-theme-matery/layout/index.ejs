@@ -30,13 +30,13 @@
             <% } %>
             <!--現在位置-->
             <% if(page.current_url !== ''){ %>
-                <p class="url-now" style="padding-left: 17px !important;">
+                <p class="url-now">
                     專欄 &gt; <%- page.author.id %>
                 </p>
-                <div class="author-block" style="padding-left: 17px !important;">
-                    <h1 class="author-name" style="margin-left: 0px !important; font-size: 24px;"><%- page.author.id %></h1>
-                    <p class="author-about" style="margin-left: 0px !important;"><%- page.author.about %></p>
-                    <ul class="author-link-block" style="margin-left: 0px !important;">
+                <div class="author-block">
+                    <h1 class="author-name" style=" font-size: 24px;"><%- page.author.id %></h1>
+                    <p class="author-about" ><%- page.author.about %></p>
+                    <ul class="author-link-block">
                         <% if (page.author.facebook) {%>
                         <li class="author-link">
                             <a href="<%= page.author.facebook %>" class="tooltipped" target="_blank" data-tooltip="Facebook" data-position="top" data-delay="50">
